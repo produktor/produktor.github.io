@@ -1,0 +1,18 @@
+{
+  "title": "Team",
+  "subtitle": "Engineering and partnerships behind the sovereign stack.",
+  "members": [
+    {
+      "name": "Andriy Oblivantsev",
+      "role": "Senior Software Engineer · Platform & Data",
+      "url": "https://eslider.github.io",
+      "avatar": "https://eslider.github.io/assets/img/avatar.jpg"
+    },
+    {
+      "name": "Artem Maltschenko",
+      "role": "Geschäftsführer · Sovereign IT for Healthcare",
+      "url": "https://produktor.github.io/artem-maltschenko/",
+      "avatar": "https://produktor.github.io/artem-maltschenko/assets/img/avatar.jpg"
+    }
+  ]
+}

@@ -30,6 +30,7 @@ jobs:
           mkdir -p "_site${{ steps.pages.outputs.base_path }}"
           cp index.html logo.svg manifest.webmanifest CNAME "_site${{ steps.pages.outputs.base_path }}/"
           cp -a assets "_site${{ steps.pages.outputs.base_path }}/assets"
+          cp -a data "_site${{ steps.pages.outputs.base_path }}/data"
           if [ -d artem-maltschenko ]; then
             cp -a artem-maltschenko "_site${{ steps.pages.outputs.base_path }}/artem-maltschenko"
           fi
