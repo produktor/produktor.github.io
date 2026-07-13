@@ -44,10 +44,32 @@
         "Karten-UI im produktor-Stack enthalten"
       ],
       "liveDemoUrl": "https://produktor.io/ui/#"
+    },
+    {
+      "code": "06",
+      "accent": "bg-[#b6cdec] text-[#0a0a0a]",
+      "icon": "ai",
+      "nameEn": "Stack AI",
+      "nameDe": "Stack AI",
+      "tagEn": "Local inference · on-premise",
+      "tagDe": "Lokale Inferenz · On-Premise",
+      "descriptionEn": "Set up local inference engines and model services — vLLM, Ollama, llama.cpp, sglang — tuned for your hardware and use case. From CPU-only classification to GPU-backed assistants and embedding pipelines.",
+      "descriptionDe": "Lokale Inferenz-Engines und Model-Services aufsetzen — vLLM, Ollama, llama.cpp, sglang — abgestimmt auf Hardware und Use-Case. Von CPU-only Klassifikation bis zu GPU-Assistenten und Embedding-Pipelines.",
+      "bulletsEn": [
+        "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — right-sized deployments",
+        "Works for semantic search, embeddings (Neo4j + Qdrant), and code assistants",
+        "Supports low-memory setups for lightweight tasks and edge use cases"
+      ],
+      "bulletsDe": [
+        "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — passend dimensioniert",
+        "Für semantische Suche, Embeddings (Neo4j + Qdrant) und Code-Assistenten",
+        "Auch für Low-Memory-Setups (leichte Tasks, Edge-Use-Cases)"
+      ],
+      "liveDemoUrl": "#contact"
     }
   ],
   "footerLinks": {
-    "modulesEn": ["Service Produkt", "Geo-Service", "UI"],
-    "modulesDe": ["Service Produkt", "Geo-Service", "UI"]
+    "modulesEn": ["Service Produkt", "Geo-Service", "Stack AI", "UI"],
+    "modulesDe": ["Service Produkt", "Geo-Service", "Stack AI", "UI"]
   }
 }

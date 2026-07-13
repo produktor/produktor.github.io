@@ -4,6 +4,8 @@
       '<svg class="size-12 sm:size-14 stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>',
     geo:
       '<svg class="size-12 sm:size-14 stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+    ai:
+      '<svg class="size-12 sm:size-14 stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4 12H2"/><path d="M22 12h-2"/><path d="M19.78 4.22l-2.83 2.83"/><path d="M7.05 16.95l-2.83 2.83"/><path d="M19.78 19.78l-2.83-2.83"/><path d="M7.05 7.05 4.22 4.22"/><path d="M12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10Z"/></svg>',
   };
 
   const ARROW =
