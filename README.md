@@ -1,10 +1,10 @@
 # produktor.github.io
 
-GitHub Pages hub for the [produktor](https://github.com/produktor) organisation.
+GitHub Pages hub for [produktor](https://github.com/produktor).
 
-| Path | Source |
-|------|--------|
-| `/` | this repo |
-| `/artem-maltschenko/` | [produktor/artem-maltschenko](https://github.com/produktor/artem-maltschenko) (private, deployed via Actions) |
+| URL | Content |
+|-----|---------|
+| https://produktor.io/ | Landing portal ([produktor/landing](https://github.com/produktor/landing), private) |
+| https://produktor.github.io/artem-maltschenko/ | IT business card |
 
-Live: **https://produktor.github.io/artem-maltschenko/**
+Custom domain `produktor.io` is configured via `CNAME` in this public repo.

@@ -28,7 +28,8 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p "_site${{ steps.pages.outputs.base_path }}"
-          cp index.html "_site${{ steps.pages.outputs.base_path }}/index.html"
+          cp index.html logo.svg manifest.webmanifest CNAME "_site${{ steps.pages.outputs.base_path }}/"
+          cp -a assets "_site${{ steps.pages.outputs.base_path }}/assets"
           if [ -d artem-maltschenko ]; then
             cp -a artem-maltschenko "_site${{ steps.pages.outputs.base_path }}/artem-maltschenko"
           fi
@@ -43,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://produktor.io/
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
