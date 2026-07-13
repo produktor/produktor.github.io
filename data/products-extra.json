@@ -7,21 +7,21 @@
       "icon": "service",
       "nameEn": "Service Produkt",
       "nameDe": "Service Produkt",
-      "tagEn": "Product exchange · on-premise",
-      "tagDe": "Produktaustausch · On-Premise",
-      "descriptionEn": "Catalogue, exchange, and distribution workflows for physical and digital products — deployed on your hardware with your identity stack and audit trail.",
-      "descriptionDe": "Katalog-, Austausch- und Vertriebs-Workflows für physische und digitale Produkte — auf Ihrer Hardware mit Ihrem Identity-Stack und Audit-Trail.",
+      "tagEn": "Gitea · git · npm · docker · on-premise",
+      "tagDe": "Gitea · Git · npm · Docker · On-Premise",
+      "descriptionEn": "Self-hosted artifact and repository plane built on Gitea — Git source control plus npm, OCI/Docker, and other package registries on infrastructure you own. No GitHub/GitLab SaaS dependency for builds, releases, or internal libraries.",
+      "descriptionDe": "Self-hosted Artefakt- und Repository-Ebene auf Gitea — Git-Quellcodeverwaltung plus npm-, OCI/Docker- und weitere Paket-Registries auf eigener Infrastruktur. Keine GitHub-/GitLab-SaaS-Abhängigkeit für Builds, Releases oder interne Libraries.",
       "bulletsEn": [
-        "Self-hosted product graph and offer matching",
-        "QR / barcode flows without SaaS middlemen",
-        "Integrates with Stack CRM and sovereign storage"
+        "Git repos, issues, PRs, Actions — Gitea-native workflows",
+        "npm, container, and generic package registries beside Git",
+        "Live stack: git.produktor.io (produktor Gitea instance)"
       ],
       "bulletsDe": [
-        "Self-hosted Produktgraph und Angebotsabgleich",
-        "QR-/Barcode-Flows ohne SaaS-Zwischenhändler",
-        "Anbindung an Stack CRM und souveränen Speicher"
+        "Git-Repos, Issues, PRs, Actions — Gitea-native Workflows",
+        "npm-, Container- und generische Paket-Registries neben Git",
+        "Live-Stack: git.produktor.io (produktor-Gitea-Instanz)"
       ],
-      "liveDemoUrl": "https://produktor.io/ui/#"
+      "liveDemoUrl": "https://git.produktor.io/"
     },
     {
       "code": "05",

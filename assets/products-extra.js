@@ -62,10 +62,13 @@
     const icon = ICONS[product.icon] || ICONS.service;
 
     const bulletHtml = bullets
-      .map(
-        (item) =>
-          `<li class="flex items-start gap-2.5 text-[14px] leading-snug"><span class="mt-1.5 size-2 shrink-0 bg-[#143a6f] border border-black"></span><span>${item}</span></li>`,
-      )
+      .map((item) => {
+        const linked = item.replace(
+          /git\.produktor\.io/g,
+          '<a href="https://git.produktor.io/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2">git.produktor.io</a>',
+        );
+        return `<li class="flex items-start gap-2.5 text-[14px] leading-snug"><span class="mt-1.5 size-2 shrink-0 bg-[#143a6f] border border-black"></span><span>${linked}</span></li>`;
+      })
       .join("");
 
     return `

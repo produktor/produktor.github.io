@@ -40,6 +40,13 @@
       "featured": false
     },
     {
+      "name": "git.produktor.io",
+      "url": "https://git.produktor.io/",
+      "tagEn": "Gitea · git · npm · docker",
+      "tagDe": "Gitea · Git · npm · Docker",
+      "featured": false
+    },
+    {
       "name": "Markets Platform",
       "onPrem": true,
       "tagEn": "Trading · on-premise (not public)",
