@@ -38,7 +38,7 @@
 
   function renderClients(grid, data, de) {
     grid.className =
-      "pk-sovereign__grid flex-1 grid sm:grid-cols-2 gap-3 max-w-3xl";
+      "pk-sovereign__grid flex-1 grid grid-cols-2 lg:grid-cols-4 gap-3";
 
     grid.innerHTML = data.clients
       .map((client) => {
@@ -70,9 +70,11 @@
     const headline = kicker?.parentElement?.querySelector(".font-black.uppercase.tracking-tight");
     if (headline) headline.textContent = de ? data.headlineDe : data.headlineEn;
 
-    const grid = [...section.querySelectorAll(".grid")].find((el) =>
-      PLACEHOLDER_LOGOS.test(el.textContent || ""),
-    );
+    const grid =
+      section.querySelector(".pk-sovereign__grid") ||
+      [...section.querySelectorAll(".grid")].find((el) =>
+        PLACEHOLDER_LOGOS.test(el.textContent || ""),
+      );
     if (grid) renderClients(grid, data, de);
   }
 

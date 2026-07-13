@@ -1,14 +1,14 @@
 {
-  "kickerEn": "Sovereign installs",
-  "kickerDe": "Souveräne Installationen",
-  "headlineEn": "Live platforms on infrastructure clients own.",
-  "headlineDe": "Live-Plattformen auf Infrastruktur, die Kunden besitzen.",
+  "kickerEn": "In production at",
+  "kickerDe": "Im Einsatz bei",
+  "headlineEn": "Sovereign stacks our clients run every day.",
+  "headlineDe": "Souveräne Stacks, die unsere Kunden täglich betreiben.",
   "clients": [
     {
       "name": "Medex Pflegedienst",
       "url": "https://medex-pflegedienst.de/",
-      "tagEn": "Healthcare · Nürnberg · flagship install",
-      "tagDe": "Gesundheitswesen · Nürnberg · Referenz-Installation",
+      "tagEn": "Healthcare · Nürnberg",
+      "tagDe": "Gesundheitswesen · Nürnberg",
       "featured": true
     },
     {
@@ -16,6 +16,20 @@
       "url": "https://asesoria-tenerife.com/",
       "tagEn": "Advisory · Canary Islands",
       "tagDe": "Beratung · Kanarische Inseln",
+      "featured": false
+    },
+    {
+      "name": "produktor.io",
+      "url": "https://produktor.io/",
+      "tagEn": "Platform · on-premise stack",
+      "tagDe": "Plattform · On-Premise-Stack",
+      "featured": false
+    },
+    {
+      "name": "Edelweiss Pflegedienst",
+      "url": "https://edelweiss-pflegedienst.de/",
+      "tagEn": "Healthcare · Nürnberg",
+      "tagDe": "Gesundheitswesen · Nürnberg",
       "featured": false
     }
   ]
