@@ -53,8 +53,9 @@
     footer.querySelectorAll("span").forEach((span) => {
       const text = span.textContent;
       if (!text || !text.includes("produktor.io")) return;
-      if (text.includes("{year}")) {
-        span.textContent = text.replace(/\{\{year\}\}|\{year\}/g, year);
+      if (text.includes("{year}") || text.includes("{{year}}")) {
+        const next = text.replace(/\{\{year\}\}|\{year\}/g, year);
+        if (span.textContent !== next) span.textContent = next;
       }
     });
   }
@@ -106,7 +107,19 @@
 
   function applyHeaderLinks() {
     const logo = document.querySelector('header a[href="#"]');
-    if (logo) logo.setAttribute("href", "/");
+    if (logo && logo.getAttribute("href") !== "/") {
+      logo.setAttribute("href", "/");
+    }
+  }
+
+  function footerLinksDone(footer) {
+    let ok = true;
+    footer.querySelectorAll("a").forEach((anchor) => {
+      const label = anchor.textContent.trim();
+      const expected = HREFS[label];
+      if (expected && anchor.getAttribute("href") !== expected) ok = false;
+    });
+    return ok && Boolean(footer.querySelector('a[href="#team"]'));
   }
 
   async function mount() {
@@ -118,13 +131,7 @@
         fixCopyrightYear(footer);
         applyHeaderLinks();
       };
-      sync();
-      new MutationObserver(sync).observe(document.body, {
-        childList: true,
-        subtree: true,
-        characterData: true,
-      });
-      if (window.pkOnLanguageChange) window.pkOnLanguageChange(sync);
+      window.pkWatchPatch(sync, { root: footer, done: () => footerLinksDone(footer) });
     } catch (err) {
       console.warn("[produktor footer-links]", err);
     }

@@ -60,28 +60,43 @@
   function hideSignIn() {
     const header = document.querySelector("header");
     if (!header) return;
+    let hasSignIn = false;
     header.querySelectorAll("button[type='button']").forEach((button) => {
       const label = button.textContent?.trim();
       if (label === "Sign in" || label === "Anmelden") {
         button.remove();
+        hasSignIn = true;
       }
     });
+    if (!hasSignIn || header.dataset.pkSignInHidden !== "1") {
+      header.dataset.pkSignInHidden = "1";
+    }
+  }
+
+  function isDone() {
+    const header = document.querySelector("header");
+    const mainNav = header && findMainNav(header);
+    return Boolean(
+      mainNav &&
+        navIsCorrect(mainNav, isGerman()) &&
+        header?.dataset.pkSignInHidden === "1",
+    );
   }
 
   function fixHeaderNav() {
     const header = document.querySelector("header");
-    if (!header) return;
+    if (!header) return false;
 
     const mainNav = findMainNav(header);
-    if (!mainNav) return;
+    if (!mainNav) return false;
 
-    // Remove duplicate <nav> blocks injected by the old Team-link bug.
     header.querySelectorAll("nav").forEach((nav) => {
       if (nav !== mainNav) nav.remove();
     });
 
     const de = isGerman();
-    if (navIsCorrect(mainNav, de)) return;
+    if (navIsCorrect(mainNav, de)) return true;
+
     const sample = mainNav.querySelector("a") || header.querySelector("a[href^='#']");
     const className = sample?.className || LINK_CLASS;
 
@@ -94,6 +109,7 @@
         return link;
       }),
     );
+    return navIsCorrect(mainNav, de);
   }
 
   async function mount() {
@@ -103,13 +119,7 @@
         fixHeaderNav();
         hideSignIn();
       };
-      sync();
-      new MutationObserver(sync).observe(document.body, {
-        childList: true,
-        subtree: true,
-        characterData: true,
-      });
-      if (window.pkOnLanguageChange) window.pkOnLanguageChange(sync);
+      window.pkWatchPatch(sync, { root: document.querySelector("header") || document.body, done: isDone });
     } catch (err) {
       console.warn("[produktor nav-fix]", err);
     }

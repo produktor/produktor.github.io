@@ -38,7 +38,7 @@
 
   function renderClients(grid, data, de) {
     grid.className =
-      "pk-sovereign__grid flex-1 grid grid-cols-2 lg:grid-cols-4 gap-3";
+      "pk-sovereign__grid flex-1 grid grid-cols-2 lg:grid-cols-3 gap-3";
 
     grid.innerHTML = data.clients
       .map((client) => {
@@ -46,29 +46,48 @@
         const featured = client.featured
           ? " shadow-[6px_6px_0_0_#f2c849] ring-2 ring-[#f2c849]/40"
           : "";
+        const cardClass = `pk-sovereign__card border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] px-4 py-4 flex flex-col gap-1.5${featured}`;
+        const inner = `
+            <span class="font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight">${client.name}</span>
+            <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#0a0a0a]/65 leading-snug">${tag}</span>`;
+
+        if (client.onPrem || !client.url) {
+          return `<div class="${cardClass} pk-sovereign__card--onprem" aria-label="${client.name}">${inner}</div>`;
+        }
+
         return `
           <a
             href="${client.url}"
             target="_blank"
             rel="noopener noreferrer"
-            class="border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] px-4 py-4 flex flex-col gap-1.5 transition-shadow hover:shadow-[6px_6px_0_0_#f2c849]${featured}"
-          >
-            <span class="font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight">${client.name}</span>
-            <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#0a0a0a]/65 leading-snug">${tag}</span>
-          </a>`;
+            class="${cardClass} transition-shadow hover:shadow-[6px_6px_0_0_#f2c849]"
+          >${inner}</a>`;
       })
       .join("");
   }
 
+  function isPatched(section, data, de) {
+    const lang = de ? "de" : "en";
+    if (section.getAttribute("data-pk-sovereign") !== lang) return false;
+    const grid = section.querySelector(".pk-sovereign__grid");
+    const first = data.clients[0]?.name;
+    return Boolean(grid && first && grid.textContent.includes(first));
+  }
+
   function applyTrustStrip(section, data) {
     const de = isGerman();
+    if (isPatched(section, data, de)) return;
+
     section.id = "sovereign-clients";
+    section.setAttribute("data-pk-sovereign", de ? "de" : "en");
 
     const kicker = section.querySelector(".text-\\[11px\\].uppercase.font-black");
-    if (kicker) kicker.textContent = de ? data.kickerDe : data.kickerEn;
+    const kickerText = de ? data.kickerDe : data.kickerEn;
+    if (kicker && kicker.textContent !== kickerText) kicker.textContent = kickerText;
 
     const headline = kicker?.parentElement?.querySelector(".font-black.uppercase.tracking-tight");
-    if (headline) headline.textContent = de ? data.headlineDe : data.headlineEn;
+    const headlineText = de ? data.headlineDe : data.headlineEn;
+    if (headline && headline.textContent !== headlineText) headline.textContent = headlineText;
 
     const grid =
       section.querySelector(".pk-sovereign__grid") ||
@@ -90,13 +109,12 @@
         if (section) applyTrustStrip(section, data);
       };
 
-      run();
-      new MutationObserver(run).observe(document.body, {
-        childList: true,
-        subtree: true,
-        characterData: true,
+      window.pkWatchPatch(run, {
+        done: () => {
+          const section = findTrustSection();
+          return Boolean(section && isPatched(section, data, isGerman()));
+        },
       });
-      if (window.pkOnLanguageChange) window.pkOnLanguageChange(run);
     } catch (err) {
       console.warn("[produktor sovereign-clients]", err);
     }

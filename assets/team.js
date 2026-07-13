@@ -14,8 +14,9 @@
   function avatarStyle(member) {
     const scale = member.avatarScale ?? 1;
     const position = member.avatarObjectPosition ?? "center center";
-    if (scale === 1 && position === "center center") return "";
-    return `transform:scale(${scale});object-position:${position};transform-origin:center 30%`;
+    const origin = member.avatarTransformOrigin ?? "center 30%";
+    if (scale === 1 && position === "center center" && origin === "center 30%") return "";
+    return `transform:scale(${scale});object-position:${position};transform-origin:${origin}`;
   }
 
   function waitFor(selector, timeoutMs = 20000) {
@@ -104,6 +105,8 @@
 
   async function mount() {
     try {
+      if (document.getElementById("team")) return;
+
       const [footer, response] = await Promise.all([
         waitFor("footer"),
         fetch("data/team.json"),

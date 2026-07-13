@@ -31,6 +31,20 @@
       "tagEn": "Healthcare · Nürnberg",
       "tagDe": "Gesundheitswesen · Nürnberg",
       "featured": false
+    },
+    {
+      "name": "Edelweiss",
+      "url": "https://pro-produkt.de/",
+      "tagEn": "Healthcare stack · pro-produkt.de",
+      "tagDe": "Gesundheitswesen-Stack · pro-produkt.de",
+      "featured": false
+    },
+    {
+      "name": "Markets Platform",
+      "onPrem": true,
+      "tagEn": "Trading · on-premise (not public)",
+      "tagDe": "Trading · On-Premise (nicht öffentlich)",
+      "featured": false
     }
   ]
 }

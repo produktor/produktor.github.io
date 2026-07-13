@@ -18,34 +18,63 @@
     return getLanguage() === "de";
   }
 
+  const langListeners = new Set();
+  let lastLang = getLanguage();
+  let groupObserver = null;
+
+  function notifyLanguageChange() {
+    const lang = getLanguage();
+    if (lang === lastLang) return;
+    lastLang = lang;
+    langListeners.forEach((callback) => callback(lang));
+  }
+
   function onLanguageChange(callback) {
-    const run = () => callback(getLanguage());
-    document.addEventListener(
+    langListeners.add(callback);
+    callback(getLanguage());
+  }
+
+  function watchLanguageSwitcher() {
+    const group = document.querySelector('[role="group"]');
+    if (!group || group.dataset.pkLangWatch === "1") return;
+
+    group.dataset.pkLangWatch = "1";
+    groupObserver = new MutationObserver(() => notifyLanguageChange());
+    groupObserver.observe(group, {
+      attributes: true,
+      subtree: true,
+      attributeFilter: ["aria-pressed"],
+    });
+
+    group.addEventListener(
       "click",
       (event) => {
-        if (event.target.closest('[role="group"] button')) {
-          queueMicrotask(run);
-          setTimeout(run, 0);
-          setTimeout(run, 50);
+        if (event.target.closest("button")) {
+          queueMicrotask(notifyLanguageChange);
         }
       },
       true,
     );
-    const observer = new MutationObserver(run);
-    const watch = () => {
-      document.querySelectorAll('[role="group"]').forEach((group) => {
-        observer.observe(group, {
-          attributes: true,
-          subtree: true,
-          attributeFilter: ["aria-pressed"],
-        });
-      });
-    };
-    watch();
-    new MutationObserver(watch).observe(document.body, { childList: true, subtree: true });
+  }
+
+  function boot() {
+    watchLanguageSwitcher();
+    if (document.querySelector('[role="group"]')) return;
+
+    const bootObserver = new MutationObserver(() => {
+      watchLanguageSwitcher();
+      if (document.querySelector('[role="group"]')) bootObserver.disconnect();
+    });
+    bootObserver.observe(document.body, { childList: true, subtree: true });
   }
 
   window.pkGetLanguage = getLanguage;
   window.pkIsGerman = isGerman;
   window.pkOnLanguageChange = onLanguageChange;
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 })();

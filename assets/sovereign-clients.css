@@ -9,3 +9,7 @@
   outline: 2px solid #f2c849;
   outline-offset: 3px;
 }
+
+.pk-sovereign__card--onprem {
+  cursor: default;
+}

@@ -25,19 +25,35 @@
     });
   }
 
+  function isPatched(section, data) {
+    const de = isGerman();
+    const articles = section.querySelectorAll("article");
+    if (articles.length < data.steps.length) return false;
+    return data.steps.every((step, index) => {
+      const link = articles[index]?.querySelector(".pk-hiw__example");
+      const label = de ? step.labelDe : step.labelEn;
+      return link && link.getAttribute("href") === step.url && link.textContent === label;
+    });
+  }
+
   function applyExamples(section, data) {
+    if (isPatched(section, data)) return;
+
     const de = isGerman();
 
     const cta = section.querySelector('a[href="#contact"]');
     if (cta && data.overview?.url) {
-      cta.href = data.overview.url;
+      if (cta.getAttribute("href") !== data.overview.url) cta.href = data.overview.url;
       cta.target = "_blank";
       cta.rel = "noopener noreferrer";
       const label = de ? data.overview.labelDe : data.overview.labelEn;
       if (label) {
         const textNode = [...cta.childNodes].find((n) => n.nodeType === Node.TEXT_NODE);
-        if (textNode) textNode.textContent = label;
-        else cta.insertBefore(document.createTextNode(label), cta.firstChild);
+        if (textNode) {
+          if (textNode.textContent !== label) textNode.textContent = label;
+        } else {
+          cta.insertBefore(document.createTextNode(label), cta.firstChild);
+        }
       }
     }
 
@@ -53,11 +69,14 @@
           "pk-hiw__example mt-4 inline-flex items-center gap-2 font-black uppercase tracking-[0.12em] text-[11px] sm:text-xs text-[#143a6f] hover:underline underline-offset-4";
         article.appendChild(link);
       }
-      link.href = step.url;
+      const label = de ? step.labelDe : step.labelEn;
+      if (link.getAttribute("href") !== step.url) link.href = step.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.textContent = de ? step.labelDe : step.labelEn;
+      if (link.textContent !== label) link.textContent = label;
     });
+
+    section.setAttribute("data-pk-hiw", de ? "de" : "en");
   }
 
   async function mount() {
@@ -68,14 +87,12 @@
       ]);
       if (!response.ok) throw new Error(`how-it-works-examples.json ${response.status}`);
       const data = await response.json();
+
       const run = () => applyExamples(section, data);
-      run();
-      new MutationObserver(run).observe(section, {
-        childList: true,
-        subtree: true,
-        characterData: true,
+      window.pkWatchPatch(run, {
+        root: section,
+        done: () => isPatched(section, data),
       });
-      if (window.pkOnLanguageChange) window.pkOnLanguageChange(run);
     } catch (err) {
       console.warn("[produktor how-it-works]", err);
     }
