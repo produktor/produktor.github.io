@@ -1,4 +1,7 @@
 (function () {
+  const OLD_EMAIL = "install@proprodukt.example";
+  const NEW_EMAIL = "info@produktor.io";
+
   const HREFS = {
     "Stack CRM": "#products",
     "Stack Chat": "#products",
@@ -15,7 +18,8 @@
     Careers: "/careers",
     Karriere: "/careers",
     Team: "#team",
-    "info@produktor.io": "mailto:info@produktor.io",
+    [OLD_EMAIL]: `mailto:${NEW_EMAIL}`,
+    [NEW_EMAIL]: `mailto:${NEW_EMAIL}`,
     "Status page": "#contact",
     Statusseite: "#contact",
     "Security disclosures": "#contact",
@@ -55,6 +59,24 @@
     });
   }
 
+  function fixContactEmail(root = document.body) {
+    if (!root) return;
+    root.querySelectorAll("a").forEach((anchor) => {
+      const href = anchor.getAttribute("href") || "";
+      if (href.includes(OLD_EMAIL)) {
+        anchor.setAttribute("href", href.replaceAll(OLD_EMAIL, NEW_EMAIL));
+      }
+      if (anchor.textContent.includes(OLD_EMAIL)) {
+        anchor.textContent = anchor.textContent.replaceAll(OLD_EMAIL, NEW_EMAIL);
+      }
+    });
+    root.querySelectorAll("li span, p, span, div").forEach((el) => {
+      if (el.children.length > 0) return;
+      const text = el.textContent?.trim();
+      if (text === OLD_EMAIL) el.textContent = NEW_EMAIL;
+    });
+  }
+
   function applyFooterLinks(footer) {
     footer.querySelectorAll("a").forEach((anchor) => {
       const label = anchor.textContent.trim();
@@ -90,14 +112,16 @@
   async function mount() {
     try {
       const footer = await waitFor("footer");
+      fixContactEmail(document.body);
       applyFooterLinks(footer);
       fixCopyrightYear(footer);
       applyHeaderLinks();
       new MutationObserver(() => {
+        fixContactEmail(document.body);
         applyFooterLinks(footer);
         fixCopyrightYear(footer);
         applyHeaderLinks();
-      }).observe(footer, { childList: true, subtree: true, characterData: true });
+      }).observe(document.body, { childList: true, subtree: true, characterData: true });
     } catch (err) {
       console.warn("[produktor footer-links]", err);
     }
