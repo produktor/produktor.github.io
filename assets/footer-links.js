@@ -44,6 +44,17 @@
     });
   }
 
+  function fixCopyrightYear(footer) {
+    const year = String(new Date().getFullYear());
+    footer.querySelectorAll("span").forEach((span) => {
+      const text = span.textContent;
+      if (!text || !text.includes("produktor.io")) return;
+      if (text.includes("{year}")) {
+        span.textContent = text.replace(/\{\{year\}\}|\{year\}/g, year);
+      }
+    });
+  }
+
   function applyFooterLinks(footer) {
     footer.querySelectorAll("a").forEach((anchor) => {
       const label = anchor.textContent.trim();
@@ -80,9 +91,11 @@
     try {
       const footer = await waitFor("footer");
       applyFooterLinks(footer);
+      fixCopyrightYear(footer);
       applyHeaderLinks();
       new MutationObserver(() => {
         applyFooterLinks(footer);
+        fixCopyrightYear(footer);
         applyHeaderLinks();
       }).observe(footer, { childList: true, subtree: true, characterData: true });
     } catch (err) {
