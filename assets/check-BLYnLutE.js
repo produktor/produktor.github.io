@@ -1,0 +1,1 @@
+import{c}from"./index-wuUEPhxk.js";const o=[["path",{d:"M7 7h10v10",key:"1tivn9"}],["path",{d:"M7 17 17 7",key:"1vkiza"}]],a=c("arrow-up-right",o);const t=[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]],r=c("check",t);export{a as A,r as C};
