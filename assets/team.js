@@ -54,6 +54,9 @@
       .map((member) => {
         const ini = initials(member.name);
         const imgStyle = avatarStyle(member);
+        const wrapStyle = member.avatarBackground
+          ? ` style="background:${member.avatarBackground}"`
+          : "";
         return `
           <a
             class="pk-team__card group border-[3px] border-black bg-white shadow-brutal p-6 sm:p-7 flex flex-col text-[#0a0a0a] no-underline transition-shadow duration-200 hover:shadow-[8px_8px_0_0_#f2c849]"
@@ -62,7 +65,7 @@
             rel="noopener noreferrer"
           >
             <div class="flex items-center gap-4">
-              <div class="pk-team__avatar-wrap" data-initials="${ini}">
+              <div class="pk-team__avatar-wrap"${wrapStyle} data-initials="${ini}">
                 <img
                   class="pk-team__avatar"
                   src="${member.avatar}"

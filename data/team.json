@@ -10,7 +10,8 @@
       "url": "https://produktor.github.io/artem-maltschenko/",
       "avatar": "https://produktor.github.io/artem-maltschenko/assets/img/avatar.jpg",
       "avatarScale": 0.7,
-      "avatarObjectPosition": "center 18%"
+      "avatarObjectPosition": "center 18%",
+      "avatarBackground": "#ffffff"
     },
     {
       "name": "Andriy Oblivantsev",
