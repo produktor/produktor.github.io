@@ -61,6 +61,17 @@
     });
   }
 
+  function hideSignIn() {
+    const header = document.querySelector("header");
+    if (!header) return;
+    header.querySelectorAll("button[type='button']").forEach((button) => {
+      const label = button.textContent?.trim();
+      if (label === "Sign in" || label === "Anmelden") {
+        button.remove();
+      }
+    });
+  }
+
   function fixHeaderNav() {
     const header = document.querySelector("header");
     if (!header) return;
