@@ -6,6 +6,7 @@
     { href: "#pricing", labelEn: "Pricing", labelDe: "Preise" },
     { href: "#team", labelEn: "Team", labelDe: "Team" },
     { href: "#faq", labelEn: "FAQ", labelDe: "FAQ" },
+    { href: "https://produktor.io/ui/#", labelEn: "UI", labelDe: "UI", external: true },
   ];
 
   const LINK_CLASS =
@@ -106,6 +107,10 @@
         link.href = item.href;
         link.className = className;
         link.textContent = de ? item.labelDe : item.labelEn;
+        if (item.external) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
         return link;
       }),
     );

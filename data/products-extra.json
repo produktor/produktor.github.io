@@ -1,0 +1,53 @@
+{
+  "uiUrl": "https://produktor.io/ui/#",
+  "products": [
+    {
+      "code": "04",
+      "accent": "bg-[#efe6cf] text-[#0a0a0a]",
+      "icon": "service",
+      "nameEn": "Service Produkt",
+      "nameDe": "Service Produkt",
+      "tagEn": "Product exchange · on-premise",
+      "tagDe": "Produktaustausch · On-Premise",
+      "descriptionEn": "Catalogue, exchange, and distribution workflows for physical and digital products — deployed on your hardware with your identity stack and audit trail.",
+      "descriptionDe": "Katalog-, Austausch- und Vertriebs-Workflows für physische und digitale Produkte — auf Ihrer Hardware mit Ihrem Identity-Stack und Audit-Trail.",
+      "bulletsEn": [
+        "Self-hosted product graph and offer matching",
+        "QR / barcode flows without SaaS middlemen",
+        "Integrates with Stack CRM and sovereign storage"
+      ],
+      "bulletsDe": [
+        "Self-hosted Produktgraph und Angebotsabgleich",
+        "QR-/Barcode-Flows ohne SaaS-Zwischenhändler",
+        "Anbindung an Stack CRM und souveränen Speicher"
+      ],
+      "liveDemoUrl": "https://produktor.io/ui/#"
+    },
+    {
+      "code": "05",
+      "accent": "bg-[#143a6f] text-[#faf5ea]",
+      "icon": "geo",
+      "nameEn": "Geo-Service",
+      "nameDe": "Geo-Service",
+      "tagEn": "Location · on-premise",
+      "tagDe": "Standort · On-Premise",
+      "descriptionEn": "Geocoding, map tiles, and location search on infrastructure you control — for care routing, field teams, and asset tracking without sending coordinates to foreign APIs.",
+      "descriptionDe": "Geocoding, Kartenkacheln und Standortsuche auf Infrastruktur unter Ihrer Kontrolle — für Pflegerouting, Außendienst und Asset-Tracking ohne Koordinaten an fremde APIs.",
+      "bulletsEn": [
+        "On-prem PostGIS / tile server options",
+        "GDPR-friendly location retention policies",
+        "Map UI ships with the produktor stack"
+      ],
+      "bulletsDe": [
+        "On-Prem-Optionen für PostGIS / Tile-Server",
+        "DSGVO-konforme Aufbewahrung von Standortdaten",
+        "Karten-UI im produktor-Stack enthalten"
+      ],
+      "liveDemoUrl": "https://produktor.io/ui/#"
+    }
+  ],
+  "footerLinks": {
+    "modulesEn": ["Service Produkt", "Geo-Service", "UI"],
+    "modulesDe": ["Service Produkt", "Geo-Service", "UI"]
+  }
+}
