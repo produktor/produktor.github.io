@@ -6,7 +6,6 @@
     { href: "#pricing", labelEn: "Pricing", labelDe: "Preise" },
     { href: "#team", labelEn: "Team", labelDe: "Team" },
     { href: "#faq", labelEn: "FAQ", labelDe: "FAQ" },
-    { href: "https://produktor.io/ui/#", labelEn: "UI", labelDe: "UI", external: true },
   ];
 
   const LINK_CLASS =
@@ -74,13 +73,31 @@
     }
   }
 
+  function hideBookDemo() {
+    const header = document.querySelector("header");
+    if (!header) return;
+    if (header.dataset.pkBookDemoHidden === "1") return;
+
+    let removed = false;
+    header.querySelectorAll("a, button").forEach((el) => {
+      const label = el.textContent?.trim();
+      if (label === "Book a demo" || label === "Demo buchen") {
+        el.remove();
+        removed = true;
+      }
+    });
+
+    if (removed) header.dataset.pkBookDemoHidden = "1";
+  }
+
   function isDone() {
     const header = document.querySelector("header");
     const mainNav = header && findMainNav(header);
     return Boolean(
       mainNav &&
         navIsCorrect(mainNav, isGerman()) &&
-        header?.dataset.pkSignInHidden === "1",
+        header?.dataset.pkSignInHidden === "1" &&
+        header?.dataset.pkBookDemoHidden === "1",
     );
   }
 
@@ -123,6 +140,7 @@
       const sync = () => {
         fixHeaderNav();
         hideSignIn();
+        hideBookDemo();
       };
       window.pkWatchPatch(sync, { root: document.querySelector("header") || document.body, done: isDone });
     } catch (err) {
