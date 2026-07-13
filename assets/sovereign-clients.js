@@ -87,7 +87,7 @@
 
     const headline = kicker?.parentElement?.querySelector(".font-black.uppercase.tracking-tight");
     const headlineText = de ? data.headlineDe : data.headlineEn;
-    if (headline && headline.textContent !== headlineText) headline.textContent = headlineText;
+    if (headline && headline.innerHTML !== headlineText) headline.innerHTML = headlineText;
 
     const grid =
       section.querySelector(".pk-sovereign__grid") ||
