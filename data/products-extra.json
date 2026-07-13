@@ -65,7 +65,7 @@
         "Für semantische Suche, Embeddings (Neo4j + Qdrant) und Code-Assistenten",
         "Auch für Low-Memory-Setups (leichte Tasks, Edge-Use-Cases)"
       ],
-      "liveDemoUrl": "#contact"
+      "liveDemoUrl": "https://ai.produktor.io/"
     }
   ],
   "footerLinks": {
