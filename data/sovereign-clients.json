@@ -1,0 +1,22 @@
+{
+  "kickerEn": "Sovereign installs",
+  "kickerDe": "Souveräne Installationen",
+  "headlineEn": "Live platforms on infrastructure clients own.",
+  "headlineDe": "Live-Plattformen auf Infrastruktur, die Kunden besitzen.",
+  "clients": [
+    {
+      "name": "Medex Pflegedienst",
+      "url": "https://medex-pflegedienst.de/",
+      "tagEn": "Healthcare · Nürnberg · flagship install",
+      "tagDe": "Gesundheitswesen · Nürnberg · Referenz-Installation",
+      "featured": true
+    },
+    {
+      "name": "Asesoría Tenerife",
+      "url": "https://asesoria-tenerife.com/",
+      "tagEn": "Advisory · Canary Islands",
+      "tagDe": "Beratung · Kanarische Inseln",
+      "featured": false
+    }
+  ]
+}

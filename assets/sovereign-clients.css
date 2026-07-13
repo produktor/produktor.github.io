@@ -1,0 +1,11 @@
+/* Sovereign client cards (trust strip injection) */
+
+.pk-sovereign__grid a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pk-sovereign__grid a:focus-visible {
+  outline: 2px solid #f2c849;
+  outline-offset: 3px;
+}
