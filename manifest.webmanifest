@@ -1,0 +1,17 @@
+{
+  "name": "ProProdukt SL — On-Premise CRM, Chat & Video",
+  "short_name": "ProProdukt SL",
+  "description": "On-premise install, migration, and support for the customer-ops stack.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf5ea",
+  "theme_color": "#143a6f",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
