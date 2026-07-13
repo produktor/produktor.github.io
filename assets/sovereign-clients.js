@@ -48,7 +48,7 @@
           : "";
         const cardClass = `pk-sovereign__card border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] px-4 py-4 flex flex-col gap-1.5${featured}`;
         const inner = `
-            <span class="font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight">${client.name}</span>
+            <span class="pk-sovereign__title font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight text-[#0a0a0a]">${client.name}</span>
             <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#0a0a0a]/65 leading-snug">${tag}</span>`;
 
         if (client.onPrem || !client.url) {
