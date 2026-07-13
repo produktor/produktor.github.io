@@ -1,5 +1,7 @@
 {
-  "title": "Team",
+  "section": "07",
+  "kicker": "Team",
+  "title": "People behind the stack.",
   "subtitle": "Engineering and partnerships behind the sovereign stack.",
   "members": [
     {
@@ -12,7 +14,9 @@
       "name": "Artem Maltschenko",
       "role": "Geschäftsführer · Sovereign IT for Healthcare",
       "url": "https://produktor.github.io/artem-maltschenko/",
-      "avatar": "https://produktor.github.io/artem-maltschenko/assets/img/avatar.jpg"
+      "avatar": "https://produktor.github.io/artem-maltschenko/assets/img/avatar.jpg",
+      "avatarScale": 0.7,
+      "avatarObjectPosition": "center 18%"
     }
   ]
 }

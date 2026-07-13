@@ -1,6 +1,6 @@
 (function () {
   const ARROW =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
   function initials(name) {
     return name
@@ -9,6 +9,13 @@
       .map((part) => part[0])
       .join("")
       .toUpperCase();
+  }
+
+  function avatarStyle(member) {
+    const scale = member.avatarScale ?? 1;
+    const position = member.avatarObjectPosition ?? "center center";
+    if (scale === 1 && position === "center center") return "";
+    return `transform:scale(${scale});object-position:${position};transform-origin:center 30%`;
   }
 
   function waitFor(selector, timeoutMs = 20000) {
@@ -50,34 +57,53 @@
   function renderTeam(data) {
     const section = document.createElement("section");
     section.id = "team";
-    section.className = "pk-team";
+    section.className = "bg-[#143a6f] text-[#faf5ea] border-b-[3px] border-black";
     section.setAttribute("aria-labelledby", "pk-team-title");
 
     const cards = data.members
       .map((member) => {
         const ini = initials(member.name);
+        const imgStyle = avatarStyle(member);
         return `
-          <a class="pk-team__card" href="${member.url}" target="_blank" rel="noopener noreferrer">
-            <div class="pk-team__profile">
+          <a
+            class="pk-team__card group border-[3px] border-black bg-white shadow-brutal p-6 sm:p-7 flex flex-col text-[#0a0a0a] no-underline transition-shadow duration-200 hover:shadow-[8px_8px_0_0_#f2c849]"
+            href="${member.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="flex items-center gap-4">
               <div class="pk-team__avatar-wrap" data-initials="${ini}">
-                <img class="pk-team__avatar" src="${member.avatar}" alt="" loading="lazy" />
+                <img
+                  class="pk-team__avatar"
+                  src="${member.avatar}"
+                  alt=""
+                  loading="lazy"
+                  ${imgStyle ? `style="${imgStyle}"` : ""}
+                />
               </div>
-              <div>
-                <h3 class="pk-team__name">${member.name}</h3>
-                <p class="pk-team__role">${member.role}</p>
+              <div class="min-w-0">
+                <h3 class="m-0 font-black uppercase tracking-tight text-xl sm:text-2xl leading-tight">${member.name}</h3>
+                <p class="mt-1 mb-0 text-sm font-bold uppercase tracking-[0.08em] text-[#0a0a0a]/70 leading-snug">${member.role}</p>
               </div>
             </div>
-            <span class="pk-team__link">View profile ${ARROW}</span>
+            <span class="pk-team__link mt-6 inline-flex items-center gap-2 font-black uppercase tracking-[0.12em] text-[11px] sm:text-xs text-[#143a6f]">
+              View profile ${ARROW}
+            </span>
           </a>`;
       })
       .join("");
 
     section.innerHTML = `
-      <div class="pk-team__inner">
-        <div class="pk-team__eyebrow">People</div>
-        <h2 class="pk-team__title" id="pk-team-title">${data.title}</h2>
-        <p class="pk-team__subtitle">${data.subtitle}</p>
-        <div class="pk-team__grid">${cards}</div>
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-3 mb-6">
+            <span class="inline-flex items-center justify-center size-9 border-[3px] border-[#faf5ea] bg-[#f2c849] text-[#0a0a0a] font-black text-sm">${data.section}</span>
+            <span class="text-[11px] sm:text-xs font-black uppercase tracking-[0.18em]">${data.kicker}</span>
+          </div>
+          <h2 class="font-black uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.02]" id="pk-team-title">${data.title}</h2>
+          <p class="mt-6 text-[15px] sm:text-[17px] leading-relaxed text-[#faf5ea]/85 max-w-2xl">${data.subtitle}</p>
+        </div>
+        <div class="mt-12 grid sm:grid-cols-2 gap-6">${cards}</div>
       </div>`;
 
     return section;
@@ -98,7 +124,8 @@
         const ini = wrap?.dataset.initials || "?";
         img.addEventListener("error", () => {
           const fallback = document.createElement("div");
-          fallback.className = "pk-team__avatar pk-team__avatar--fallback";
+          fallback.className =
+            "pk-team__avatar pk-team__avatar--fallback size-full grid place-items-center font-black text-lg text-[#0a0a0a]";
           fallback.textContent = ini;
           wrap?.replaceChildren(fallback);
         });

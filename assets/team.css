@@ -1,143 +1,20 @@
-/* Produktor landing — Team section (injected alongside Freebuff dist) */
+/* Team section — avatar framing (matches Plans brutalist cards via Tailwind in team.js) */
 
-.pk-team {
-  --pk-team-bg: #070b14;
-  --pk-team-card: rgba(15, 23, 42, 0.72);
-  --pk-team-border: rgba(148, 163, 184, 0.14);
-  --pk-team-text: #e2e8f0;
-  --pk-team-muted: #94a3b8;
-  --pk-team-accent: #38bdf8;
-  --pk-team-accent-2: #818cf8;
-  position: relative;
-  isolation: isolate;
-  padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(56, 189, 248, 0.08), transparent 60%),
-    linear-gradient(180deg, #070b14 0%, #0b1220 100%);
-  color: var(--pk-team-text);
-  border-top: 1px solid var(--pk-team-border);
-}
-
-.pk-team__inner {
-  max-width: 72rem;
-  margin: 0 auto;
-}
-
-.pk-team__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pk-team-accent);
-}
-
-.pk-team__eyebrow::before {
-  content: "";
-  width: 2rem;
-  height: 1px;
-  background: linear-gradient(90deg, var(--pk-team-accent), transparent);
-}
-
-.pk-team__title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.pk-team__subtitle {
-  margin: 0 0 2.75rem;
-  max-width: 38rem;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--pk-team-muted);
-}
-
-.pk-team__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
-}
-
-.pk-team__card {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background: var(--pk-team-card);
-  border: 1px solid var(--pk-team-border);
-  backdrop-filter: blur(12px);
-  text-decoration: none;
-  color: inherit;
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.pk-team__card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.45);
-}
-
-.pk-team__card:focus-visible {
-  outline: 2px solid var(--pk-team-accent);
-  outline-offset: 3px;
-}
-
-.pk-team__profile {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.pk-team__avatar-wrap {
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 3px solid #0a0a0a;
+  border-radius: 9999px;
+  background: #f2c849;
 }
 
 .pk-team__avatar {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 999px;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 2px solid rgba(56, 189, 248, 0.35);
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  flex-shrink: 0;
-}
-
-.pk-team__avatar--fallback {
-  display: grid;
-  place-items: center;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #cbd5e1;
-}
-
-.pk-team__name {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-}
-
-.pk-team__role {
-  margin: 0.25rem 0 0;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--pk-team-muted);
-}
-
-.pk-team__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: auto;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--pk-team-accent);
 }
 
 .pk-team__link svg {
@@ -151,7 +28,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pk-team__card,
   .pk-team__link svg {
     transition: none;
   }
