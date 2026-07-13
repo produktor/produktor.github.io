@@ -31,17 +31,17 @@
       "nameDe": "Geo-Service",
       "tagEn": "Location · on-premise",
       "tagDe": "Standort · On-Premise",
-      "descriptionEn": "Geocoding, map tiles, and location search on infrastructure you control — for care routing, field teams, and asset tracking without sending coordinates to foreign APIs.",
-      "descriptionDe": "Geocoding, Kartenkacheln und Standortsuche auf Infrastruktur unter Ihrer Kontrolle — für Pflegerouting, Außendienst und Asset-Tracking ohne Koordinaten an fremde APIs.",
+      "descriptionEn": "Vector maps and geo search fully generated on-premise from up-to-date OSM and other datasets: tiles, Proton search, geocoding, and reverse geocoding — rendered with MapLibre with no commercial-license restrictions.",
+      "descriptionDe": "Vektor-Karten und Geo-Suche vollständig On-Premise aus aktuellen OSM- und weiteren Datensätzen: Tiles, Proton-Suche, Geocoding und Reverse-Geocoding — Darstellung mit MapLibre ohne Einschränkungen durch kommerzielle Lizenzen.",
       "bulletsEn": [
-        "On-prem PostGIS / tile server options",
-        "GDPR-friendly location retention policies",
-        "Map UI ships with the produktor stack"
+        "Vector tiles + MapLibre rendering (no external map API calls)",
+        "Proton search + geocoding + reverse geocoding on your infrastructure",
+        "Fresh OSM-based data pipeline (updates on your schedule)"
       ],
       "bulletsDe": [
-        "On-Prem-Optionen für PostGIS / Tile-Server",
-        "DSGVO-konforme Aufbewahrung von Standortdaten",
-        "Karten-UI im produktor-Stack enthalten"
+        "Vektor-Tiles + MapLibre-Rendering (keine externen Map-API-Calls)",
+        "Proton-Suche + Geocoding + Reverse-Geocoding auf Ihrer Infrastruktur",
+        "Aktuelle OSM-basierte Datenpipeline (Updates nach Ihrem Rhythmus)"
       ],
       "liveDemoUrl": "https://produktor.io/ui/#"
     },
