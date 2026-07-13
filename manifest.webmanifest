@@ -1,6 +1,6 @@
 {
-  "name": "ProProdukt SL — On-Premise CRM, Chat & Video",
-  "short_name": "ProProdukt SL",
+  "name": "produktor.io — On-Premise CRM, Chat & Video",
+  "short_name": "produktor.io",
   "description": "On-premise install, migration, and support for the customer-ops stack.",
   "start_url": "/",
   "display": "standalone",
