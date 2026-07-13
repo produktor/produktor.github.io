@@ -2,11 +2,7 @@
   const PLACEHOLDER_LOGOS = /NULSPACE|HELION|ORBIT|ZEPHYR|PARABOLA|ARC LABS|MERIDIAN|GENESIS|WAVERLY/;
 
   function isGerman() {
-    const lang = document.documentElement.lang || "";
-    if (lang.startsWith("de")) return true;
-    return /Souverän|Souveräne|Installationsmethode|Vor-Ort-Installationen/i.test(
-      document.body?.textContent || "",
-    );
+    return window.pkIsGerman ? window.pkIsGerman() : false;
   }
 
   function waitFor(selector, timeoutMs = 20000) {
@@ -32,6 +28,8 @@
   }
 
   function findTrustSection() {
+    const byId = document.getElementById("sovereign-clients");
+    if (byId) return byId;
     for (const section of document.querySelectorAll("section")) {
       if (PLACEHOLDER_LOGOS.test(section.textContent || "")) return section;
     }
@@ -39,8 +37,6 @@
   }
 
   function renderClients(grid, data, de) {
-    if (grid.dataset.pkSovereignDone === "1") return;
-    grid.dataset.pkSovereignDone = "1";
     grid.className =
       "pk-sovereign__grid flex-1 grid sm:grid-cols-2 gap-3 max-w-3xl";
 
@@ -98,6 +94,7 @@
         subtree: true,
         characterData: true,
       });
+      if (window.pkOnLanguageChange) window.pkOnLanguageChange(run);
     } catch (err) {
       console.warn("[produktor sovereign-clients]", err);
     }

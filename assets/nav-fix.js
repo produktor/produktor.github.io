@@ -12,11 +12,7 @@
     "px-3 py-2 text-sm font-bold text-[#0a0a0a] hover:bg-[#f2c849] transition-colors";
 
   function isGerman() {
-    const lang = document.documentElement.lang || "";
-    if (lang.startsWith("de")) return true;
-    return /Installationsmethode|Vergleich|Preise|Demo buchen/i.test(
-      document.querySelector("header")?.textContent || "",
-    );
+    return window.pkIsGerman ? window.pkIsGerman() : false;
   }
 
   function waitFor(selector, timeoutMs = 20000) {
@@ -103,12 +99,17 @@
   async function mount() {
     try {
       await waitFor("header nav");
-      fixHeaderNav();
-      new MutationObserver(fixHeaderNav).observe(document.body, {
+      const sync = () => {
+        fixHeaderNav();
+        hideSignIn();
+      };
+      sync();
+      new MutationObserver(sync).observe(document.body, {
         childList: true,
         subtree: true,
         characterData: true,
       });
+      if (window.pkOnLanguageChange) window.pkOnLanguageChange(sync);
     } catch (err) {
       console.warn("[produktor nav-fix]", err);
     }

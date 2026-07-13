@@ -89,12 +89,12 @@
   }
 
   function addTeamLink(footer) {
-    if (footer.querySelector('a[href="#team"]')) return;
+    const existing = footer.querySelector('a[href="#team"]');
+    if (existing) return;
     const careers = [...footer.querySelectorAll("a")].find((a) =>
       /^(careers|karriere)$/i.test(a.textContent.trim()),
     );
     if (!careers?.closest("ul")) return;
-    const list = careers.closest("ul");
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.href = "#team";
@@ -112,16 +112,19 @@
   async function mount() {
     try {
       const footer = await waitFor("footer");
-      fixContactEmail(document.body);
-      applyFooterLinks(footer);
-      fixCopyrightYear(footer);
-      applyHeaderLinks();
-      new MutationObserver(() => {
+      const sync = () => {
         fixContactEmail(document.body);
         applyFooterLinks(footer);
         fixCopyrightYear(footer);
         applyHeaderLinks();
-      }).observe(document.body, { childList: true, subtree: true, characterData: true });
+      };
+      sync();
+      new MutationObserver(sync).observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+      });
+      if (window.pkOnLanguageChange) window.pkOnLanguageChange(sync);
     } catch (err) {
       console.warn("[produktor footer-links]", err);
     }

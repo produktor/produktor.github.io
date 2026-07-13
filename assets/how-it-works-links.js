@@ -1,10 +1,6 @@
 (function () {
   function isGerman() {
-    const lang = document.documentElement.lang || "";
-    if (lang.startsWith("de")) return true;
-    return /Installationsmethode|Architektur-Audit|Vollständigen Ablauf/i.test(
-      document.querySelector("#how-it-works")?.textContent || "",
-    );
+    return window.pkIsGerman ? window.pkIsGerman() : false;
   }
 
   function waitFor(selector, timeoutMs = 20000) {
@@ -48,16 +44,19 @@
     const articles = section.querySelectorAll("article");
     data.steps.forEach((step, index) => {
       const article = articles[index];
-      if (!article || article.querySelector(".pk-hiw__example")) return;
+      if (!article) return;
 
-      const link = document.createElement("a");
+      let link = article.querySelector(".pk-hiw__example");
+      if (!link) {
+        link = document.createElement("a");
+        link.className =
+          "pk-hiw__example mt-4 inline-flex items-center gap-2 font-black uppercase tracking-[0.12em] text-[11px] sm:text-xs text-[#143a6f] hover:underline underline-offset-4";
+        article.appendChild(link);
+      }
       link.href = step.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.className =
-        "pk-hiw__example mt-4 inline-flex items-center gap-2 font-black uppercase tracking-[0.12em] text-[11px] sm:text-xs text-[#143a6f] hover:underline underline-offset-4";
       link.textContent = de ? step.labelDe : step.labelEn;
-      article.appendChild(link);
     });
   }
 
@@ -69,13 +68,14 @@
       ]);
       if (!response.ok) throw new Error(`how-it-works-examples.json ${response.status}`);
       const data = await response.json();
-      applyExamples(section, data);
-
-      new MutationObserver(() => applyExamples(section, data)).observe(section, {
+      const run = () => applyExamples(section, data);
+      run();
+      new MutationObserver(run).observe(section, {
         childList: true,
         subtree: true,
         characterData: true,
       });
+      if (window.pkOnLanguageChange) window.pkOnLanguageChange(run);
     } catch (err) {
       console.warn("[produktor how-it-works]", err);
     }
