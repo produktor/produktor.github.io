@@ -15,7 +15,7 @@
     Careers: "/careers",
     Karriere: "/careers",
     Team: "#team",
-    "install@proprodukt.example": "mailto:install@proprodukt.example",
+    "info@produktor.io": "mailto:info@produktor.io",
     "Status page": "#contact",
     Statusseite: "#contact",
     "Security disclosures": "#contact",
