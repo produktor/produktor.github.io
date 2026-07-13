@@ -1,0 +1,29 @@
+{
+  "overview": {
+    "url": "https://eslider.github.io/projects/#architecture-notes",
+    "labelEn": "Architecture examples on eslider.github.io",
+    "labelDe": "Architektur-Beispiele auf eslider.github.io"
+  },
+  "steps": [
+    {
+      "url": "https://eslider.github.io/posts/self-hosted-ai-delivery-fabric/",
+      "labelEn": "Example → delivery fabric diagram",
+      "labelDe": "Beispiel → Delivery-Fabric-Diagramm"
+    },
+    {
+      "url": "https://eslider.github.io/posts/matrix-webrtc-voip-production/",
+      "labelEn": "Example → Matrix / WebRTC stack diagram",
+      "labelDe": "Beispiel → Matrix-/WebRTC-Stack-Diagramm"
+    },
+    {
+      "url": "https://eslider.github.io/posts/edelweiss-healthcare-knowledge-base/#platform-architecture",
+      "labelEn": "Example → knowledge-base architecture",
+      "labelDe": "Beispiel → Wissensbasis-Architektur"
+    },
+    {
+      "url": "https://eslider.github.io/posts/edelweiss-healthcare-knowledge-base/#failover-when-a-homeserver-is-down",
+      "labelEn": "Example → failover & operations",
+      "labelDe": "Beispiel → Failover & Betrieb"
+    }
+  ]
+}
