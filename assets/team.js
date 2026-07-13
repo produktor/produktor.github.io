@@ -41,17 +41,7 @@
   }
 
   function addNavLink() {
-    if (document.querySelector('a[href="#team"]')) return;
-    const anchor = document.querySelector('a[href="#pricing"]');
-    if (!anchor) return;
-    const item = anchor.closest("li") || anchor.parentElement;
-    if (!item || !item.parentElement) return;
-    const clone = item.cloneNode(true);
-    const link = clone.querySelector("a");
-    if (!link) return;
-    link.href = "#team";
-    link.textContent = "Team";
-    item.parentElement.insertBefore(clone, item.nextSibling);
+    // Header nav is normalized by assets/nav-fix.js (includes #team).
   }
 
   function renderTeam(data) {
