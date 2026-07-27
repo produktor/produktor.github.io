@@ -67,3 +67,12 @@ body {
     max-width: 100%;
   }
 }
+
+/* Pricing: cadence under price; keep card rhythm */
+#pricing .mt-6.flex.flex-col {
+  min-height: 4rem;
+}
+#pricing .mt-6.flex.flex-col > span:first-child {
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
