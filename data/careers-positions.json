@@ -1,0 +1,60 @@
+{
+  "en": [
+    {
+      "id": "consulting-support-engineer",
+      "title": "Consulting / Support Engineer",
+      "location": "EU field + Berlin hub (travel required)",
+      "contract": "Full-time",
+      "about": "You are the on-site face of our install and support practice. You travel to customer sites, guide them through our four-step delivery — architecture audit, provision & install, data migration, operate & support — and stay available for hands-on recovery when something breaks in their rack, not only in a ticket queue.",
+      "responsibilities": [
+        "Lead or co-lead on-site architecture audits and turn findings into a written install spec the customer signs off on",
+        "Execute and supervise provision & install on customer hardware — bare metal, VMs, or their cloud tenancy — through cutover",
+        "Support data-migration windows on premises: connectors, dry-runs, and zero-downtime cutovers with the customer team in the room",
+        "Provide physical and remote support after handover: patch windows, escalations, quarterly upgrades, and on-floor troubleshooting",
+        "Translate customer constraints (compliance, air-gap, identity) into actionable work for product and platform engineers"
+      ],
+      "requirements": [
+        "3+ years in customer-facing consulting, field engineering, or technical support for infrastructure / B2B software",
+        "Willingness to travel regularly to EU customer sites (healthcare, advisory, and sovereign IT environments)",
+        "Solid Linux administration; able to install and debug services on bare metal and VMs without a runbook babysitter",
+        "Clear written and spoken English; German strongly preferred for DACH customer work",
+        "Experience with identity (SSO/IdP), networking, or Postgres operations is a plus"
+      ],
+      "benefits": [
+        "Permanent contract, EU salary benchmark",
+        "Travel covered; Berlin hub when not on site",
+        "Conference + hardware budget",
+        "Six weeks paid leave and a quarterly company-wide on-site week"
+      ]
+    }
+  ],
+  "de": [
+    {
+      "id": "consulting-support-engineer",
+      "title": "Consulting / Support Engineer",
+      "location": "EU vor Ort + Hub Berlin (Reisebereitschaft)",
+      "contract": "Vollzeit",
+      "about": "Sie sind das Gesicht unserer Installations- und Support-Praxis vor Ort. Sie reisen zu Kundenseiten, begleiten den vierstufigen Delivery-Prozess — Architektur-Audit, Provisioning & Installation, Datenmigration, Betrieb & Support — und bleiben greifbar, wenn im Rack etwas bricht, nicht nur im Ticket.",
+      "responsibilities": [
+        "Architektur-Audits vor Ort leiten oder mitführen und daraus ein unterzeichnetes Installations-Lastenheft machen",
+        "Provisioning & Installation auf Kundenhardware (Bare Metal, VMs oder deren Cloud-Tenancy) bis zum Cutover durchführen und beaufsichtigen",
+        "Datenmigrationsfenster vor Ort begleiten: Konnektoren, Dry-Runs und Zero-Downtime-Cutovers mit dem Kundenteam im Raum",
+        "Physischen und Remote-Support nach der Übergabe leisten: Patch-Fenster, Eskalationen, Quartals-Upgrades und Troubleshooting vor Ort",
+        "Kundenanforderungen (Compliance, Air-Gap, Identity) in konkrete Arbeit für Product- und Platform-Engineers übersetzen"
+      ],
+      "requirements": [
+        "3+ Jahre in kundennaher Beratung, Field Engineering oder technischem Support für Infrastruktur / B2B-Software",
+        "Regelmäßige Reisen zu Kundenseiten in der EU (Healthcare, Advisory, souveräne IT-Umgebungen)",
+        "Solide Linux-Administration; Dienste auf Bare Metal und VMs ohne Runbook-Babysitter installieren und debuggen",
+        "Sehr gutes Englisch in Wort und Schrift; Deutsch für DACH-Kundenarbeit stark bevorzugt",
+        "Erfahrung mit Identity (SSO/IdP), Networking oder Postgres-Betrieb von Vorteil"
+      ],
+      "benefits": [
+        "Festanstellung, EU-Gehalt am Marktstandard",
+        "Reisekosten übernommen; Berliner Hub, wenn Sie nicht vor Ort sind",
+        "Konferenz- und Hardware-Budget",
+        "Sechs Wochen bezahlter Urlaub und eine quartalsweise Company-On-Site-Woche"
+      ]
+    }
+  ]
+}
