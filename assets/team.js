@@ -178,7 +178,7 @@
 
       const [, response] = await Promise.all([
         waitFor("footer, #pk-site-footer-host, #root"),
-        fetch("/data/team.json"),
+        fetch("/data/team.json", { cache: "no-store" }),
       ]);
       if (!response.ok) throw new Error(`team.json ${response.status}`);
       teamData = await response.json();
