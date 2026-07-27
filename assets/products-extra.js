@@ -86,7 +86,7 @@
         <ul class="mt-5 space-y-2">${bulletHtml}</ul>
         <div class="mt-6 pt-5 border-t-[3px] border-black flex flex-wrap items-center justify-between gap-3">
           <a href="/modules/${product.slug || ""}/" class="inline-flex items-center gap-2 font-black uppercase text-sm tracking-[0.12em] text-[#143a6f] hover:underline underline-offset-4">${labels.moduleBrief} ${ARROW}</a>
-          <a href="${product.liveDemoUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 h-9 border-[3px] border-black bg-[#f2c849] text-[#0a0a0a] font-black uppercase text-[11px] sm:text-xs tracking-[0.12em] hover:shadow-[3px_3px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${labels.liveDemo} ${LIVE_ARROW}</a>
+          <a href="${product.liveDemoUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 h-9 border-[3px] border-black bg-[#f2c849] text-[#0a0a0a] font-black uppercase text-[11px] sm:text-xs tracking-[0.12em] shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${labels.liveDemo} ${LIVE_ARROW}</a>
         </div>
       </article>`;
   }
@@ -117,37 +117,6 @@
     section.setAttribute("data-pk-products-extra", de ? "de" : "en");
   }
 
-  function addFooterModuleLinks(footer, data) {
-    const de = isGerman();
-    const labels = de ? data.footerLinks.modulesDe : data.footerLinks.modulesEn;
-    const stackMeet = [...footer.querySelectorAll("a")].find((a) =>
-      /^stack meet$/i.test(a.textContent.trim()),
-    );
-    const list = stackMeet?.closest("ul");
-    if (!list) return;
-
-    const sample = list.querySelector("a");
-    if (!sample) return;
-
-    for (const label of labels) {
-      if ([...list.querySelectorAll("a")].some((a) => a.textContent.trim() === label)) continue;
-      const item = document.createElement("li");
-      const link = document.createElement("a");
-      link.className = sample.className;
-      link.textContent = label;
-      const slugByLabel = {
-        "Service Produkt": "service",
-        "Geo-Service": "geo",
-        "Stack AI": "ai",
-        UI: "ui",
-      };
-      const slug = slugByLabel[label];
-      link.href = slug ? `/modules/${slug}/` : "#products";
-      item.appendChild(link);
-      list.appendChild(item);
-    }
-  }
-
   async function mount() {
     try {
       const [section, response] = await Promise.all([
@@ -157,31 +126,15 @@
       if (!response.ok) throw new Error(`products-extra.json ${response.status}`);
       const data = await response.json();
 
-      const run = () => {
-        applyProducts(section, data);
-        const footer = document.querySelector("footer");
-        if (footer) addFooterModuleLinks(footer, data);
-      };
-
+      const run = () => applyProducts(section, data);
       const watch = window.pkWatchPatch || ((fn) => fn());
       watch(run, {
         root: section,
         done: () => isPatched(section, data, isGerman()),
       });
-
-      const footer = await waitFor("footer");
-      watch(
-        () => addFooterModuleLinks(footer, data),
-        {
-          root: footer,
-          done: () => {
-            const labels = isGerman() ? data.footerLinks.modulesDe : data.footerLinks.modulesEn;
-            return labels.every((label) =>
-              [...footer.querySelectorAll("a")].some((a) => a.textContent.trim() === label),
-            );
-          },
-        },
-      );
+      if (window.pkOnLanguageChange) {
+        window.pkOnLanguageChange(() => applyProducts(section, data));
+      }
     } catch (err) {
       console.warn("[produktor products-extra]", err);
     }

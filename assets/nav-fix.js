@@ -218,7 +218,20 @@
     bootObserver.observe(document.body, { childList: true, subtree: true });
   }
 
+  function consumeScrollIntent() {
+    try {
+      const id = sessionStorage.getItem("pkScrollTo");
+      if (id) {
+        sessionStorage.removeItem("pkScrollTo");
+        if (!location.hash || location.hash === "#") {
+          history.replaceState(null, "", `#${id}`);
+        }
+      }
+    } catch (e) {}
+  }
+
   function scrollToHash() {
+    consumeScrollIntent();
     const hash = location.hash || "";
     if (!hash || hash === "#") return;
     const id = decodeURIComponent(hash.slice(1));
@@ -230,7 +243,6 @@
     waitFor(`#${CSS.escape(id)}`, 20000)
       .then((el) => {
         if (token !== hashScrollToken) return;
-        // Late-injected sections (#team) need layout after mount.
         const go = () => {
           if (token !== hashScrollToken) return;
           el.scrollIntoView({ behavior: "auto", block: "start" });
@@ -240,6 +252,7 @@
           go();
           setTimeout(go, 50);
           setTimeout(go, 250);
+          setTimeout(go, 800);
         });
       })
       .catch(() => {});

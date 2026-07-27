@@ -1,0 +1,49 @@
+.pk-site-footer {
+  background: #0a0a0a;
+  color: #faf5ea;
+}
+
+/* React-managed footers stay in the tree but must not show beside the shared one */
+#root footer {
+  display: none !important;
+}
+
+.pk-site-footer a {
+  color: #faf5ea;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.pk-site-footer a:hover {
+  color: #f2c849;
+}
+
+.pk-site-footer__col-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: rgba(250, 245, 234, 0.6);
+}
+
+.pk-site-footer__meta {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 3px solid rgba(250, 245, 234, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(250, 245, 234, 0.65);
+}
+
+@media (min-width: 640px) {
+  .pk-site-footer__meta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

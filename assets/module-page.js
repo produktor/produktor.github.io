@@ -69,7 +69,6 @@
     const others = (catalog.modules || []).filter((m) => m.slug !== slug);
     document.documentElement.lang = lang;
     document.title = `${c.name} — produktor.io`;
-    setLangButtons(lang);
     localStorage.setItem("pk-module-lang", lang);
 
     const icon = ICONS[mod.icon] || ICONS.crm;
@@ -102,7 +101,7 @@
               <button type="button" data-lang="en" class="pk-mod__lang px-3 h-10 font-black uppercase tracking-[0.14em] text-[11px]">EN</button>
               <button type="button" data-lang="de" class="pk-mod__lang px-3 h-10 font-black uppercase tracking-[0.14em] text-[11px] border-l-[3px] border-black">DE</button>
             </div>
-            <a href="/#products" class="hidden sm:inline-flex items-center px-4 h-10 border-[3px] border-black font-bold text-sm hover:bg-[#143a6f] hover:text-[#faf5ea] no-underline">${escapeHtml(ui.backHome)}</a>
+            <a href="/products/" class="hidden sm:inline-flex items-center px-4 h-10 border-[3px] border-black font-bold text-sm hover:bg-[#143a6f] hover:text-[#faf5ea] no-underline">${escapeHtml(ui.backHome)}</a>
           </div>
         </div>
       </header>
@@ -121,8 +120,8 @@
             <p class="mt-6 text-[15px] sm:text-[17px] leading-relaxed text-[#faf5ea]/85 max-w-2xl">${escapeHtml(c.lead)}</p>
             <div class="mt-4 text-[11px] font-black uppercase tracking-[0.16em] text-[#faf5ea]/70">${escapeHtml(ui.replaces)}: ${replaces}</div>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="${escapeHtml(mod.liveDemoUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#f2c849] text-[#0a0a0a] font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a]">${escapeHtml(ui.liveDemo)} ${ARROW}</a>
-              <a href="/#contact" class="inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-[#faf5ea] bg-transparent text-[#faf5ea] font-black uppercase tracking-wide text-sm no-underline hover:bg-[#f2c849] hover:text-[#0a0a0a] hover:border-black">${escapeHtml(ui.contactCta)}</a>
+              <a href="${escapeHtml(mod.liveDemoUrl)}" target="_blank" rel="noopener noreferrer" class="pk-press inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#f2c849] text-[#0a0a0a] font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${escapeHtml(ui.liveDemo)} ${ARROW}</a>
+              <a href="/contact/" class="pk-mod__cta-ghost pk-press inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-white bg-transparent text-white font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 hover:bg-[#f2c849] hover:text-[#0a0a0a] hover:border-black">${escapeHtml(ui.contactCta)}</a>
             </div>
           </div>
         </div>
@@ -164,20 +163,14 @@
           <h2 class="m-0 font-black uppercase tracking-tight text-2xl sm:text-3xl text-[#143a6f]">${escapeHtml(ui.otherModules)}</h2>
           <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">${otherCards}</div>
           <div class="mt-10 flex flex-wrap gap-3">
-            <a href="/#contact" class="inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#143a6f] text-[#faf5ea] font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a]">${escapeHtml(ui.contactCta)} ${ARROW}</a>
-            <a href="/#products" class="inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] font-black uppercase tracking-wide text-sm no-underline">${escapeHtml(ui.backHome)}</a>
+            <a href="/contact/" class="pk-mod__cta-primary pk-press inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#143a6f] text-white font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${escapeHtml(ui.contactCta)} ${ARROW}</a>
+            <a href="/products/" class="pk-press inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${escapeHtml(ui.backHome)}</a>
           </div>
         </div>
       </section>
-
-      <footer class="bg-[#0a0a0a] text-[#faf5ea]">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-[11px] uppercase tracking-[0.18em]">
-          <span>© ${new Date().getFullYear()} produktor.io · ${escapeHtml(c.name)}</span>
-          <a href="/impressum/" class="font-black text-[#f2c849] no-underline hover:underline">${lang === "de" ? "Impressum" : "Imprint"}</a>
-        </div>
-      </footer>
     `;
 
+    setLangButtons(lang);
     root.querySelectorAll(".pk-mod__lang").forEach((btn) => {
       btn.addEventListener("click", () => render(btn.dataset.lang));
     });

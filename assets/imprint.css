@@ -42,7 +42,19 @@
   border-top: 3px solid #0a0a0a;
 }
 
-.pk-imprint a {
+.pk-imprint dd a,
+.pk-imprint p a {
   color: #143a6f;
   font-weight: 800;
+}
+
+.pk-imprint a.pk-imprint__cta {
+  color: #faf5ea;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.pk-imprint footer a {
+  color: #f2c849;
+  font-weight: 900;
 }

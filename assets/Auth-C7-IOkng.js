@@ -199,7 +199,7 @@ function getSession(){
   return sessionStorage.getItem(SESSION_KEY)||localStorage.getItem(SESSION_KEY);
 }
 
-const btnNeo="border-[3px] border-black shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[1px_1px_0_0_#0a0a0a] hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100 disabled:hover:shadow-[4px_4px_0_0_#0a0a0a] disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:opacity-60";
+const btnNeo="border-[3px] border-black shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 disabled:hover:shadow-[4px_4px_0_0_#0a0a0a] disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:opacity-60";
 
 function pt({redirectAfterAuth:n}={}){
   const x=He();

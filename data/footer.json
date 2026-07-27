@@ -1,0 +1,82 @@
+{
+  "brand": "produktor.io",
+  "email": "info@produktor.io",
+  "en": {
+    "brandTagline": "On-Premise CRM · Chat · Video",
+    "lead": "On-premise install, migration, and support for the customer-ops stack your team is too busy building to operate itself.",
+    "systemsOk": "Systems OK",
+    "copyright": "© {{year}} produktor.io",
+    "tagline": "ProProdukt SL · On-premise install & support.",
+    "columns": [
+      {
+        "title": "Modules",
+        "items": [
+          { "label": "Stack CRM", "href": "/modules/crm/" },
+          { "label": "Stack Chat", "href": "/modules/chat/" },
+          { "label": "Stack Meet", "href": "/modules/meet/" },
+          { "label": "Service Produkt", "href": "/modules/service/" },
+          { "label": "Geo-Service", "href": "/modules/geo/" },
+          { "label": "Stack AI", "href": "/modules/ai/" },
+          { "label": "UI", "href": "/modules/ui/" }
+        ]
+      },
+      {
+        "title": "Company",
+        "items": [
+          { "label": "Install method", "href": "/#how-it-works" },
+          { "label": "Pricing", "href": "/#pricing" },
+          { "label": "Compliance", "href": "/#compare" },
+          { "label": "Team", "href": "/#team" },
+          { "label": "Careers", "href": "/careers/" },
+          { "label": "Imprint", "href": "/impressum/" }
+        ]
+      },
+      {
+        "title": "Contact",
+        "items": [
+          { "label": "Book a demo", "href": "/contact/" },
+          { "label": "info@produktor.io", "href": "mailto:info@produktor.io" }
+        ]
+      }
+    ]
+  },
+  "de": {
+    "brandTagline": "Vor-Ort-CRM · Chat · Video",
+    "lead": "Installation, Migration und Support für den Customer-Ops-Stack, den Ihr Team zu beschäftigt ist, um ihn selbst zu betreiben.",
+    "systemsOk": "Systeme OK",
+    "copyright": "© {{year}} produktor.io",
+    "tagline": "ProProdukt SL · On-Premise-Installation & Support.",
+    "columns": [
+      {
+        "title": "Module",
+        "items": [
+          { "label": "Stack CRM", "href": "/modules/crm/" },
+          { "label": "Stack Chat", "href": "/modules/chat/" },
+          { "label": "Stack Meet", "href": "/modules/meet/" },
+          { "label": "Service Produkt", "href": "/modules/service/" },
+          { "label": "Geo-Service", "href": "/modules/geo/" },
+          { "label": "Stack AI", "href": "/modules/ai/" },
+          { "label": "UI", "href": "/modules/ui/" }
+        ]
+      },
+      {
+        "title": "Unternehmen",
+        "items": [
+          { "label": "Installationsmethode", "href": "/#how-it-works" },
+          { "label": "Preise", "href": "/#pricing" },
+          { "label": "Compliance", "href": "/#compare" },
+          { "label": "Team", "href": "/#team" },
+          { "label": "Karriere", "href": "/careers/" },
+          { "label": "Impressum", "href": "/impressum/" }
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "items": [
+          { "label": "Demo buchen", "href": "/contact/" },
+          { "label": "info@produktor.io", "href": "mailto:info@produktor.io" }
+        ]
+      }
+    ]
+  }
+}

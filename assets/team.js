@@ -153,18 +153,37 @@
     wireAvatars(next);
   }
 
+  function insertTeamSection(section) {
+    const host = document.getElementById("pk-site-footer-host");
+    if (host?.parentElement) {
+      host.parentElement.insertBefore(section, host);
+      return;
+    }
+    const rootFooter = document.querySelector("#root footer");
+    if (rootFooter?.parentElement) {
+      rootFooter.parentElement.insertBefore(section, rootFooter);
+      return;
+    }
+    const footer = document.querySelector("footer");
+    if (footer?.parentElement) {
+      footer.parentElement.insertBefore(section, footer);
+      return;
+    }
+    document.body.appendChild(section);
+  }
+
   async function mount() {
     try {
       if (document.getElementById("team")) return;
 
-      const [footer, response] = await Promise.all([
-        waitFor("footer"),
+      const [, response] = await Promise.all([
+        waitFor("footer, #pk-site-footer-host, #root"),
         fetch("/data/team.json"),
       ]);
       if (!response.ok) throw new Error(`team.json ${response.status}`);
       teamData = await response.json();
       const section = renderTeam(teamData);
-      footer.parentElement.insertBefore(section, footer);
+      insertTeamSection(section);
       wireAvatars(section);
 
       if (window.pkOnLanguageChange) {

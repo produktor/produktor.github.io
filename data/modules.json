@@ -159,7 +159,7 @@
       "code": "03",
       "accent": "bg-[#143a6f] text-[#faf5ea]",
       "icon": "meet",
-      "liveDemoUrl": "https://meet.pro-dukt.de?ref=freebuf",
+      "liveDemoUrl": "https://meet.pro-dukt.de",
       "footerLabels": ["Stack Meet"],
       "en": {
         "name": "Stack Meet",

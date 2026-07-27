@@ -3,13 +3,12 @@
   "tradeName": "produktor.io",
   "email": "info@produktor.io",
   "website": "https://produktor.io",
-  "correspondence": {
-    "lines": ["Nordring 169", "90409 Nürnberg", "Germany"]
-  },
   "responsible": {
-    "name": "Artem Maltschenko",
-    "roleEn": "Managing Director · Content responsible (TMG / RStV)",
-    "roleDe": "Geschäftsführer · Verantwortlicher i. S. d. TMG / RStV"
+    "name": "Andriy Oblivantsev",
+    "nameEn": "Andriy Oblivantsev",
+    "nameDe": "Andriy Oblivantsev",
+    "roleEn": "",
+    "roleDe": ""
   },
   "team": [
     {

@@ -1,0 +1,52 @@
+/* Unified brutal press — same as "other modules" cards.
+   Skip: header/nav chrome, lang toggles, footer text links, form fields. */
+
+:where(
+  main a.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button[type="submit"][class*="border-[3px]"],
+  main a.group.flex.items-center.justify-between[class*="border-[3px]"],
+  .pk-mod section a.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  .pk-mod section a[class*="shadow-[4px_4px"],
+  .pk-imprint a.pk-imprint__cta,
+  .pk-product__extra a.inline-flex[class*="border-[3px]"],
+  a.pk-press,
+  button.pk-press
+) {
+  box-shadow: 4px 4px 0 0 #0a0a0a !important;
+  transition: transform 100ms ease, box-shadow 100ms ease !important;
+}
+
+:where(
+  main a.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button[type="submit"][class*="border-[3px]"],
+  main a.group.flex.items-center.justify-between[class*="border-[3px]"],
+  .pk-mod section a.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  .pk-mod section a[class*="shadow-[4px_4px"],
+  .pk-imprint a.pk-imprint__cta,
+  .pk-product__extra a.inline-flex[class*="border-[3px]"],
+  a.pk-press,
+  button.pk-press
+):is(:hover, :focus-visible):not(:disabled):not([aria-disabled="true"]) {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0 0 #0a0a0a !important;
+}
+
+:where(
+  main a.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button[type="submit"][class*="border-[3px]"],
+  a.pk-press,
+  button.pk-press
+):disabled,
+:where(
+  main a.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button.inline-flex[class*="border-[3px]"]:is([class*="h-9"], [class*="h-11"], [class*="h-12"]),
+  main button[type="submit"][class*="border-[3px]"],
+  a.pk-press,
+  button.pk-press
+):disabled:hover {
+  transform: none !important;
+  box-shadow: 4px 4px 0 0 #0a0a0a !important;
+}

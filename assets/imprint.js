@@ -1,7 +1,5 @@
 (function () {
   const ROOT = document.getElementById("pk-imprint-root");
-  const COPY = document.getElementById("pk-imprint-copy");
-  const BACK = document.getElementById("pk-imprint-back");
   let data = null;
 
   function preferredLang() {
@@ -33,17 +31,27 @@
     const s = c.sections;
     document.documentElement.lang = lang;
     document.title = c.pageTitle;
-    setLangButtons(lang);
     localStorage.setItem("pk-imprint-lang", lang);
+    // sync after DOM updated below
+    const syncFooter = () => {
+      setLangButtons(lang);
+      if (window.pkMountSiteFooter) window.pkMountSiteFooter();
+    };
 
-    const address = (data.correspondence?.lines || [])
-      .map((line) => escapeHtml(line))
-      .join("<br />");
+    const addressLines = data.correspondence?.lines || [];
+    const addressHtml = addressLines.length
+      ? `<dt>${escapeHtml(labels.address)}</dt><dd>${addressLines.map((line) => escapeHtml(line)).join("<br />")}</dd>`
+      : "";
+    const role =
+      (lang === "de" ? data.responsible?.roleDe : data.responsible?.roleEn) || "";
+    const roleHtml = role
+      ? `<p class="mt-1 mb-0 text-sm font-bold text-[#0a0a0a]/70">${escapeHtml(role)}</p>`
+      : "";
 
     const team = (data.team || [])
       .map((member) => {
-        const role = lang === "de" ? member.roleDe : member.roleEn;
-        return `<li class="font-bold text-[15px] leading-snug"><span class="font-black">${escapeHtml(member.name)}</span><br /><span class="text-[#0a0a0a]/70 text-sm">${escapeHtml(role)}</span></li>`;
+        const memberRole = lang === "de" ? member.roleDe : member.roleEn;
+        return `<li class="font-bold text-[15px] leading-snug"><span class="font-black">${escapeHtml(member.name)}</span><br /><span class="text-[#0a0a0a]/70 text-sm">${escapeHtml(memberRole)}</span></li>`;
       })
       .join("");
 
@@ -63,8 +71,7 @@
             <dd>${escapeHtml(data.legalName)}</dd>
             <dt>${escapeHtml(labels.tradeName)}</dt>
             <dd>${escapeHtml(data.tradeName)}</dd>
-            <dt>${escapeHtml(labels.address)}</dt>
-            <dd>${address}</dd>
+            ${addressHtml}
           </dl>
         </section>
 
@@ -80,8 +87,8 @@
 
         <section>
           <h2 class="m-0 font-black uppercase tracking-tight text-xl sm:text-2xl">${escapeHtml(s.responsible)}</h2>
-          <p class="mt-4 mb-0 font-black text-lg">${escapeHtml(data.responsible.name)}</p>
-          <p class="mt-1 mb-0 text-sm font-bold text-[#0a0a0a]/70">${escapeHtml(lang === "de" ? data.responsible.roleDe : data.responsible.roleEn)}</p>
+          <p class="mt-4 mb-0 font-black text-lg">${escapeHtml((lang === "de" ? data.responsible.nameDe : data.responsible.nameEn) || data.responsible.name)}</p>
+          ${roleHtml}
         </section>
 
         <section>
@@ -113,12 +120,10 @@
       </div>
 
       <p class="mt-10">
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#143a6f] text-[#faf5ea] font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a]">${escapeHtml(s.back)}</a>
+        <a href="/" class="pk-imprint__cta pk-press inline-flex items-center justify-center gap-2 px-5 h-12 border-[3px] border-black bg-[#143a6f] text-[#faf5ea] font-black uppercase tracking-wide text-sm no-underline shadow-[4px_4px_0_0_#0a0a0a] hover:shadow-[2px_2px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${escapeHtml(s.back)}</a>
       </p>
     `;
-
-    if (COPY) COPY.textContent = `© ${new Date().getFullYear()} ${data.tradeName}`;
-    if (BACK) BACK.textContent = s.back;
+    syncFooter();
   }
 
   async function mount() {
