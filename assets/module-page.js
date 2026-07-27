@@ -135,6 +135,19 @@
           <div class="lg:col-span-8">
             <h2 class="m-0 font-black uppercase tracking-tight text-2xl sm:text-3xl">${escapeHtml(ui.overview)}</h2>
             <p class="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#0a0a0a]/85">${escapeHtml(c.overview)}</p>
+            ${
+              Array.isArray(c.refs) && c.refs.length
+                ? `<div class="mt-8">
+              <h3 class="m-0 font-black uppercase tracking-[0.14em] text-[12px] text-[#0a0a0a]/65">${escapeHtml(ui.refs || "Further reading")}</h3>
+              <ul class="mt-3 space-y-2 list-none p-0 m-0">${c.refs
+                .map(
+                  (ref) =>
+                    `<li><a href="${escapeHtml(ref.href)}" target="_blank" rel="noopener noreferrer" class="font-bold text-[#143a6f] underline underline-offset-4 decoration-[2px] hover:bg-[#f2c849]">${escapeHtml(ref.label)}</a></li>`,
+                )
+                .join("")}</ul>
+            </div>`
+                : ""
+            }
           </div>
         </div>
       </section>

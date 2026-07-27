@@ -10,7 +10,8 @@
       "liveDemo": "Live demo",
       "contactCta": "Talk install",
       "otherModules": "Other modules",
-      "replaces": "Replaces"
+      "replaces": "Replaces",
+      "refs": "Further reading"
     },
     "de": {
       "backHome": "Zurück zum Stack",
@@ -22,7 +23,8 @@
       "liveDemo": "Live-Demo",
       "contactCta": "Installation besprechen",
       "otherModules": "Andere Module",
-      "replaces": "Ersetzt"
+      "replaces": "Ersetzt",
+      "refs": "Weiterlesen"
     }
   },
   "modules": [
@@ -102,27 +104,38 @@
         "tag": "Team messaging",
         "titleHighlight": "Chat",
         "titleRest": "without SaaS egress.",
-        "lead": "Channels, threads, DMs, voice notes, and file sharing — end-to-end encrypted with keys you hold. Air-gapped option. Slack/Discord features without the data leaving your rack.",
+        "lead": "Channels, threads, DMs, voice notes, and file sharing — end-to-end encrypted with keys you hold. Native agent bots with long-term memory, STT/TTS, and optional call join — still on your homeserver.",
         "replaces": ["Slack", "Discord"],
-        "overview": "Stack Chat is the collaboration spine of the suite. Search, files, and presence stay on infrastructure you control. Native clients cover desk and mobile so field and office share one secure plane.",
+        "overview": "Stack Chat is the collaboration spine of the suite. Search, files, and presence stay on infrastructure you control. Beyond human rooms, the same Matrix plane hosts knowledge bots that act as agents: they hear text or voice, retrieve durable context via GraphRAG (Neo4j associations + Qdrant vectors), answer with a local LLM, and can reply as text or TTS — with the room timeline as the audit trail. Positive feedback can be written back into long-term memory. Native clients cover desk and mobile so field and office share one secure plane.",
         "features": [
           "E2E encryption with on-prem key custody",
           "Full search index with no SaaS backhaul",
           "Native iOS / Android / desktop clients",
           "Channels, threads, DMs, voice notes, file sharing",
+          "Agent bots in rooms — tools, history, and durable GraphRAG memory (Neo4j + Qdrant)",
+          "Voice turns: STT (Faster-Whisper / Vosk) → RAG → local LLM → optional TTS (Piper / Coqui)",
+          "Optional Element Call / LiveKit join for voice agents; feedback loop refines the knowledge store",
           "Air-gap deployment path for closed networks",
           "Same identity model as CRM and Meet"
         ],
         "useCases": [
           "Regulated orgs that forbid Slack/Teams cloud tenancies",
           "Ops bridges between ward, clinic, and back-office without public chat SaaS",
+          "On-prem knowledge assistants in Element — text, voice message, or call — grounded in your Markdown KB",
           "Incident rooms that must stay on LAN during WAN outages"
         ],
         "deploy": [
           "Stand up with the shared control plane and IdP",
           "Import channel history where connectors exist; otherwise phased cutover",
           "Roll out desktop and mobile clients with MDM if required",
+          "Optional: attach go-second-brain / GraphRAG bot + STT/TTS workers on the same LAN",
           "Patch and upgrade on the suite cadence"
+        ],
+        "refs": [
+          {
+            "label": "Edelweiss — Video Assistant MVP (Matrix + GraphRAG)",
+            "href": "https://eslider.github.io/posts/edelweiss-video-assistant-mvp/"
+          }
         ]
       },
       "de": {
@@ -130,27 +143,38 @@
         "tag": "Team-Messaging",
         "titleHighlight": "Chat",
         "titleRest": "ohne SaaS-Egress.",
-        "lead": "Channels, Threads, DMs, Sprachnachrichten und Filesharing — Ende-zu-Ende-verschlüsselt mit Schlüsseln in Ihrer Custody. Air-Gap-Option. Slack-/Discord-Funktionen, ohne dass Daten das Rack verlassen.",
+        "lead": "Channels, Threads, DMs, Sprachnachrichten und Filesharing — Ende-zu-Ende-verschlüsselt mit Schlüsseln in Ihrer Custody. Native Agent-Bots mit Langzeitgedächtnis, STT/TTS und optionalem Call-Join — weiterhin auf Ihrem Homeserver.",
         "replaces": ["Slack", "Discord"],
-        "overview": "Stack Chat ist die Kollaborations-Wirbelsäule der Suite. Suche, Dateien und Presence bleiben auf Infrastruktur unter Ihrer Kontrolle. Native Clients für Desk und Mobile halten Field und Office auf einer sicheren Ebene.",
+        "overview": "Stack Chat ist die Kollaborations-Wirbelsäule der Suite. Suche, Dateien und Presence bleiben auf Infrastruktur unter Ihrer Kontrolle. Über menschliche Räume hinaus hostet dieselbe Matrix-Ebene Knowledge-Bots als Agenten: Text oder Stimme, Abruf dauerhaften Kontexts per GraphRAG (Neo4j-Assoziationen + Qdrant-Vektoren), Antwort mit lokalem LLM, Reply als Text oder TTS — Timeline bleibt Audit-Trail. Positives Feedback kann zurück ins Langzeitgedächtnis geschrieben werden. Native Clients für Desk und Mobile halten Field und Office auf einer sicheren Ebene.",
         "features": [
           "Ende-zu-Ende-Verschlüsselung mit On-Prem-Schlüsselverwaltung",
           "Vollständiger Suchindex ohne SaaS-Backhaul",
           "Native iOS-, Android- und Desktop-Clients",
           "Channels, Threads, DMs, Sprachnachrichten, Filesharing",
+          "Agent-Bots in Räumen — Tools, Historie und dauerhaftes GraphRAG-Gedächtnis (Neo4j + Qdrant)",
+          "Voice-Turns: STT (Faster-Whisper / Vosk) → RAG → lokales LLM → optional TTS (Piper / Coqui)",
+          "Optionaler Element-Call- / LiveKit-Join für Voice-Agents; Feedback-Loop verfeinert den Knowledge Store",
           "Air-Gap-Pfad für geschlossene Netze",
           "Gleiches Identity-Modell wie CRM und Meet"
         ],
         "useCases": [
           "Regulierte Orgs ohne Slack-/Teams-Cloud-Tenancy",
           "Ops-Brücken zwischen Station, Klinik und Backoffice ohne Public-Chat-SaaS",
+          "On-Prem-Wissensassistenten in Element — Text, Sprachnachricht oder Call — grounded in Ihrer Markdown-KB",
           "Incident-Räume, die bei WAN-Ausfall im LAN bleiben müssen"
         ],
         "deploy": [
           "Mit gemeinsamer Control Plane und IdP aufsetzen",
           "Channel-Historie importieren, wo Konnektoren existieren; sonst gestufter Cutover",
           "Desktop- und Mobile-Clients ausrollen — mit MDM falls nötig",
+          "Optional: go-second-brain / GraphRAG-Bot + STT/TTS-Worker im gleichen LAN anbinden",
           "Patch und Upgrade im Suite-Rhythmus"
+        ],
+        "refs": [
+          {
+            "label": "Edelweiss — Video Assistant MVP (Matrix + GraphRAG)",
+            "href": "https://eslider.github.io/posts/edelweiss-video-assistant-mvp/"
+          }
         ]
       }
     },
