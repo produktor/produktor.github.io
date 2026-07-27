@@ -1,9 +1,35 @@
 (function () {
   const SUPPORTED = new Set(["en", "de"]);
+  const KEYS = window.pkLangKeys || [
+    "pk-lang",
+    "i18nextLng",
+    "pk-module-lang",
+    "pk-imprint-lang",
+  ];
 
   function normalize(code) {
+    if (window.pkNormalizeLang) return window.pkNormalizeLang(code);
     const lang = (code || "").split("-")[0].toLowerCase();
     return SUPPORTED.has(lang) ? lang : null;
+  }
+
+  function fromQuery() {
+    try {
+      const q = new URLSearchParams(location.search);
+      return normalize(q.get("lng") || q.get("lang"));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function fromStorage() {
+    for (const key of KEYS) {
+      try {
+        const v = normalize(localStorage.getItem(key));
+        if (v) return v;
+      } catch (e) {}
+    }
+    return null;
   }
 
   function fromHtml() {
@@ -14,30 +40,45 @@
     const pressed = [
       ...document.querySelectorAll('[role="group"] button[aria-pressed="true"]'),
     ]
-      .map((btn) => normalize(btn.textContent?.trim()))
+      .map((btn) => normalize(btn.textContent?.trim()) || normalize(btn.dataset.lang))
       .filter(Boolean);
-    // Prefer majority / first pressed that matches html when switchers disagree
     if (pressed.length === 0) return null;
     const html = fromHtml();
     if (html && pressed.includes(html)) return html;
     return pressed[0];
   }
 
+  function persistLanguage(code) {
+    const lang = normalize(code);
+    if (!lang) return null;
+    if (window.pkPersistLanguage) {
+      window.pkPersistLanguage(lang);
+    } else {
+      try {
+        KEYS.forEach((key) => localStorage.setItem(key, lang));
+      } catch (e) {}
+      document.documentElement.lang = lang;
+    }
+    return lang;
+  }
+
+  function preferredLanguage() {
+    if (window.pkPreferredLanguage) return window.pkPreferredLanguage();
+    return fromQuery() || fromStorage() || fromHtml() || "en";
+  }
+
   function getLanguage() {
-    // html[lang] is set by React i18n effect — authoritative after switch
-    return fromHtml() || fromSwitcher() || "en";
+    // After boot / switch: html[lang] + storage stay in sync.
+    return fromHtml() || fromStorage() || fromSwitcher() || "en";
   }
 
   function isGerman() {
     return getLanguage() === "de";
   }
 
-  const ACTIVE =
-    "bg-[#143a6f] text-[#faf5ea]";
-  const INACTIVE_LIGHT =
-    "text-[#0a0a0a] hover:bg-[#f2c849]";
-  const INACTIVE_DARK =
-    "text-[#faf5ea] hover:bg-[#143a6f]";
+  const ACTIVE = "bg-[#143a6f] text-[#faf5ea]";
+  const INACTIVE_LIGHT = "text-[#0a0a0a] hover:bg-[#f2c849]";
+  const INACTIVE_DARK = "text-[#faf5ea] hover:bg-[#143a6f]";
 
   function switcherVariant(group) {
     return group.className.includes("border-[#faf5ea]") ? "dark" : "light";
@@ -49,7 +90,6 @@
       if (group.closest("#root")) return;
 
       const dark = switcherVariant(group) === "dark";
-      // Match homepage LanguageSwitcher: fixed height so h-full buttons are not squashed
       if (!dark) {
         group.classList.add("inline-flex", "items-stretch", "h-9", "border-[3px]", "border-black");
         if (!group.className.includes("bg-[")) group.classList.add("bg-[#faf5ea]");
@@ -60,25 +100,19 @@
         const on = code === lang;
         btn.setAttribute("aria-pressed", on ? "true" : "false");
         if (!btn.dataset.lang) btn.dataset.lang = code;
-        const border =
-          btn.previousElementSibling
-            ? dark
-              ? "border-l-[3px] border-[#faf5ea] "
-              : "border-l-[3px] border-black "
-            : "";
-        const state = on
-          ? ACTIVE
-          : dark
-            ? INACTIVE_DARK
-            : INACTIVE_LIGHT;
-        btn.className =
-          `px-3 h-full font-black uppercase tracking-[0.14em] text-[11px] transition-colors duration-100 ${border}${state}`;
+        const border = btn.previousElementSibling
+          ? dark
+            ? "border-l-[3px] border-[#faf5ea] "
+            : "border-l-[3px] border-black "
+          : "";
+        const state = on ? ACTIVE : dark ? INACTIVE_DARK : INACTIVE_LIGHT;
+        btn.className = `px-3 h-full font-black uppercase tracking-[0.14em] text-[11px] transition-colors duration-100 ${border}${state}`;
       });
     });
   }
 
   const langListeners = new Set();
-  let lastLang = getLanguage();
+  let lastLang = null;
   let groupObserver = null;
   let htmlObserver = null;
 
@@ -86,7 +120,9 @@
     const lang = getLanguage();
     if (lang === lastLang) return;
     lastLang = lang;
+    persistLanguage(lang);
     syncSwitcherActive(lang);
+    if (window.pkSyncBrandTaglines) window.pkSyncBrandTaglines(lang);
     langListeners.forEach((callback) => callback(lang));
   }
 
@@ -107,10 +143,10 @@
         (event) => {
           const btn = event.target.closest("button");
           if (!btn) return;
-          const code = normalize(btn.textContent?.trim());
+          const code =
+            normalize(btn.dataset.lang) || normalize(btn.textContent?.trim());
           if (!code) return;
-          // Optimistic UI — React may lag / mis-detect active via `in` array bug
-          document.documentElement.lang = code;
+          persistLanguage(code);
           lastLang = null;
           queueMicrotask(notifyLanguageChange);
           setTimeout(notifyLanguageChange, 50);
@@ -145,6 +181,11 @@
   }
 
   function boot() {
+    const initial = preferredLanguage();
+    persistLanguage(initial);
+    lastLang = initial;
+    syncSwitcherActive(initial);
+
     watchHtmlLang();
     if (watchLanguageSwitcher()) return;
 
@@ -157,6 +198,8 @@
   window.pkGetLanguage = getLanguage;
   window.pkIsGerman = isGerman;
   window.pkOnLanguageChange = onLanguageChange;
+  window.pkPersistLanguage = persistLanguage;
+  window.pkPreferredLanguage = preferredLanguage;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);

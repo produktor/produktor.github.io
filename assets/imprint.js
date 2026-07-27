@@ -3,10 +3,28 @@
   let data = null;
 
   function preferredLang() {
-    const stored = localStorage.getItem("pk-imprint-lang");
-    if (stored === "en" || stored === "de") return stored;
+    if (window.pkPreferredLanguage) return window.pkPreferredLanguage();
+    try {
+      for (const key of ["pk-lang", "i18nextLng", "pk-module-lang", "pk-imprint-lang"]) {
+        const stored = localStorage.getItem(key);
+        if (stored === "en" || stored === "de") return stored;
+      }
+    } catch (e) {}
     const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
     return nav === "de" ? "de" : "en";
+  }
+
+  function persistLang(lang) {
+    if (window.pkPersistLanguage) {
+      window.pkPersistLanguage(lang);
+      return;
+    }
+    try {
+      ["pk-lang", "i18nextLng", "pk-module-lang", "pk-imprint-lang"].forEach((key) =>
+        localStorage.setItem(key, lang),
+      );
+    } catch (e) {}
+    document.documentElement.lang = lang;
   }
 
   function setLangButtons(lang) {
@@ -29,9 +47,8 @@
     const c = data[lang] || data.en;
     const labels = c.labels;
     const s = c.sections;
-    document.documentElement.lang = lang;
+    persistLang(lang);
     document.title = c.pageTitle;
-    localStorage.setItem("pk-imprint-lang", lang);
     // sync after DOM updated below
     const syncFooter = () => {
       setLangButtons(lang);

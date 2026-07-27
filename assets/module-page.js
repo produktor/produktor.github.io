@@ -24,10 +24,28 @@
   }
 
   function preferredLang() {
-    const stored = localStorage.getItem("pk-module-lang");
-    if (stored === "en" || stored === "de") return stored;
+    if (window.pkPreferredLanguage) return window.pkPreferredLanguage();
+    try {
+      for (const key of ["pk-lang", "i18nextLng", "pk-module-lang", "pk-imprint-lang"]) {
+        const stored = localStorage.getItem(key);
+        if (stored === "en" || stored === "de") return stored;
+      }
+    } catch (e) {}
     const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
     return nav === "de" ? "de" : "en";
+  }
+
+  function persistLang(lang) {
+    if (window.pkPersistLanguage) {
+      window.pkPersistLanguage(lang);
+      return;
+    }
+    try {
+      ["pk-lang", "i18nextLng", "pk-module-lang", "pk-imprint-lang"].forEach((key) =>
+        localStorage.setItem(key, lang),
+      );
+    } catch (e) {}
+    document.documentElement.lang = lang;
   }
 
   function escapeHtml(value) {
@@ -67,9 +85,8 @@
     const ui = catalog.ui[lang] || catalog.ui.en;
     const c = mod[lang] || mod.en;
     const others = (catalog.modules || []).filter((m) => m.slug !== slug);
-    document.documentElement.lang = lang;
+    persistLang(lang);
     document.title = `${c.name} — produktor.io`;
-    localStorage.setItem("pk-module-lang", lang);
 
     const icon = ICONS[mod.icon] || ICONS.crm;
     const replaces = (c.replaces || []).map(escapeHtml).join(" · ");

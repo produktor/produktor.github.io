@@ -6,11 +6,14 @@
 
   function langKey(lang) {
     if (lang === "de" || lang === "en") return lang;
+    if (window.pkPreferredLanguage) return window.pkPreferredLanguage();
     const doc = (document.documentElement.lang || "").slice(0, 2).toLowerCase();
-    if (doc === "de") return "de";
+    if (doc === "de" || doc === "en") return doc;
     try {
-      const stored = localStorage.getItem("pk-imprint-lang") || localStorage.getItem("pk-module-lang");
-      if (stored === "de" || stored === "en") return stored;
+      for (const key of ["pk-lang", "i18nextLng", "pk-module-lang", "pk-imprint-lang"]) {
+        const stored = localStorage.getItem(key);
+        if (stored === "de" || stored === "en") return stored;
+      }
     } catch (e) {}
     return "en";
   }
