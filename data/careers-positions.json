@@ -3,9 +3,9 @@
     {
       "id": "consulting-support-engineer",
       "title": "Consulting / Support Engineer",
-      "location": "EU field + Berlin hub (travel required)",
+      "location": "Full remote (EU) · travel to client sites",
       "contract": "Full-time",
-      "about": "You are the on-site face of our install and support practice. You travel to customer sites, guide them through our four-step delivery — architecture audit, provision & install, data migration, operate & support — and stay available for hands-on recovery when something breaks in their rack, not only in a ticket queue.",
+      "about": "You are the on-site face of our install and support practice — while living full remote. You travel to customer sites as needed, guide them through our four-step delivery — architecture audit, provision & install, data migration, operate & support — and stay available for hands-on recovery when something breaks in their rack, not only in a ticket queue.",
       "responsibilities": [
         "Lead or co-lead on-site architecture audits and turn findings into a written install spec the customer signs off on",
         "Execute and supervise provision & install on customer hardware — bare metal, VMs, or their cloud tenancy — through cutover",
@@ -15,14 +15,14 @@
       ],
       "requirements": [
         "3+ years in customer-facing consulting, field engineering, or technical support for infrastructure / B2B software",
-        "Willingness to travel regularly to EU customer sites (healthcare, advisory, and sovereign IT environments)",
+        "Full-remote setup in the EU, with willingness to travel regularly to customer sites (healthcare, advisory, and sovereign IT environments)",
         "Solid Linux administration; able to install and debug services on bare metal and VMs without a runbook babysitter",
         "Clear written and spoken English; German strongly preferred for DACH customer work",
         "Experience with identity (SSO/IdP), networking, or Postgres operations is a plus"
       ],
       "benefits": [
         "Permanent contract, EU salary benchmark",
-        "Travel covered; Berlin hub when not on site",
+        "Full remote across the EU; travel to clients covered; Berlin hub optional when not on site",
         "Conference + hardware budget",
         "Six weeks paid leave and a quarterly company-wide on-site week"
       ]
@@ -32,9 +32,9 @@
     {
       "id": "consulting-support-engineer",
       "title": "Consulting / Support Engineer",
-      "location": "EU vor Ort + Hub Berlin (Reisebereitschaft)",
+      "location": "Full Remote (EU) · Reisen zu Kundenseiten",
       "contract": "Vollzeit",
-      "about": "Sie sind das Gesicht unserer Installations- und Support-Praxis vor Ort. Sie reisen zu Kundenseiten, begleiten den vierstufigen Delivery-Prozess — Architektur-Audit, Provisioning & Installation, Datenmigration, Betrieb & Support — und bleiben greifbar, wenn im Rack etwas bricht, nicht nur im Ticket.",
+      "about": "Sie sind das Gesicht unserer Installations- und Support-Praxis vor Ort — bei Full-Remote-Wohnsitz. Sie reisen bei Bedarf zu Kundenseiten, begleiten den vierstufigen Delivery-Prozess — Architektur-Audit, Provisioning & Installation, Datenmigration, Betrieb & Support — und bleiben greifbar, wenn im Rack etwas bricht, nicht nur im Ticket.",
       "responsibilities": [
         "Architektur-Audits vor Ort leiten oder mitführen und daraus ein unterzeichnetes Installations-Lastenheft machen",
         "Provisioning & Installation auf Kundenhardware (Bare Metal, VMs oder deren Cloud-Tenancy) bis zum Cutover durchführen und beaufsichtigen",
@@ -44,14 +44,14 @@
       ],
       "requirements": [
         "3+ Jahre in kundennaher Beratung, Field Engineering oder technischem Support für Infrastruktur / B2B-Software",
-        "Regelmäßige Reisen zu Kundenseiten in der EU (Healthcare, Advisory, souveräne IT-Umgebungen)",
+        "Full Remote in der EU, mit regelmäßiger Reisebereitschaft zu Kundenseiten (Healthcare, Advisory, souveräne IT-Umgebungen)",
         "Solide Linux-Administration; Dienste auf Bare Metal und VMs ohne Runbook-Babysitter installieren und debuggen",
         "Sehr gutes Englisch in Wort und Schrift; Deutsch für DACH-Kundenarbeit stark bevorzugt",
         "Erfahrung mit Identity (SSO/IdP), Networking oder Postgres-Betrieb von Vorteil"
       ],
       "benefits": [
         "Festanstellung, EU-Gehalt am Marktstandard",
-        "Reisekosten übernommen; Berliner Hub, wenn Sie nicht vor Ort sind",
+        "Full Remote in der EU; Kundenreisen übernommen; Berliner Hub optional, wenn Sie nicht vor Ort sind",
         "Konferenz- und Hardware-Budget",
         "Sechs Wochen bezahlter Urlaub und eine quartalsweise Company-On-Site-Woche"
       ]
