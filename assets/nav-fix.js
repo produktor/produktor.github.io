@@ -141,65 +141,47 @@
     const header = document.querySelector("header");
     if (!header) return false;
 
-    const mainNav = findMainNav(header);
-    if (!mainNav) return false;
+    const reactNav =
+      header.querySelector('nav.hidden.md\\:flex:not([data-pk-nav="1"])') ||
+      header.querySelector('nav:not([data-pk-nav="1"])');
+    if (!reactNav) return false;
 
-    // Hide extra navs — never remove (React owns the tree).
+    // Always use our own nav sibling — never mutate React's <a> nodes.
     header.querySelectorAll("nav").forEach((nav) => {
-      if (nav !== mainNav && nav.dataset.pkNav !== "1") {
-        nav.hidden = true;
-        nav.setAttribute("aria-hidden", "true");
-        nav.style.display = "none";
-      }
+      if (nav.dataset.pkNav === "1") return;
+      nav.hidden = true;
+      nav.setAttribute("aria-hidden", "true");
+      nav.style.display = "none";
     });
 
     const de = isGerman();
-    const links = [...mainNav.querySelectorAll(":scope > a")];
-
-    // Prefer in-place updates so React keeps the same <a> nodes.
-    if (links.length === NAV_ITEMS.length) {
-      NAV_ITEMS.forEach((item, index) => {
-        const link = links[index];
-        if (!link) return;
-        if (link.getAttribute("href") !== item.href) link.setAttribute("href", item.href);
-        const label = de ? item.labelDe : item.labelEn;
-        if (link.textContent !== label) link.textContent = label;
-        link.className = linkClass(item.href);
-        link.setAttribute(
-          "aria-current",
-          item.href === activeHref ? "true" : "false",
-        );
-      });
-      return navIsCorrect(mainNav, de);
-    }
-
-    // Structure mismatch: hide React nav, mount our own sibling (outside React ownership).
     let pkNav = header.querySelector('nav[data-pk-nav="1"]');
     if (!pkNav) {
       pkNav = document.createElement("nav");
       pkNav.dataset.pkNav = "1";
-      pkNav.className = mainNav.className || "hidden md:flex items-center gap-1";
-      mainNav.insertAdjacentElement("afterend", pkNav);
+      pkNav.className = reactNav.className || "hidden md:flex items-center gap-1";
+      reactNav.insertAdjacentElement("afterend", pkNav);
     }
-    mainNav.hidden = true;
-    mainNav.setAttribute("aria-hidden", "true");
-    mainNav.style.display = "none";
     pkNav.hidden = false;
     pkNav.removeAttribute("aria-hidden");
     pkNav.style.display = "";
-    pkNav.replaceChildren(
-      ...NAV_ITEMS.map((item) => {
-        const link = document.createElement("a");
-        link.href = item.href;
-        link.className = linkClass(item.href);
-        link.textContent = de ? item.labelDe : item.labelEn;
-        link.setAttribute(
-          "aria-current",
-          item.href === activeHref ? "true" : "false",
-        );
-        return link;
-      }),
-    );
+    if (!navIsCorrect(pkNav, de)) {
+      pkNav.replaceChildren(
+        ...NAV_ITEMS.map((item) => {
+          const link = document.createElement("a");
+          link.href = item.href;
+          link.className = linkClass(item.href);
+          link.textContent = de ? item.labelDe : item.labelEn;
+          link.setAttribute(
+            "aria-current",
+            item.href === activeHref ? "true" : "false",
+          );
+          return link;
+        }),
+      );
+    } else {
+      applyActiveStyles(pkNav);
+    }
     return navIsCorrect(pkNav, de);
   }
 
