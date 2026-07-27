@@ -46,11 +46,17 @@
   function syncSwitcherActive(lang) {
     document.querySelectorAll('[role="group"]').forEach((group) => {
       const dark = switcherVariant(group) === "dark";
+      // Match homepage LanguageSwitcher: fixed height so h-full buttons are not squashed
+      if (!dark) {
+        group.classList.add("inline-flex", "items-stretch", "h-9", "border-[3px]", "border-black");
+        if (!group.className.includes("bg-[")) group.classList.add("bg-[#faf5ea]");
+      }
       group.querySelectorAll("button").forEach((btn) => {
-        const code = normalize(btn.textContent?.trim());
+        const code = normalize(btn.textContent?.trim()) || normalize(btn.dataset.lang);
         if (!code) return;
         const on = code === lang;
         btn.setAttribute("aria-pressed", on ? "true" : "false");
+        if (!btn.dataset.lang) btn.dataset.lang = code;
         const border =
           btn.previousElementSibling
             ? dark

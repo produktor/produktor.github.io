@@ -95,9 +95,9 @@
               : `<a href="/" class="flex items-center gap-3 group no-underline text-inherit"><span class="font-black uppercase tracking-tight text-base sm:text-lg">produktor.io</span></a>`
           }
           <div class="flex items-center gap-2 sm:gap-3">
-            <div class="inline-flex border-[3px] border-black" role="group" aria-label="Language">
-              <button type="button" data-lang="en" class="pk-mod__lang px-3 h-10 font-black uppercase tracking-[0.14em] text-[11px]">EN</button>
-              <button type="button" data-lang="de" class="pk-mod__lang px-3 h-10 font-black uppercase tracking-[0.14em] text-[11px] border-l-[3px] border-black">DE</button>
+            <div class="inline-flex items-stretch h-9 border-[3px] border-black bg-[#faf5ea]" role="group" aria-label="Language">
+              <button type="button" data-lang="en" class="pk-mod__lang px-3 h-full font-black uppercase tracking-[0.14em] text-[11px]">EN</button>
+              <button type="button" data-lang="de" class="pk-mod__lang px-3 h-full font-black uppercase tracking-[0.14em] text-[11px] border-l-[3px] border-black">DE</button>
             </div>
             <a href="/products/" class="hidden sm:inline-flex items-center px-4 h-10 border-[3px] border-black font-bold text-sm hover:bg-[#143a6f] hover:text-[#faf5ea] no-underline">${escapeHtml(ui.backHome)}</a>
           </div>

@@ -121,10 +121,21 @@
       const res = await fetch("/data/imprint.json", { cache: "no-store" });
       if (!res.ok) throw new Error(`imprint.json ${res.status}`);
       data = await res.json();
-      render(preferredLang());
-      document.querySelectorAll(".pk-imprint__lang").forEach((btn) => {
-        btn.addEventListener("click", () => render(btn.dataset.lang));
+
+      const applyLang = (lang) => {
+        if (lang !== "en" && lang !== "de") return;
+        render(lang);
+      };
+
+      applyLang(preferredLang());
+
+      document.querySelectorAll("header button[data-lang]").forEach((btn) => {
+        btn.addEventListener("click", () => applyLang(btn.dataset.lang));
       });
+
+      if (window.pkOnLanguageChange) {
+        window.pkOnLanguageChange(applyLang);
+      }
     } catch (err) {
       if (ROOT) ROOT.innerHTML = `<p class="font-bold text-red-800">Failed to load imprint.</p>`;
       console.warn("[produktor imprint]", err);
