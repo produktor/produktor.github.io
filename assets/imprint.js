@@ -42,11 +42,6 @@
     const addressHtml = addressLines.length
       ? `<dt>${escapeHtml(labels.address)}</dt><dd>${addressLines.map((line) => escapeHtml(line)).join("<br />")}</dd>`
       : "";
-    const role =
-      (lang === "de" ? data.responsible?.roleDe : data.responsible?.roleEn) || "";
-    const roleHtml = role
-      ? `<p class="mt-1 mb-0 text-sm font-bold text-[#0a0a0a]/70">${escapeHtml(role)}</p>`
-      : "";
 
     const team = (data.team || [])
       .map((member) => {
@@ -83,12 +78,6 @@
             <dt>${escapeHtml(labels.web)}</dt>
             <dd><a href="${escapeHtml(data.website)}">${escapeHtml(String(data.website || "").replace(/^https?:\/\//, ""))}</a></dd>
           </dl>
-        </section>
-
-        <section>
-          <h2 class="m-0 font-black uppercase tracking-tight text-xl sm:text-2xl">${escapeHtml(s.responsible)}</h2>
-          <p class="mt-4 mb-0 font-black text-lg">${escapeHtml((lang === "de" ? data.responsible.nameDe : data.responsible.nameEn) || data.responsible.name)}</p>
-          ${roleHtml}
         </section>
 
         <section>

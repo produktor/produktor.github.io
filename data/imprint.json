@@ -3,13 +3,6 @@
   "tradeName": "produktor.io",
   "email": "info@produktor.io",
   "website": "https://produktor.io",
-  "responsible": {
-    "name": "Andriy Oblivantsev",
-    "nameEn": "Andriy Oblivantsev",
-    "nameDe": "Andriy Oblivantsev",
-    "roleEn": "Managing Director · Content responsible (TMG / RStV)",
-    "roleDe": "Geschäftsführer · Verantwortlicher i. S. d. TMG / RStV"
-  },
   "team": [
     {
       "name": "Andriy Oblivantsev",
@@ -25,7 +18,6 @@
     "sections": {
       "provider": "Service provider",
       "contact": "Contact",
-      "responsible": "Responsible for content",
       "team": "Management & contacts",
       "register": "Commercial register",
       "registerBody": "ProProdukt SL is a Spanish limited company (Sociedad Limitada). Commercial-register number, registered seat, and VAT ID are available on request at the contact email above and will be published here once confirmed for this domain.",
@@ -54,7 +46,6 @@
     "sections": {
       "provider": "Anbieter",
       "contact": "Kontakt",
-      "responsible": "Verantwortlich für den Inhalt",
       "team": "Leitung & Ansprechpartner",
       "register": "Handelsregister",
       "registerBody": "ProProdukt SL ist eine spanische Sociedad Limitada (SL). Handelsregisternummer, Sitz und USt-IdNr. sind auf Anfrage unter der oben genannten E-Mail erhältlich und werden hier veröffentlicht, sobald sie für diese Domain bestätigt sind.",
