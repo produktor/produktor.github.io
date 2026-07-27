@@ -7,8 +7,16 @@
     "pk-imprint-lang",
   ];
 
+  // Capture boot helpers before we overwrite the same window names.
+  const bootPersist =
+    typeof window.pkPersistLanguage === "function" ? window.pkPersistLanguage : null;
+  const bootPreferred =
+    typeof window.pkPreferredLanguage === "function" ? window.pkPreferredLanguage : null;
+  const bootNormalize =
+    typeof window.pkNormalizeLang === "function" ? window.pkNormalizeLang : null;
+
   function normalize(code) {
-    if (window.pkNormalizeLang) return window.pkNormalizeLang(code);
+    if (bootNormalize) return bootNormalize(code);
     const lang = (code || "").split("-")[0].toLowerCase();
     return SUPPORTED.has(lang) ? lang : null;
   }
@@ -51,8 +59,8 @@
   function persistLanguage(code) {
     const lang = normalize(code);
     if (!lang) return null;
-    if (window.pkPersistLanguage) {
-      window.pkPersistLanguage(lang);
+    if (bootPersist) {
+      bootPersist(lang);
     } else {
       try {
         KEYS.forEach((key) => localStorage.setItem(key, lang));
@@ -63,7 +71,7 @@
   }
 
   function preferredLanguage() {
-    if (window.pkPreferredLanguage) return window.pkPreferredLanguage();
+    if (bootPreferred) return bootPreferred();
     return fromQuery() || fromStorage() || fromHtml() || "en";
   }
 
