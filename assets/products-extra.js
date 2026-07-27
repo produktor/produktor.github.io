@@ -102,22 +102,25 @@
     const de = isGerman();
     if (isPatched(section, data, de)) return;
 
-    const grid = section.querySelector(".grid");
-    if (!grid) return;
+    const reactGrid = [...section.querySelectorAll(".grid")].find(
+      (el) => !el.classList.contains("pk-products__extra-host"),
+    );
+    if (!reactGrid) return;
 
-    // Keep React-owned product cards intact — only manage our extras.
-    grid.querySelectorAll("article.pk-product__extra").forEach((node) => node.remove());
-
-    grid.classList.add("pk-products__grid", "mt-12", "gap-6");
-    if (!/[sm|lg]:grid-cols-/.test(grid.className)) {
-      grid.classList.add("grid", "sm:grid-cols-2", "lg:grid-cols-3");
+    // Never mutate React grid children — host extras in a sibling grid.
+    let host = section.querySelector(".pk-products__extra-host");
+    if (!host) {
+      host = document.createElement("div");
+      host.className =
+        "pk-products__extra-host grid mt-12 gap-6 sm:grid-cols-2 lg:grid-cols-3";
+      reactGrid.insertAdjacentElement("afterend", host);
     }
 
     const labels = labelsFromSection(section);
     const extras = data.products.map((product) => renderCard(product, labels, de)).join("");
     const holder = document.createElement("div");
     holder.innerHTML = extras;
-    [...holder.children].forEach((card) => grid.appendChild(card));
+    host.replaceChildren(...holder.children);
     section.setAttribute("data-pk-products-extra", de ? "de" : "en");
   }
 

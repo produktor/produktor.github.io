@@ -36,34 +36,67 @@
     return null;
   }
 
-  function renderClients(grid, data, de) {
-    grid.className =
-      "pk-sovereign__grid flex-1 grid grid-cols-2 lg:grid-cols-3 gap-3";
+  function findReactLogoGrid(section) {
+    return [...section.querySelectorAll(".grid")].find(
+      (el) =>
+        !el.classList.contains("pk-sovereign__grid") &&
+        PLACEHOLDER_LOGOS.test(el.textContent || ""),
+    );
+  }
 
-    grid.innerHTML = data.clients
-      .map((client) => {
-        const tag = de ? client.tagDe : client.tagEn;
-        const featured = client.featured
-          ? " shadow-[6px_6px_0_0_#f2c849] ring-2 ring-[#f2c849]/40"
-          : "";
-        const cardClass = `pk-sovereign__card border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] px-4 py-4 flex flex-col gap-1.5${featured}`;
-        const inner = `
+  function hideReactNode(node) {
+    if (!node) return;
+    node.hidden = true;
+    node.setAttribute("aria-hidden", "true");
+    node.style.display = "none";
+  }
+
+  function cardHtml(client, de) {
+    const tag = de ? client.tagDe : client.tagEn;
+    const featured = client.featured
+      ? " shadow-[6px_6px_0_0_#f2c849] ring-2 ring-[#f2c849]/40"
+      : "";
+    const cardClass = `pk-sovereign__card border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] px-4 py-4 flex flex-col gap-1.5${featured}`;
+    const inner = `
             <span class="pk-sovereign__title font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight text-[#0a0a0a]">${client.name}</span>
             <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#0a0a0a]/65 leading-snug">${tag}</span>`;
 
-        if (client.onPrem || !client.url) {
-          return `<div class="${cardClass} pk-sovereign__card--onprem" aria-label="${client.name}">${inner}</div>`;
-        }
+    if (client.onPrem || !client.url) {
+      return `<div class="${cardClass} pk-sovereign__card--onprem" aria-label="${client.name}">${inner}</div>`;
+    }
 
-        return `
+    return `
           <a
             href="${client.url}"
             target="_blank"
             rel="noopener noreferrer"
             class="${cardClass} transition-shadow hover:shadow-[6px_6px_0_0_#f2c849]"
           >${inner}</a>`;
-      })
-      .join("");
+  }
+
+  function ensurePkGrid(section) {
+    let grid = section.querySelector(".pk-sovereign__grid");
+    if (grid) return grid;
+
+    grid = document.createElement("div");
+    grid.className =
+      "pk-sovereign__grid flex-1 grid grid-cols-2 lg:grid-cols-3 gap-3";
+
+    const reactGrid = findReactLogoGrid(section);
+    if (reactGrid) {
+      hideReactNode(reactGrid);
+      reactGrid.insertAdjacentElement("afterend", grid);
+    } else {
+      section.appendChild(grid);
+    }
+    return grid;
+  }
+
+  function renderClients(grid, data, de) {
+    // Only touch our pk-owned grid — never React children.
+    const holder = document.createElement("div");
+    holder.innerHTML = data.clients.map((client) => cardHtml(client, de)).join("");
+    grid.replaceChildren(...holder.children);
   }
 
   function isPatched(section, data, de) {
@@ -81,6 +114,7 @@
     section.id = "sovereign-clients";
     section.setAttribute("data-pk-sovereign", de ? "de" : "en");
 
+    // Prefer overlay copy on pk-owned nodes only; soft-update React text as last resort.
     const kicker = section.querySelector(".text-\\[11px\\].uppercase.font-black");
     const kickerText = de ? data.kickerDe : data.kickerEn;
     if (kicker && kicker.textContent !== kickerText) kicker.textContent = kickerText;
@@ -89,12 +123,11 @@
     const headlineText = de ? data.headlineDe : data.headlineEn;
     if (headline && headline.innerHTML !== headlineText) headline.innerHTML = headlineText;
 
-    const grid =
-      section.querySelector(".pk-sovereign__grid") ||
-      [...section.querySelectorAll(".grid")].find((el) =>
-        PLACEHOLDER_LOGOS.test(el.textContent || ""),
-      );
-    if (grid) renderClients(grid, data, de);
+    const reactGrid = findReactLogoGrid(section);
+    hideReactNode(reactGrid);
+
+    const grid = ensurePkGrid(section);
+    renderClients(grid, data, de);
   }
 
   async function mount() {
