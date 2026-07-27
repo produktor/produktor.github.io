@@ -1,0 +1,48 @@
+.pk-imprint__lang[aria-pressed="true"] {
+  background: #143a6f;
+  color: #faf5ea;
+}
+
+.pk-imprint__lang[aria-pressed="false"] {
+  background: transparent;
+  color: #0a0a0a;
+}
+
+.pk-imprint__lang[aria-pressed="false"]:hover {
+  background: #f2c849;
+}
+
+.pk-imprint dl {
+  margin: 0;
+}
+
+.pk-imprint dt {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-top: 1rem;
+}
+
+.pk-imprint dt:first-child {
+  margin-top: 0;
+}
+
+.pk-imprint dd {
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.pk-imprint section + section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 3px solid #0a0a0a;
+}
+
+.pk-imprint a {
+  color: #143a6f;
+  font-weight: 800;
+}

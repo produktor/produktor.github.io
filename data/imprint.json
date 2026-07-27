@@ -1,0 +1,84 @@
+{
+  "legalName": "ProProdukt SL",
+  "tradeName": "produktor.io",
+  "email": "info@produktor.io",
+  "website": "https://produktor.io",
+  "correspondence": {
+    "lines": ["Nordring 169", "90409 Nürnberg", "Germany"]
+  },
+  "responsible": {
+    "name": "Artem Maltschenko",
+    "roleEn": "Managing Director · Content responsible (TMG / RStV)",
+    "roleDe": "Geschäftsführer · Verantwortlicher i. S. d. TMG / RStV"
+  },
+  "team": [
+    {
+      "name": "Artem Maltschenko",
+      "roleEn": "Managing Director · Sovereign IT for Healthcare",
+      "roleDe": "Geschäftsführer · Sovereign IT for Healthcare"
+    },
+    {
+      "name": "Andriy Oblivantsev",
+      "roleEn": "Senior Software Engineer · Platform & Data",
+      "roleDe": "Senior Software Engineer · Plattform & Daten"
+    }
+  ],
+  "en": {
+    "pageTitle": "Imprint — produktor.io",
+    "kicker": "Legal",
+    "title": "Imprint",
+    "lead": "Statutory provider identification for the produktor.io website and related services.",
+    "sections": {
+      "provider": "Service provider",
+      "contact": "Contact",
+      "responsible": "Responsible for content",
+      "team": "Management & contacts",
+      "register": "Commercial register",
+      "registerBody": "ProProdukt SL is a Spanish limited company (Sociedad Limitada). Commercial-register number, registered seat, and VAT ID are available on request at the contact email above and will be published here once confirmed for this domain.",
+      "dispute": "EU dispute resolution",
+      "disputeBody": "The European Commission provides a platform for online dispute resolution (ODR):",
+      "disputeNote": "We are neither obliged nor willing to participate in dispute-resolution proceedings before a consumer arbitration board.",
+      "liability": "Liability for content & links",
+      "liabilityBody": "We prepare site content with care. No warranty for completeness, accuracy, or currency. External links are checked at publication; we are not responsible for third-party content beyond our control. Please notify us of broken or unlawful links.",
+      "copyright": "Copyright",
+      "copyrightBody": "Texts, branding, and media on this site are protected. Reproduction beyond private use requires prior written consent.",
+      "back": "Back to home"
+    },
+    "labels": {
+      "legalName": "Legal name",
+      "tradeName": "Brand / trade name",
+      "email": "Email",
+      "web": "Website",
+      "address": "Correspondence address"
+    }
+  },
+  "de": {
+    "pageTitle": "Impressum — produktor.io",
+    "kicker": "Rechtliches",
+    "title": "Impressum",
+    "lead": "Anbieterkennzeichnung gemäß TMG für die Website produktor.io und zugehörige Dienste.",
+    "sections": {
+      "provider": "Anbieter",
+      "contact": "Kontakt",
+      "responsible": "Verantwortlich für den Inhalt",
+      "team": "Leitung & Ansprechpartner",
+      "register": "Handelsregister",
+      "registerBody": "ProProdukt SL ist eine spanische Sociedad Limitada (SL). Handelsregisternummer, Sitz und USt-IdNr. sind auf Anfrage unter der oben genannten E-Mail erhältlich und werden hier veröffentlicht, sobald sie für diese Domain bestätigt sind.",
+      "dispute": "EU-Streitschlichtung",
+      "disputeBody": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+      "disputeNote": "Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+      "liability": "Haftung für Inhalte & Links",
+      "liabilityBody": "Die Inhalte dieser Seite werden mit Sorgfalt erstellt. Für Vollständigkeit, Richtigkeit und Aktualität wird keine Gewähr übernommen. Externe Links werden bei Einstellung geprüft; für fremde Inhalte außerhalb unseres Einflusses haften wir nicht. Bitte melden Sie fehlerhafte oder rechtswidrige Links.",
+      "copyright": "Urheberrecht",
+      "copyrightBody": "Texte, Marken und Medien auf dieser Website sind geschützt. Vervielfältigung über den privaten Gebrauch hinaus bedarf der vorherigen schriftlichen Zustimmung.",
+      "back": "Zur Startseite"
+    },
+    "labels": {
+      "legalName": "Firma",
+      "tradeName": "Marke / Auftreten",
+      "email": "E-Mail",
+      "web": "Website",
+      "address": "Korrespondenzadresse"
+    }
+  }
+}

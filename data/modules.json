@@ -1,0 +1,478 @@
+{
+  "ui": {
+    "en": {
+      "backHome": "Back to stack",
+      "kicker": "Module",
+      "overview": "Overview",
+      "features": "Capabilities",
+      "useCases": "Use cases",
+      "deploy": "Deploy & operate",
+      "liveDemo": "Live demo",
+      "contactCta": "Talk install",
+      "otherModules": "Other modules",
+      "replaces": "Replaces"
+    },
+    "de": {
+      "backHome": "Zurück zum Stack",
+      "kicker": "Modul",
+      "overview": "Überblick",
+      "features": "Funktionen",
+      "useCases": "Use Cases",
+      "deploy": "Bereitstellung & Betrieb",
+      "liveDemo": "Live-Demo",
+      "contactCta": "Installation besprechen",
+      "otherModules": "Andere Module",
+      "replaces": "Ersetzt"
+    }
+  },
+  "modules": [
+    {
+      "slug": "crm",
+      "code": "01",
+      "accent": "bg-[#f2c849] text-[#0a0a0a]",
+      "icon": "crm",
+      "liveDemoUrl": "https://office.pro-dukt.de?ref=freebuf",
+      "footerLabels": ["Stack CRM"],
+      "en": {
+        "name": "Stack CRM",
+        "tag": "Customer & deal management",
+        "titleHighlight": "CRM",
+        "titleRest": "on your hardware.",
+        "lead": "Pipeline, accounts, contacts, and forecasting on Postgres — with SSO against your IdP and webhooks for every state change. Built for teams that cannot put pipeline data in a US SaaS tenancy.",
+        "replaces": ["HubSpot", "Salesforce"],
+        "overview": "Stack CRM is the customer system of record for sovereign installs. It runs on your Postgres (or ours on your metal), speaks REST and GraphQL, and fits the same identity and observability plane as Chat and Meet — so adding modules later is wiring, not a re-platform.",
+        "features": [
+          "Self-hosted Postgres or your existing database",
+          "Custom fields, stages, and roles without vendor lock-in",
+          "Public REST + GraphQL APIs out of the box",
+          "SSO / IdP integration for staff access",
+          "Webhooks on deal and contact state changes",
+          "Air-gap capable — no mandatory cloud phone-home"
+        ],
+        "useCases": [
+          "Healthcare and advisory firms that need CRM inside their compliance boundary",
+          "Field sales teams that sync from on-site networks with intermittent WAN",
+          "Operators replacing HubSpot/Salesforce while keeping historical deals"
+        ],
+        "deploy": [
+          "Install beside Stack Chat / Meet on bare metal, VM, or your cloud tenancy",
+          "Connect IdP and map roles before cutover",
+          "Migrate accounts and opportunities via connectors; dry-run then zero-downtime switch",
+          "Operate with quarterly upgrades and on-call under the same support contract"
+        ]
+      },
+      "de": {
+        "name": "Stack CRM",
+        "tag": "Kunden- und Deal-Management",
+        "titleHighlight": "CRM",
+        "titleRest": "auf Ihrer Hardware.",
+        "lead": "Pipeline, Accounts, Kontakte und Forecasting auf Postgres — SSO mit Ihrem IdP und Webhooks für jede Statusänderung. Für Teams, die Pipeline-Daten nicht in eine US-SaaS-Tenancy legen dürfen.",
+        "replaces": ["HubSpot", "Salesforce"],
+        "overview": "Stack CRM ist das Kundensystem der Wahrheit für souveräne Installationen. Es läuft auf Ihrem Postgres (oder unserem auf Ihrer Hardware), spricht REST und GraphQL und teilt Identity- und Observability-Plane mit Chat und Meet — spätere Module sind Verkabelung, kein Re-Platforming.",
+        "features": [
+          "Selbstgehostetes Postgres oder Ihre bestehende Datenbank",
+          "Eigene Felder, Stages und Rollen ohne Vendor-Lock-in",
+          "Public REST- und GraphQL-APIs out of the box",
+          "SSO / IdP für Mitarbeiterzugang",
+          "Webhooks bei Deal- und Kontakt-Statusänderungen",
+          "Air-Gap-fähig — kein verpflichtendes Cloud-Phone-Home"
+        ],
+        "useCases": [
+          "Healthcare- und Advisory-Firmen mit CRM innerhalb der Compliance-Grenze",
+          "Field-Sales mit Sync aus On-Site-Netzen und intermittierendem WAN",
+          "Ablösung von HubSpot/Salesforce unter Beibehalt der Deal-Historie"
+        ],
+        "deploy": [
+          "Installation neben Stack Chat / Meet auf Bare Metal, VM oder Ihrer Cloud-Tenancy",
+          "IdP anbinden und Rollen vor dem Cutover mappen",
+          "Accounts und Opportunities per Konnektor migrieren; Dry-Run, dann Zero-Downtime",
+          "Betrieb mit Quartals-Upgrades und On-Call im gleichen Support-Vertrag"
+        ]
+      }
+    },
+    {
+      "slug": "chat",
+      "code": "02",
+      "accent": "bg-[#b6cdec] text-[#0a0a0a]",
+      "icon": "chat",
+      "liveDemoUrl": "https://chat.pro-dukt.de?ref=freebuf",
+      "footerLabels": ["Stack Chat"],
+      "en": {
+        "name": "Stack Chat",
+        "tag": "Team messaging",
+        "titleHighlight": "Chat",
+        "titleRest": "without SaaS egress.",
+        "lead": "Channels, threads, DMs, voice notes, and file sharing — end-to-end encrypted with keys you hold. Air-gapped option. Slack/Discord features without the data leaving your rack.",
+        "replaces": ["Slack", "Discord"],
+        "overview": "Stack Chat is the collaboration spine of the suite. Search, files, and presence stay on infrastructure you control. Native clients cover desk and mobile so field and office share one secure plane.",
+        "features": [
+          "E2E encryption with on-prem key custody",
+          "Full search index with no SaaS backhaul",
+          "Native iOS / Android / desktop clients",
+          "Channels, threads, DMs, voice notes, file sharing",
+          "Air-gap deployment path for closed networks",
+          "Same identity model as CRM and Meet"
+        ],
+        "useCases": [
+          "Regulated orgs that forbid Slack/Teams cloud tenancies",
+          "Ops bridges between ward, clinic, and back-office without public chat SaaS",
+          "Incident rooms that must stay on LAN during WAN outages"
+        ],
+        "deploy": [
+          "Stand up with the shared control plane and IdP",
+          "Import channel history where connectors exist; otherwise phased cutover",
+          "Roll out desktop and mobile clients with MDM if required",
+          "Patch and upgrade on the suite cadence"
+        ]
+      },
+      "de": {
+        "name": "Stack Chat",
+        "tag": "Team-Messaging",
+        "titleHighlight": "Chat",
+        "titleRest": "ohne SaaS-Egress.",
+        "lead": "Channels, Threads, DMs, Sprachnachrichten und Filesharing — Ende-zu-Ende-verschlüsselt mit Schlüsseln in Ihrer Custody. Air-Gap-Option. Slack-/Discord-Funktionen, ohne dass Daten das Rack verlassen.",
+        "replaces": ["Slack", "Discord"],
+        "overview": "Stack Chat ist die Kollaborations-Wirbelsäule der Suite. Suche, Dateien und Presence bleiben auf Infrastruktur unter Ihrer Kontrolle. Native Clients für Desk und Mobile halten Field und Office auf einer sicheren Ebene.",
+        "features": [
+          "Ende-zu-Ende-Verschlüsselung mit On-Prem-Schlüsselverwaltung",
+          "Vollständiger Suchindex ohne SaaS-Backhaul",
+          "Native iOS-, Android- und Desktop-Clients",
+          "Channels, Threads, DMs, Sprachnachrichten, Filesharing",
+          "Air-Gap-Pfad für geschlossene Netze",
+          "Gleiches Identity-Modell wie CRM und Meet"
+        ],
+        "useCases": [
+          "Regulierte Orgs ohne Slack-/Teams-Cloud-Tenancy",
+          "Ops-Brücken zwischen Station, Klinik und Backoffice ohne Public-Chat-SaaS",
+          "Incident-Räume, die bei WAN-Ausfall im LAN bleiben müssen"
+        ],
+        "deploy": [
+          "Mit gemeinsamer Control Plane und IdP aufsetzen",
+          "Channel-Historie importieren, wo Konnektoren existieren; sonst gestufter Cutover",
+          "Desktop- und Mobile-Clients ausrollen — mit MDM falls nötig",
+          "Patch und Upgrade im Suite-Rhythmus"
+        ]
+      }
+    },
+    {
+      "slug": "meet",
+      "code": "03",
+      "accent": "bg-[#143a6f] text-[#faf5ea]",
+      "icon": "meet",
+      "liveDemoUrl": "https://meet.pro-dukt.de?ref=freebuf",
+      "footerLabels": ["Stack Meet"],
+      "en": {
+        "name": "Stack Meet",
+        "tag": "Video conferencing",
+        "titleHighlight": "Meet",
+        "titleRest": "on your SFU.",
+        "lead": "Low-latency video, screen share, recording, and webinars — routed on your LAN and peered through your own SFU cluster. Recordings land in your object store, not a vendor vault.",
+        "replaces": ["Zoom", "Google Meet"],
+        "overview": "Stack Meet closes the loop for sovereign collaboration: the same people who chat and work deals can meet without a third-party media path. Scale rooms on hardware you size; keep recordings under your retention policy.",
+        "features": [
+          "Self-hosted SFU with WebRTC fall-back",
+          "Recordings stay on your object store",
+          "Up to 1000 participants per room (sized hardware)",
+          "Screen share, webinars, and waiting rooms",
+          "LAN-first routing with controlled WAN peering",
+          "Integrates with suite identity and Chat"
+        ],
+        "useCases": [
+          "Board and clinical reviews that must not use Zoom cloud",
+          "All-hands and training webinars inside the corporate network",
+          "Hybrid sites that prefer LAN media with optional WAN bridges"
+        ],
+        "deploy": [
+          "Size SFU nodes for concurrent rooms and peak participants",
+          "Point recordings at S3-compatible storage you control",
+          "Join the suite SSO and calendar hooks as needed",
+          "Load-test before cutover; keep Zoom as fall-back only if policy allows"
+        ]
+      },
+      "de": {
+        "name": "Stack Meet",
+        "tag": "Videokonferenzen",
+        "titleHighlight": "Meet",
+        "titleRest": "auf Ihrer SFU.",
+        "lead": "Latenzarme Videoübertragung, Bildschirmfreigabe, Aufzeichnung und Webinare — geroutet über Ihr LAN und Ihre eigene SFU-Cluster-Topologie. Aufzeichnungen landen in Ihrem Object-Store, nicht im Vendor-Vault.",
+        "replaces": ["Zoom", "Google Meet"],
+        "overview": "Stack Meet schließt den Kreis souveräner Kollaboration: dieselben Personen, die chatten und Deals führen, treffen sich ohne Third-Party-Medienpfad. Räume auf Hardware dimensionieren, die Sie wählen; Aufzeichnungen unter Ihrer Retention-Policy.",
+        "features": [
+          "Selbstgehostete SFU mit WebRTC-Fallback",
+          "Aufzeichnungen bleiben in Ihrem Object-Store",
+          "Bis zu 1000 Teilnehmer pro Raum (passende Hardware)",
+          "Bildschirmfreigabe, Webinare und Waiting Rooms",
+          "LAN-first Routing mit kontrolliertem WAN-Peering",
+          "Anbindung an Suite-Identity und Chat"
+        ],
+        "useCases": [
+          "Board- und Clinical Reviews ohne Zoom-Cloud",
+          "All-Hands und Trainings-Webinare im Unternehmensnetz",
+          "Hybrid-Standorte mit LAN-Medien und optionalen WAN-Bridges"
+        ],
+        "deploy": [
+          "SFU-Nodes nach parallelen Räumen und Peak-Teilnehmern dimensionieren",
+          "Recordings auf S3-kompatiblen Storage unter Ihrer Kontrolle legen",
+          "Suite-SSO und Kalender-Hooks nach Bedarf anbinden",
+          "Vor Cutover Last testen; Zoom nur als Policy-Fallback behalten"
+        ]
+      }
+    },
+    {
+      "slug": "service",
+      "code": "04",
+      "accent": "bg-[#efe6cf] text-[#0a0a0a]",
+      "icon": "service",
+      "liveDemoUrl": "https://git.produktor.io/",
+      "footerLabels": ["Service Produkt"],
+      "en": {
+        "name": "Service Produkt",
+        "tag": "Gitea · git · npm · docker · on-premise",
+        "titleHighlight": "Repos",
+        "titleRest": "& packages you own.",
+        "lead": "Self-hosted artifact and repository plane on Gitea — Git plus npm, OCI/Docker, and other registries on infrastructure you own. No GitHub/GitLab SaaS dependency for builds, releases, or internal libraries.",
+        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS"],
+        "overview": "Service Produkt is the forge and package hub for sovereign product teams. Source, issues, PRs, Actions-style workflows, and package registries sit together so CI and release never require a foreign tenancy.",
+        "features": [
+          "Git repos, issues, PRs, Actions — Gitea-native workflows",
+          "npm, container, and generic package registries beside Git",
+          "Live reference stack at git.produktor.io",
+          "Org/team permissions aligned with suite identity",
+          "Mirror and migrate from GitHub/GitLab when you cut over",
+          "Runs on your metal or private cloud"
+        ],
+        "useCases": [
+          "Internal libraries and container images that must not leave the org",
+          "Customer-delivered software with on-prem build provenance",
+          "Air-gapped engineering orgs that still need modern Git UX"
+        ],
+        "deploy": [
+          "Provision Gitea + registry storage with backup targets",
+          "Import orgs/repos; validate Actions runners on your network",
+          "Point CI and deploy pipelines at the new remotes",
+          "Decommission SaaS mirrors after dual-run window"
+        ]
+      },
+      "de": {
+        "name": "Service Produkt",
+        "tag": "Gitea · Git · npm · Docker · On-Premise",
+        "titleHighlight": "Repos",
+        "titleRest": "& Packages unter Ihrer Kontrolle.",
+        "lead": "Self-hosted Artefakt- und Repository-Ebene auf Gitea — Git plus npm, OCI/Docker und weitere Registries auf eigener Infrastruktur. Keine GitHub-/GitLab-SaaS-Abhängigkeit für Builds, Releases oder interne Libraries.",
+        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS"],
+        "overview": "Service Produkt ist Forge und Package-Hub für souveräne Product-Teams. Source, Issues, PRs, Actions-ähnliche Workflows und Package-Registries liegen zusammen — CI und Release brauchen keine fremde Tenancy.",
+        "features": [
+          "Git-Repos, Issues, PRs, Actions — Gitea-native Workflows",
+          "npm-, Container- und generische Paket-Registries neben Git",
+          "Live-Referenzstack unter git.produktor.io",
+          "Org-/Team-Rechte aligned mit Suite-Identity",
+          "Mirror und Migration von GitHub/GitLab beim Cutover",
+          "Auf Ihrer Hardware oder Private Cloud"
+        ],
+        "useCases": [
+          "Interne Libraries und Container-Images, die die Org nicht verlassen dürfen",
+          "Kunden-Software mit On-Prem Build-Provenance",
+          "Air-Gap-Engineering mit modernem Git-UX"
+        ],
+        "deploy": [
+          "Gitea + Registry-Storage mit Backup-Zielen provisionieren",
+          "Orgs/Repos importieren; Actions-Runner im eigenen Netz validieren",
+          "CI und Deploy-Pipelines auf neue Remotes umstellen",
+          "SaaS-Mirror nach Dual-Run abschalten"
+        ]
+      }
+    },
+    {
+      "slug": "geo",
+      "code": "05",
+      "accent": "bg-[#143a6f] text-[#faf5ea]",
+      "icon": "geo",
+      "liveDemoUrl": "https://produktor.io/ui/#",
+      "footerLabels": ["Geo-Service"],
+      "en": {
+        "name": "Geo-Service",
+        "tag": "Location · on-premise",
+        "titleHighlight": "Maps",
+        "titleRest": "without map SaaS.",
+        "lead": "Vector maps and geo search fully generated on-premise from up-to-date OSM and other datasets: tiles, Proton search, geocoding, and reverse geocoding — MapLibre rendering with no commercial-license tax on every view.",
+        "replaces": ["Google Maps Platform", "Mapbox SaaS"],
+        "overview": "Geo-Service keeps location intelligence inside your boundary. Tile generation, search, and geocoding run on your schedule against datasets you host — useful for logistics, care routing, and field ops that cannot call out to commercial map APIs.",
+        "features": [
+          "Vector tiles + MapLibre rendering (no external map API calls)",
+          "Proton search + geocoding + reverse geocoding on your infrastructure",
+          "Fresh OSM-based data pipeline (updates on your schedule)",
+          "Works with the produktor UI map shell",
+          "No per-request commercial license metering",
+          "Deployable beside the rest of the stack"
+        ],
+        "useCases": [
+          "Care and field routing with patient/site addresses kept on-prem",
+          "Internal ops dashboards that embed maps without Google keys",
+          "Sovereign apps that need geocode + reverse without egress"
+        ],
+        "deploy": [
+          "Size disk/CPU for tile builds and search indexes",
+          "Schedule OSM (and other) refresh jobs",
+          "Point UI / apps at your tile and geocode endpoints",
+          "Monitor build lag vs your freshness SLO"
+        ]
+      },
+      "de": {
+        "name": "Geo-Service",
+        "tag": "Standort · On-Premise",
+        "titleHighlight": "Karten",
+        "titleRest": "ohne Map-SaaS.",
+        "lead": "Vektor-Karten und Geo-Suche vollständig On-Premise aus aktuellen OSM- und weiteren Datensätzen: Tiles, Proton-Suche, Geocoding und Reverse-Geocoding — MapLibre ohne kommerzielle Lizenzgebühr pro View.",
+        "replaces": ["Google Maps Platform", "Mapbox SaaS"],
+        "overview": "Geo-Service hält Location-Intelligence innerhalb Ihrer Grenze. Tile-Generierung, Suche und Geocoding laufen nach Ihrem Rhythmus gegen Datasets, die Sie hosten — für Logistik, Care-Routing und Field-Ops ohne Commercial-Map-APIs.",
+        "features": [
+          "Vektor-Tiles + MapLibre-Rendering (keine externen Map-API-Calls)",
+          "Proton-Suche + Geocoding + Reverse-Geocoding auf Ihrer Infrastruktur",
+          "Aktuelle OSM-basierte Datenpipeline (Updates nach Ihrem Rhythmus)",
+          "Anbindung an die produktor-UI-Map-Shell",
+          "Kein Commercial-License-Metering pro Request",
+          "Deploybar neben dem Rest des Stacks"
+        ],
+        "useCases": [
+          "Care- und Field-Routing mit Patienten-/Standortadressen On-Prem",
+          "Interne Ops-Dashboards mit Karten ohne Google-Keys",
+          "Souveräne Apps mit Geocode + Reverse ohne Egress"
+        ],
+        "deploy": [
+          "Disk/CPU für Tile-Builds und Search-Indexes dimensionieren",
+          "OSM- (und weitere) Refresh-Jobs planen",
+          "UI / Apps auf Ihre Tile- und Geocode-Endpoints zeigen",
+          "Build-Lag gegen Ihr Freshness-SLO monitoren"
+        ]
+      }
+    },
+    {
+      "slug": "ai",
+      "code": "06",
+      "accent": "bg-[#b6cdec] text-[#0a0a0a]",
+      "icon": "ai",
+      "liveDemoUrl": "https://ai.produktor.io/",
+      "footerLabels": ["Stack AI"],
+      "en": {
+        "name": "Stack AI",
+        "tag": "Local inference · on-premise",
+        "titleHighlight": "AI",
+        "titleRest": "on your silicon.",
+        "lead": "Local inference engines and model services — vLLM, Ollama, llama.cpp, sglang — tuned to your hardware and use case. From CPU-only classification to GPU assistants and embedding pipelines.",
+        "replaces": ["Cloud LLM APIs", "Managed inference SaaS"],
+        "overview": "Stack AI is how the suite stays smart without shipping prompts to a foreign API. Embeddings feed Neo4j/Qdrant search; assistants stay next to your documents. Right-size from edge CPU boxes to multi-GPU nodes.",
+        "features": [
+          "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — right-sized deployments",
+          "Semantic search and embeddings (Neo4j + Qdrant)",
+          "Code assistants and internal chatbots on local models",
+          "Low-memory setups for lightweight and edge tasks",
+          "Engine choice: vLLM, Ollama, llama.cpp, sglang",
+          "Fits the same install and support practice as other modules"
+        ],
+        "useCases": [
+          "Private RAG over care or legal corpora that cannot leave the site",
+          "Dev assistants against internal repos on Service Produkt",
+          "Classification and routing jobs on CPU-only appliances"
+        ],
+        "deploy": [
+          "Pick models and engines for VRAM / CPU budget",
+          "Wire embedding endpoints into search and agents",
+          "Lock model artifacts in your registry (Service Produkt)",
+          "Monitor latency and queue depth under real traffic"
+        ]
+      },
+      "de": {
+        "name": "Stack AI",
+        "tag": "Lokale Inferenz · On-Premise",
+        "titleHighlight": "AI",
+        "titleRest": "auf Ihrer Hardware.",
+        "lead": "Lokale Inferenz-Engines und Model-Services — vLLM, Ollama, llama.cpp, sglang — abgestimmt auf Hardware und Use-Case. Von CPU-only Klassifikation bis zu GPU-Assistenten und Embedding-Pipelines.",
+        "replaces": ["Cloud-LLM-APIs", "Managed-Inference-SaaS"],
+        "overview": "Stack AI hält den Stack smart, ohne Prompts an eine fremde API zu schicken. Embeddings speisen Neo4j/Qdrant-Suche; Assistenten bleiben neben Ihren Dokumenten. Von Edge-CPU bis Multi-GPU richtig dimensionieren.",
+        "features": [
+          "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — passend dimensioniert",
+          "Semantische Suche und Embeddings (Neo4j + Qdrant)",
+          "Code-Assistenten und interne Chatbots auf lokalen Modellen",
+          "Low-Memory-Setups für leichte und Edge-Tasks",
+          "Engine-Wahl: vLLM, Ollama, llama.cpp, sglang",
+          "Gleiche Install- und Support-Praxis wie andere Module"
+        ],
+        "useCases": [
+          "Privates RAG über Care- oder Legal-Corpora ohne Site-Egress",
+          "Dev-Assistenten gegen interne Repos auf Service Produkt",
+          "Klassifikation und Routing auf CPU-only Appliances"
+        ],
+        "deploy": [
+          "Modelle und Engines nach VRAM-/CPU-Budget wählen",
+          "Embedding-Endpoints in Suche und Agents verdrahten",
+          "Model-Artefakte in Ihrer Registry (Service Produkt) sichern",
+          "Latenz und Queue-Tiefe unter Realverkehr monitoren"
+        ]
+      }
+    },
+    {
+      "slug": "ui",
+      "code": "07",
+      "accent": "bg-[#efe6cf] text-[#0a0a0a]",
+      "icon": "ui",
+      "liveDemoUrl": "https://produktor.io/ui/#",
+      "footerLabels": ["UI"],
+      "en": {
+        "name": "UI",
+        "tag": "Map & ops shell · on-premise",
+        "titleHighlight": "UI",
+        "titleRest": "for sovereign maps.",
+        "lead": "The produktor map and ops shell that sits on Geo-Service tiles and search — a browser UI for exploring layers, geocoding, and operational views without shipping queries to a commercial map vendor.",
+        "replaces": ["Vendor map consoles", "Ad-hoc Leaflet demos"],
+        "overview": "UI is the front door for Geo-Service. Operators and integrators get a consistent shell for tiles, search, and debugging — deployable with the stack or pointed at your own endpoints.",
+        "features": [
+          "MapLibre-based interactive map shell",
+          "Hooks into on-prem tiles and Proton search",
+          "Geocode / reverse helpers for ops workflows",
+          "Works with Geo-Service data pipelines",
+          "Hosted reference at produktor.io/ui",
+          "Embeddable patterns for your own apps"
+        ],
+        "useCases": [
+          "Internal ops desks validating geocode quality",
+          "Demo and acceptance environments for Geo-Service installs",
+          "Starter shell for product teams building location features"
+        ],
+        "deploy": [
+          "Serve static UI behind your reverse proxy",
+          "Configure tile and search base URLs to Geo-Service",
+          "Lock down access with the suite IdP if exposed beyond LAN",
+          "Keep in sync with Geo-Service dataset refreshes"
+        ]
+      },
+      "de": {
+        "name": "UI",
+        "tag": "Karten- & Ops-Shell · On-Premise",
+        "titleHighlight": "UI",
+        "titleRest": "für souveräne Karten.",
+        "lead": "Die produktor Map- und Ops-Shell auf Geo-Service-Tiles und -Suche — Browser-UI für Layer, Geocoding und operative Views, ohne Queries an einen kommerziellen Map-Vendor zu schicken.",
+        "replaces": ["Vendor-Map-Consoles", "Ad-hoc-Leaflet-Demos"],
+        "overview": "UI ist die Haustür zu Geo-Service. Ops und Integratoren bekommen eine konsistente Shell für Tiles, Suche und Debugging — mit dem Stack deploybar oder auf eigene Endpoints gerichtet.",
+        "features": [
+          "MapLibre-basierte interaktive Map-Shell",
+          "Anbindung an On-Prem-Tiles und Proton-Suche",
+          "Geocode-/Reverse-Hilfen für Ops-Workflows",
+          "Zusammenspiel mit Geo-Service-Datenpipelines",
+          "Referenz unter produktor.io/ui",
+          "Einbettbare Patterns für eigene Apps"
+        ],
+        "useCases": [
+          "Interne Ops-Desks zur Geocode-Qualitätsprüfung",
+          "Demo- und Abnahme-Umgebungen für Geo-Service-Installs",
+          "Starter-Shell für Product-Teams mit Location-Features"
+        ],
+        "deploy": [
+          "Statische UI hinter Ihrem Reverse-Proxy ausliefern",
+          "Tile- und Search-Base-URLs auf Geo-Service setzen",
+          "Zugriff mit Suite-IdP absichern, falls außerhalb LAN",
+          "Mit Geo-Service-Dataset-Refreshes synchron halten"
+        ]
+      }
+    }
+  ]
+}

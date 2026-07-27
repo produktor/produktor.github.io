@@ -2,13 +2,15 @@
   const OLD_EMAIL = "install@proprodukt.example";
   const NEW_EMAIL = "info@produktor.io";
 
+  // Only real destinations. Dead stubs (Status page, Security disclosures → #contact) removed.
   const HREFS = {
-    "Stack CRM": "#products",
-    "Stack Chat": "#products",
-    "Stack Meet": "#products",
-    "Service Produkt": "#products",
-    "Geo-Service": "#products",
-    UI: "https://produktor.io/ui/#",
+    "Stack CRM": "/modules/crm/",
+    "Stack Chat": "/modules/chat/",
+    "Stack Meet": "/modules/meet/",
+    "Service Produkt": "/modules/service/",
+    "Geo-Service": "/modules/geo/",
+    "Stack AI": "/modules/ai/",
+    UI: "/modules/ui/",
     "Sizing sheet": "#pricing",
     "Sizing-Sheet": "#pricing",
     "Install method": "#how-it-works",
@@ -21,13 +23,18 @@
     Careers: "/careers",
     Karriere: "/careers",
     Team: "#team",
+    Imprint: "/impressum/",
+    Impressum: "/impressum/",
     [OLD_EMAIL]: `mailto:${NEW_EMAIL}`,
     [NEW_EMAIL]: `mailto:${NEW_EMAIL}`,
-    "Status page": "#contact",
-    Statusseite: "#contact",
-    "Security disclosures": "#contact",
-    "Sicherheits-Hinweise": "#contact",
   };
+
+  const REMOVE_LABELS = new Set([
+    "Status page",
+    "Statusseite",
+    "Security disclosures",
+    "Sicherheits-Hinweise",
+  ]);
 
   function waitFor(selector, timeoutMs = 20000) {
     return new Promise((resolve, reject) => {
@@ -81,7 +88,17 @@
     });
   }
 
+  function removeDeadLinks(footer) {
+    footer.querySelectorAll("a").forEach((anchor) => {
+      const label = anchor.textContent.trim();
+      if (!REMOVE_LABELS.has(label)) return;
+      const item = anchor.closest("li");
+      (item || anchor).remove();
+    });
+  }
+
   function applyFooterLinks(footer) {
+    removeDeadLinks(footer);
     footer.querySelectorAll("a").forEach((anchor) => {
       const label = anchor.textContent.trim();
       const href = HREFS[label] || (label.includes("@") ? `mailto:${label}` : null);
@@ -90,6 +107,7 @@
       }
     });
     addTeamLink(footer);
+    addImprintLink(footer);
   }
 
   function addTeamLink(footer) {
@@ -108,6 +126,22 @@
     careers.closest("li")?.before(item);
   }
 
+  function addImprintLink(footer) {
+    if (footer.querySelector('a[href="/impressum/"], a[href="/impressum"]')) return;
+    const careers = [...footer.querySelectorAll("a")].find((a) =>
+      /^(careers|karriere)$/i.test(a.textContent.trim()),
+    );
+    if (!careers?.closest("ul")) return;
+    const de = window.pkIsGerman ? window.pkIsGerman() : false;
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "/impressum/";
+    link.className = careers.className;
+    link.textContent = de ? "Impressum" : "Imprint";
+    item.appendChild(link);
+    careers.closest("li")?.after(item);
+  }
+
   function applyHeaderLinks() {
     const logo = document.querySelector('header a[href="#"]');
     if (logo && logo.getAttribute("href") !== "/") {
@@ -119,10 +153,15 @@
     let ok = true;
     footer.querySelectorAll("a").forEach((anchor) => {
       const label = anchor.textContent.trim();
+      if (REMOVE_LABELS.has(label)) ok = false;
       const expected = HREFS[label];
       if (expected && anchor.getAttribute("href") !== expected) ok = false;
     });
-    return ok && Boolean(footer.querySelector('a[href="#team"]'));
+    return (
+      ok &&
+      Boolean(footer.querySelector('a[href="#team"]')) &&
+      Boolean(footer.querySelector('a[href="/impressum/"], a[href="/impressum"]'))
+    );
   }
 
   async function mount() {
@@ -135,6 +174,14 @@
         applyHeaderLinks();
       };
       window.pkWatchPatch(sync, { root: footer, done: () => footerLinksDone(footer) });
+      if (window.pkOnLanguageChange) {
+        window.pkOnLanguageChange(() => {
+          const imprint = footer.querySelector('a[href="/impressum/"], a[href="/impressum"]');
+          if (imprint) {
+            imprint.textContent = window.pkIsGerman() ? "Impressum" : "Imprint";
+          }
+        });
+      }
     } catch (err) {
       console.warn("[produktor footer-links]", err);
     }

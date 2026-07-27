@@ -3,6 +3,7 @@
   "products": [
     {
       "code": "04",
+      "slug": "service",
       "accent": "bg-[#efe6cf] text-[#0a0a0a]",
       "icon": "service",
       "nameEn": "Service Produkt",
@@ -25,6 +26,7 @@
     },
     {
       "code": "05",
+      "slug": "geo",
       "accent": "bg-[#143a6f] text-[#faf5ea]",
       "icon": "geo",
       "nameEn": "Geo-Service",
@@ -47,6 +49,7 @@
     },
     {
       "code": "06",
+      "slug": "ai",
       "accent": "bg-[#b6cdec] text-[#0a0a0a]",
       "icon": "ai",
       "nameEn": "Stack AI",

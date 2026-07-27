@@ -85,7 +85,7 @@
         <p class="mt-4 text-[14px] sm:text-[15px] leading-relaxed text-[#0a0a0a]/80">${description}</p>
         <ul class="mt-5 space-y-2">${bulletHtml}</ul>
         <div class="mt-6 pt-5 border-t-[3px] border-black flex flex-wrap items-center justify-between gap-3">
-          <a href="#contact" class="inline-flex items-center gap-2 font-black uppercase text-sm tracking-[0.12em] text-[#143a6f] hover:underline underline-offset-4">${labels.moduleBrief} ${ARROW}</a>
+          <a href="/modules/${product.slug || ""}/" class="inline-flex items-center gap-2 font-black uppercase text-sm tracking-[0.12em] text-[#143a6f] hover:underline underline-offset-4">${labels.moduleBrief} ${ARROW}</a>
           <a href="${product.liveDemoUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 h-9 border-[3px] border-black bg-[#f2c849] text-[#0a0a0a] font-black uppercase text-[11px] sm:text-xs tracking-[0.12em] hover:shadow-[3px_3px_0_0_#0a0a0a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100">${labels.liveDemo} ${LIVE_ARROW}</a>
         </div>
       </article>`;
@@ -135,13 +135,14 @@
       const link = document.createElement("a");
       link.className = sample.className;
       link.textContent = label;
-      if (label === "UI") {
-        link.href = data.uiUrl;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-      } else {
-        link.href = "#products";
-      }
+      const slugByLabel = {
+        "Service Produkt": "service",
+        "Geo-Service": "geo",
+        "Stack AI": "ai",
+        UI: "ui",
+      };
+      const slug = slugByLabel[label];
+      link.href = slug ? `/modules/${slug}/` : "#products";
       item.appendChild(link);
       list.appendChild(item);
     }

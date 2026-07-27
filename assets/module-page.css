@@ -1,0 +1,29 @@
+.pk-mod a {
+  color: inherit;
+}
+
+.pk-mod__lang[aria-pressed="true"] {
+  background: #143a6f;
+  color: #faf5ea;
+}
+
+.pk-mod__lang[aria-pressed="false"] {
+  background: transparent;
+  color: #0a0a0a;
+}
+
+.pk-mod__lang[aria-pressed="false"]:hover {
+  background: #f2c849;
+}
+
+.pk-mod__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .pk-mod__icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}

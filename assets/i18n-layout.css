@@ -76,3 +76,16 @@ body {
   overflow-wrap: anywhere;
   max-width: 100%;
 }
+
+
+/* section deep-link offset under sticky header */
+section[id],
+#team,
+#products,
+#how-it-works,
+#compare,
+#pricing,
+#faq,
+#contact {
+  scroll-margin-top: 5.5rem;
+}

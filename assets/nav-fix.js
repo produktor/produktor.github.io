@@ -1,11 +1,13 @@
 (function () {
+  // Order must match DOM section order on the landing page.
+  // Team is injected after #contact (before footer); FAQ precedes contact.
   const NAV_ITEMS = [
     { href: "#products", labelEn: "Stack", labelDe: "Stack" },
     { href: "#how-it-works", labelEn: "Install", labelDe: "Installation" },
     { href: "#compare", labelEn: "Compare", labelDe: "Vergleich" },
     { href: "#pricing", labelEn: "Pricing", labelDe: "Preise" },
-    { href: "#team", labelEn: "Team", labelDe: "Team" },
     { href: "#faq", labelEn: "FAQ", labelDe: "FAQ" },
+    { href: "#team", labelEn: "Team", labelDe: "Team" },
   ];
 
   const LINK_BASE =
@@ -15,6 +17,7 @@
 
   let activeHref = "";
   let sectionObserver = null;
+  let hashScrollToken = 0;
 
   function isGerman() {
     return window.pkIsGerman ? window.pkIsGerman() : false;
@@ -182,26 +185,28 @@
         entries.forEach((entry) => {
           ratios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
         });
+        // Prefer later section in DOM when ratios tie (content order).
         let bestId = "";
         let bestRatio = 0;
-        ratios.forEach((ratio, id) => {
-          if (ratio > bestRatio) {
+        let bestIndex = -1;
+        targets.forEach((el, index) => {
+          const ratio = ratios.get(el.id) || 0;
+          if (ratio > bestRatio || (ratio === bestRatio && ratio > 0 && index > bestIndex)) {
             bestRatio = ratio;
-            bestId = id;
+            bestId = el.id;
+            bestIndex = index;
           }
         });
         if (bestId) setActiveHref(`#${bestId}`);
       },
       {
         root: null,
-        // Prefer section near upper third of viewport (under sticky header)
         rootMargin: "-20% 0px -55% 0px",
         threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
       },
     );
 
     targets.forEach((el) => sectionObserver.observe(el));
-    // true only when every nav section exists (team injects late)
     return targets.length === NAV_ITEMS.length;
   }
 
@@ -211,6 +216,33 @@
       if (watchSections()) bootObserver.disconnect();
     });
     bootObserver.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function scrollToHash() {
+    const hash = location.hash || "";
+    if (!hash || hash === "#") return;
+    const id = decodeURIComponent(hash.slice(1));
+    if (!id || !/^[A-Za-z][\w:-]*$/.test(id)) return;
+
+    const token = ++hashScrollToken;
+    setActiveHref(`#${id}`);
+
+    waitFor(`#${CSS.escape(id)}`, 20000)
+      .then((el) => {
+        if (token !== hashScrollToken) return;
+        // Late-injected sections (#team) need layout after mount.
+        const go = () => {
+          if (token !== hashScrollToken) return;
+          el.scrollIntoView({ behavior: "auto", block: "start" });
+          setActiveHref(`#${id}`);
+        };
+        requestAnimationFrame(() => {
+          go();
+          setTimeout(go, 50);
+          setTimeout(go, 250);
+        });
+      })
+      .catch(() => {});
   }
 
   async function mount() {
@@ -234,11 +266,14 @@
       window.addEventListener(
         "hashchange",
         () => {
-          if (location.hash) setActiveHref(location.hash);
+          scrollToHash();
         },
         { passive: true },
       );
-      if (location.hash) setActiveHref(location.hash);
+      // After React paint + late patches (team)
+      scrollToHash();
+      setTimeout(scrollToHash, 100);
+      setTimeout(scrollToHash, 600);
     } catch (err) {
       console.warn("[produktor nav-fix]", err);
     }

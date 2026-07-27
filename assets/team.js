@@ -13,6 +13,17 @@
     return data[lang] || data.en || data;
   }
 
+  // Same highlight chip as pricing (dark navy sections)
+  const TITLE_MARK =
+    'inline-block bg-[#f2c849] text-[#0a0a0a] px-3 py-1';
+
+  function richTitle(title) {
+    return String(title || "").replace(
+      /<1>(.*?)<\/1>/g,
+      `<span class="${TITLE_MARK}">$1</span>`,
+    );
+  }
+
   function memberRole(member) {
     if (isGerman()) return member.roleDe || member.role || member.roleEn || "";
     return member.roleEn || member.role || member.roleDe || "";
@@ -122,7 +133,7 @@
             <span class="inline-flex items-center justify-center size-9 border-[3px] border-[#faf5ea] bg-[#f2c849] text-[#0a0a0a] font-black text-sm">${data.section}</span>
             <span class="text-[11px] sm:text-xs font-black uppercase tracking-[0.18em]">${c.kicker}</span>
           </div>
-          <h2 class="font-black uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.02]" id="pk-team-title">${c.title}</h2>
+          <h2 class="font-black uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.02]" id="pk-team-title">${richTitle(c.title)}</h2>
           <p class="mt-6 text-[15px] sm:text-[17px] leading-relaxed text-[#faf5ea]/85 max-w-2xl">${c.subtitle}</p>
         </div>
         <div class="mt-12 grid sm:grid-cols-2 gap-6">${cards}</div>
