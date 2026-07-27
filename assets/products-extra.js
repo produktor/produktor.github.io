@@ -105,15 +105,19 @@
     const grid = section.querySelector(".grid");
     if (!grid) return;
 
-    grid.className = "pk-products__grid mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6";
+    // Keep React-owned product cards intact — only manage our extras.
+    grid.querySelectorAll("article.pk-product__extra").forEach((node) => node.remove());
+
+    grid.classList.add("pk-products__grid", "mt-12", "gap-6");
+    if (!/[sm|lg]:grid-cols-/.test(grid.className)) {
+      grid.classList.add("grid", "sm:grid-cols-2", "lg:grid-cols-3");
+    }
 
     const labels = labelsFromSection(section);
-    const existing = [...grid.querySelectorAll("article")].filter(
-      (node) => !node.classList.contains("pk-product__extra"),
-    );
     const extras = data.products.map((product) => renderCard(product, labels, de)).join("");
-
-    grid.innerHTML = existing.map((node) => node.outerHTML).join("") + extras;
+    const holder = document.createElement("div");
+    holder.innerHTML = extras;
+    [...holder.children].forEach((card) => grid.appendChild(card));
     section.setAttribute("data-pk-products-extra", de ? "de" : "en");
   }
 
