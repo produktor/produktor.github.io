@@ -2,6 +2,22 @@
   const ARROW =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
+  let teamData = null;
+
+  function isGerman() {
+    return window.pkIsGerman ? window.pkIsGerman() : false;
+  }
+
+  function copy(data) {
+    const lang = isGerman() ? "de" : "en";
+    return data[lang] || data.en || data;
+  }
+
+  function memberRole(member) {
+    if (isGerman()) return member.roleDe || member.role || member.roleEn || "";
+    return member.roleEn || member.role || member.roleDe || "";
+  }
+
   function initials(name) {
     return name
       .split(/\s+/)
@@ -41,15 +57,27 @@
     });
   }
 
-  function addNavLink() {
-    // Header nav is normalized by assets/nav-fix.js (includes #team).
+  function wireAvatars(section) {
+    section.querySelectorAll(".pk-team__avatar").forEach((img) => {
+      const wrap = img.closest(".pk-team__avatar-wrap");
+      const ini = wrap?.dataset.initials || "?";
+      img.addEventListener("error", () => {
+        const fallback = document.createElement("div");
+        fallback.className =
+          "pk-team__avatar pk-team__avatar--fallback size-full grid place-items-center font-black text-lg text-[#0a0a0a]";
+        fallback.textContent = ini;
+        wrap?.replaceChildren(fallback);
+      });
+    });
   }
 
   function renderTeam(data) {
+    const c = copy(data);
     const section = document.createElement("section");
     section.id = "team";
     section.className = "bg-[#143a6f] text-[#faf5ea] border-b-[3px] border-black";
     section.setAttribute("aria-labelledby", "pk-team-title");
+    section.dataset.pkLang = isGerman() ? "de" : "en";
 
     const cards = data.members
       .map((member) => {
@@ -77,11 +105,11 @@
               </div>
               <div class="min-w-0">
                 <h3 class="m-0 font-black uppercase tracking-tight text-xl sm:text-2xl leading-tight">${member.name}</h3>
-                <p class="mt-1 mb-0 text-sm font-bold uppercase tracking-[0.08em] text-[#0a0a0a]/70 leading-snug">${member.role}</p>
+                <p class="mt-1 mb-0 text-sm font-bold uppercase tracking-[0.08em] text-[#0a0a0a]/70 leading-snug">${memberRole(member)}</p>
               </div>
             </div>
             <span class="pk-team__link mt-6 inline-flex items-center gap-2 font-black uppercase tracking-[0.12em] text-[11px] sm:text-xs text-[#143a6f]">
-              View profile ${ARROW}
+              ${c.viewProfile} ${ARROW}
             </span>
           </a>`;
       })
@@ -92,15 +120,26 @@
         <div class="max-w-3xl">
           <div class="inline-flex items-center gap-3 mb-6">
             <span class="inline-flex items-center justify-center size-9 border-[3px] border-[#faf5ea] bg-[#f2c849] text-[#0a0a0a] font-black text-sm">${data.section}</span>
-            <span class="text-[11px] sm:text-xs font-black uppercase tracking-[0.18em]">${data.kicker}</span>
+            <span class="text-[11px] sm:text-xs font-black uppercase tracking-[0.18em]">${c.kicker}</span>
           </div>
-          <h2 class="font-black uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.02]" id="pk-team-title">${data.title}</h2>
-          <p class="mt-6 text-[15px] sm:text-[17px] leading-relaxed text-[#faf5ea]/85 max-w-2xl">${data.subtitle}</p>
+          <h2 class="font-black uppercase tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.02]" id="pk-team-title">${c.title}</h2>
+          <p class="mt-6 text-[15px] sm:text-[17px] leading-relaxed text-[#faf5ea]/85 max-w-2xl">${c.subtitle}</p>
         </div>
         <div class="mt-12 grid sm:grid-cols-2 gap-6">${cards}</div>
       </div>`;
 
     return section;
+  }
+
+  function refreshTeam() {
+    if (!teamData) return;
+    const existing = document.getElementById("team");
+    if (!existing) return;
+    const lang = isGerman() ? "de" : "en";
+    if (existing.dataset.pkLang === lang) return;
+    const next = renderTeam(teamData);
+    existing.replaceWith(next);
+    wireAvatars(next);
   }
 
   async function mount() {
@@ -109,24 +148,17 @@
 
       const [footer, response] = await Promise.all([
         waitFor("footer"),
-        fetch("data/team.json"),
+        fetch("/data/team.json"),
       ]);
       if (!response.ok) throw new Error(`team.json ${response.status}`);
-      const data = await response.json();
-      const section = renderTeam(data);
+      teamData = await response.json();
+      const section = renderTeam(teamData);
       footer.parentElement.insertBefore(section, footer);
-      section.querySelectorAll(".pk-team__avatar").forEach((img) => {
-        const wrap = img.closest(".pk-team__avatar-wrap");
-        const ini = wrap?.dataset.initials || "?";
-        img.addEventListener("error", () => {
-          const fallback = document.createElement("div");
-          fallback.className =
-            "pk-team__avatar pk-team__avatar--fallback size-full grid place-items-center font-black text-lg text-[#0a0a0a]";
-          fallback.textContent = ini;
-          wrap?.replaceChildren(fallback);
-        });
-      });
-      addNavLink();
+      wireAvatars(section);
+
+      if (window.pkOnLanguageChange) {
+        window.pkOnLanguageChange(() => refreshTeam());
+      }
     } catch (err) {
       console.warn("[produktor team]", err);
     }

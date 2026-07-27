@@ -1,12 +1,22 @@
 {
   "section": "07",
-  "kicker": "Team",
-  "title": "People behind the stack.",
-  "subtitle": "Engineering and partnerships behind the sovereign stack.",
+  "en": {
+    "kicker": "Team",
+    "title": "People behind the stack.",
+    "subtitle": "Engineering and partnerships behind the sovereign stack.",
+    "viewProfile": "View profile"
+  },
+  "de": {
+    "kicker": "Team",
+    "title": "Menschen hinter dem Stack.",
+    "subtitle": "Engineering und Partnerschaften hinter dem souveränen Stack.",
+    "viewProfile": "Profil ansehen"
+  },
   "members": [
     {
       "name": "Artem Maltschenko",
-      "role": "Geschäftsführer · Sovereign IT for Healthcare",
+      "roleEn": "Managing Director · Sovereign IT for Healthcare",
+      "roleDe": "Geschäftsführer · Sovereign IT for Healthcare",
       "url": "https://produktor.github.io/artem-maltschenko/",
       "avatar": "https://produktor.github.io/artem-maltschenko/assets/img/avatar.jpg",
       "avatarScale": 1,
@@ -16,7 +26,8 @@
     },
     {
       "name": "Andriy Oblivantsev",
-      "role": "Senior Software Engineer · Platform & Data",
+      "roleEn": "Senior Software Engineer · Platform & Data",
+      "roleDe": "Senior Software Engineer · Plattform & Daten",
       "url": "https://eslider.github.io",
       "avatar": "https://eslider.github.io/assets/img/avatar.jpg"
     }
