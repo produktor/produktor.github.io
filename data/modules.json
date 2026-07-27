@@ -517,34 +517,43 @@
       "footerLabels": ["Observing", "Monitoring"],
       "en": {
         "name": "Observing",
-        "tag": "Monitoring · Grafana · Prometheus · Loki",
+        "tag": "Monitoring · edge · DNS · QEMU legacy",
         "titleHighlight": "Observe",
-        "titleRest": "the whole fleet.",
-        "lead": "One shared observability plane for the suite: Grafana dashboards, Prometheus metrics, Loki logs, and Alertmanager routes into your chat — on metal you control, not a vendor SaaS tenancy.",
-        "replaces": ["Datadog", "New Relic", "CloudWatch-only ops"],
-        "overview": "Observing is how produktor runs day-2 ops. A single Grafana is the UI; Prometheus scrapes host and container exporters; Loki holds docker and app logs; Alertmanager fans out to Matrix (or your on-prem channel). Compose labels plus an inventory of critical / lab / ignore stacks keep dashboards honest. Remote sites ship metrics and logs over SSH reverse tunnels — same plane for HQ and field hosts.",
+        "titleRest": "route, and run legacy safely.",
+        "lead": "One shared ops plane: Grafana / Prometheus / Loki for the fleet, Nginx Proxy Manager for service front-doors and your own DNS names, ddclient when the WAN IP moves — plus finely tuned QEMU for legacy servers you cannot rewrite yet.",
+        "replaces": ["Datadog", "New Relic", "CloudWatch-only ops", "Ad-hoc port forwards / ISP DDNS gadgets"],
+        "overview": "Observing is day-2 ops and the install edge for the suite. Metrics and logs land in one Grafana/Prometheus/Loki plane; Alertmanager fans out to Matrix. In front of every module sits Nginx Proxy Manager: TLS, host-based routing, and your own DNS names (produktor.io or customer zones) instead of raw ports. On dynamic WAN links, ddclient (or equivalent) keeps A/AAAA records fresh so cutovers and demos keep working after DHCP renumbering — that DNS + proxy pair is part of standard setup, not an afterthought. Where Windows / old Linux appliances still matter, we virtualize them under QEMU/KVM with explicit CPU, disk, and network profiles, scheduled backups, and Grafana visibility — so legacy and modern compose stacks share one site without surprise coupling.",
         "features": [
           "Grafana as the shared BI / ops UI (one instance per site, not nested copies)",
-          "Prometheus scrape of node-exporter, cAdvisor, SMART, and app exporters",
+          "Prometheus scrape of node-exporter, cAdvisor, SMART, app exporters, and QEMU guests",
           "Loki + Alloy for container and host log pipelines",
           "Alertmanager → on-prem chat (Matrix relay) for actionable pages",
+          "Nginx Proxy Manager: reverse-proxy services to stable hostnames with TLS",
+          "Own DNS names for modules (CRM, Chat, Meet, AI, Grafana) — no naked IP:port ops",
+          "ddclient (or provider API) auto-updates DNS when the site has a dynamic public IP",
+          "QEMU/KVM for legacy servers: pinned resources, virtio where safe, isolated NICs",
+          "Legacy VM backup + restore drills; live disks observed with safe qemu-img -U",
           "Fleet dashboards: overview, compose fleet, disks, QEMU, GPU",
           "Inventory-driven tiers so labs do not page like production",
-          "SSH tunnel pattern for remote agents without opening scrape ports to the internet",
-          "Air-gap friendly — metrics stay inside your boundary"
+          "SSH tunnel pattern for remote agents without opening scrape ports to the internet"
         ],
         "useCases": [
           "Operators watching compose fleets, disks, and VMs from one Grafana",
+          "Sites that need *.yourdomain certificates and NPM routes as first-class install work",
+          "Offices on dynamic ISP IPs that still need reachable demo and staff hostnames",
+          "Keeping a legacy Windows / ERP box alive beside OnlyOffice and Chat without dual hardware",
           "On-call that wants alerts in Matrix instead of a SaaS pager only",
-          "Multi-host installs (HQ + field) under one Prometheus / Loki plane",
-          "Acceptance environments that prove SLOs before cutover"
+          "Acceptance environments that prove SLOs and backup restore before cutover"
         ],
         "deploy": [
           "Stand up Grafana + Prometheus + Loki + Alertmanager beside the suite",
+          "Install Nginx Proxy Manager; publish each service under its DNS name with TLS",
+          "Point your zone (or subdomain) at the site; enable ddclient if the WAN IP is dynamic",
           "Wire exporters and inventory; reload Prometheus scrape config",
-          "Point Alertmanager at your Matrix (or other) relay",
-          "Deploy remote agents and SSH tunnels for field hosts",
-          "Hand operators starter dashboards (overview, fleet, disks, alerts)"
+          "For legacy: define QEMU guests (CPU topology, disk bus, NIC model), backup schedule, and Grafana checks",
+          "Document which VMs are expected-up vs lab so alerts stay honest",
+          "Point Alertmanager at your Matrix (or other) relay; deploy remote agents / SSH tunnels",
+          "Hand operators starter dashboards (overview, fleet, disks, QEMU, alerts)"
         ],
         "refs": [
           {
@@ -558,39 +567,52 @@
           {
             "label": "Compose fleet dashboard",
             "href": "https://grafana.produktor.io/d/arc1-compose-fleet"
+          },
+          {
+            "label": "QEMU / VM dashboard",
+            "href": "https://grafana.produktor.io/d/arc1-qemu"
           }
         ]
       },
       "de": {
         "name": "Observing",
-        "tag": "Monitoring · Grafana · Prometheus · Loki",
+        "tag": "Monitoring · Edge · DNS · QEMU-Legacy",
         "titleHighlight": "Observe",
-        "titleRest": "die gesamte Fleet.",
-        "lead": "Eine gemeinsame Observability-Plane für die Suite: Grafana-Dashboards, Prometheus-Metriken, Loki-Logs und Alertmanager-Routen in Ihren Chat — auf Hardware unter Ihrer Kontrolle, nicht in einer Vendor-SaaS-Tenancy.",
-        "replaces": ["Datadog", "New Relic", "CloudWatch-only Ops"],
-        "overview": "Observing ist Day-2-Ops bei produktor. Ein Grafana als UI; Prometheus scrapt Host- und Container-Exporter; Loki hält Docker- und App-Logs; Alertmanager fannt nach Matrix (oder Ihren On-Prem-Kanal). Compose-Labels plus Inventory (critical / lab / ignore) halten Dashboards ehrlich. Remote-Sites liefern Metriken und Logs über SSH-Reverse-Tunnels — eine Plane für HQ und Field.",
+        "titleRest": "routen und Legacy sicher betreiben.",
+        "lead": "Eine gemeinsame Ops-Plane: Grafana / Prometheus / Loki für die Fleet, Nginx Proxy Manager für Service-Front-Doors und eigene DNS-Namen, ddclient wenn die WAN-IP wechselt — plus fein abgestimmtes QEMU für Legacy-Server, die Sie noch nicht ersetzen können.",
+        "replaces": ["Datadog", "New Relic", "CloudWatch-only Ops", "Ad-hoc Port-Forwards / ISP-DDNS-Gadgets"],
+        "overview": "Observing ist Day-2-Ops und die Install-Edge der Suite. Metriken und Logs landen in einer Grafana-/Prometheus-/Loki-Plane; Alertmanager fannt nach Matrix. Vor jedem Modul sitzt Nginx Proxy Manager: TLS, Host-basiertes Routing und Ihre eigenen DNS-Namen (produktor.io oder Kunden-Zonen) statt nackter Ports. An dynamischen WAN-Links hält ddclient (oder Äquivalent) A/AAAA-Records frisch, damit Cutover und Demos nach DHCP-Renumbering weiterlaufen — DNS + Proxy sind Teil des Standard-Setups, kein Nachgedanke. Wo Windows- / alte Linux-Appliances noch zählen, virtualisieren wir sie unter QEMU/KVM mit expliziten CPU-, Disk- und Netz-Profilen, geplanten Backups und Grafana-Sicht — Legacy und moderne Compose-Stacks teilen eine Site ohne überraschende Kopplung.",
         "features": [
           "Grafana als gemeinsame BI-/Ops-UI (eine Instanz pro Site, keine Nested-Kopien)",
-          "Prometheus-Scrape von node-exporter, cAdvisor, SMART und App-Exportern",
+          "Prometheus-Scrape von node-exporter, cAdvisor, SMART, App-Exportern und QEMU-Guests",
           "Loki + Alloy für Container- und Host-Log-Pipelines",
           "Alertmanager → On-Prem-Chat (Matrix-Relay) für actionable Pages",
+          "Nginx Proxy Manager: Reverse-Proxy von Services auf stabile Hostnames mit TLS",
+          "Eigene DNS-Namen für Module (CRM, Chat, Meet, AI, Grafana) — kein nacktes IP:Port-Ops",
+          "ddclient (oder Provider-API) aktualisiert DNS, wenn die Site eine dynamische Public-IP hat",
+          "QEMU/KVM für Legacy-Server: gepinnte Ressourcen, virtio wo sicher, isolierte NICs",
+          "Legacy-VM-Backup + Restore-Drills; Live-Disks mit sicherem qemu-img -U beobachten",
           "Fleet-Dashboards: Overview, Compose Fleet, Disks, QEMU, GPU",
           "Inventory-Tiers, damit Labs nicht wie Production pagieren",
-          "SSH-Tunnel-Pattern für Remote-Agents ohne offene Scrape-Ports ins Internet",
-          "Air-Gap-freundlich — Metriken bleiben in Ihrer Grenze"
+          "SSH-Tunnel-Pattern für Remote-Agents ohne offene Scrape-Ports ins Internet"
         ],
         "useCases": [
           "Ops, die Compose-Fleets, Disks und VMs aus einem Grafana sehen",
+          "Sites, die *.yourdomain-Zertifikate und NPM-Routes als First-Class-Install brauchen",
+          "Büros mit dynamischer ISP-IP, die trotzdem erreichbare Demo- und Staff-Hostnames brauchen",
+          "Legacy-Windows-/ERP-Box neben OnlyOffice und Chat am Leben halten ohne Doppel-Hardware",
           "On-Call mit Alerts in Matrix statt nur SaaS-Pager",
-          "Multi-Host-Installs (HQ + Field) unter einer Prometheus-/Loki-Plane",
-          "Abnahme-Umgebungen, die SLOs vor dem Cutover beweisen"
+          "Abnahme-Umgebungen, die SLOs und Backup-Restore vor dem Cutover beweisen"
         ],
         "deploy": [
           "Grafana + Prometheus + Loki + Alertmanager neben der Suite aufsetzen",
+          "Nginx Proxy Manager installieren; jeden Service unter DNS-Name mit TLS publizieren",
+          "Zone (oder Subdomain) auf die Site zeigen; ddclient aktivieren, wenn WAN-IP dynamisch ist",
           "Exporter und Inventory verdrahten; Prometheus-Scrape-Config reloaden",
-          "Alertmanager auf Ihr Matrix- (oder anderes) Relay zeigen",
-          "Remote-Agents und SSH-Tunnels für Field-Hosts deployen",
-          "Operatoren Starter-Dashboards geben (Overview, Fleet, Disks, Alerts)"
+          "Für Legacy: QEMU-Guests definieren (CPU-Topologie, Disk-Bus, NIC-Modell), Backup-Plan und Grafana-Checks",
+          "Dokumentieren, welche VMs expected-up vs lab sind, damit Alerts ehrlich bleiben",
+          "Alertmanager auf Matrix- (oder anderes) Relay; Remote-Agents / SSH-Tunnels deployen",
+          "Operatoren Starter-Dashboards geben (Overview, Fleet, Disks, QEMU, Alerts)"
         ],
         "refs": [
           {
@@ -604,6 +626,10 @@
           {
             "label": "Compose-Fleet-Dashboard",
             "href": "https://grafana.produktor.io/d/arc1-compose-fleet"
+          },
+          {
+            "label": "QEMU-/VM-Dashboard",
+            "href": "https://grafana.produktor.io/d/arc1-qemu"
           }
         ]
       }

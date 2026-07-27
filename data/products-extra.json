@@ -77,18 +77,18 @@
       "icon": "monitoring",
       "nameEn": "Observing",
       "nameDe": "Observing",
-      "tagEn": "Grafana · Prometheus · Loki · on-premise",
-      "tagDe": "Grafana · Prometheus · Loki · On-Premise",
-      "descriptionEn": "Shared observability plane: Grafana dashboards, Prometheus metrics, Loki logs, Alertmanager into on-prem chat. Fleet views for compose, disks, VMs, and GPUs — without Datadog egress.",
-      "descriptionDe": "Gemeinsame Observability-Plane: Grafana-Dashboards, Prometheus-Metriken, Loki-Logs, Alertmanager in On-Prem-Chat. Fleet-Views für Compose, Disks, VMs und GPUs — ohne Datadog-Egress.",
+      "tagEn": "Grafana · NPM · DNS · QEMU · on-premise",
+      "tagDe": "Grafana · NPM · DNS · QEMU · On-Premise",
+      "descriptionEn": "Ops edge for the suite: Grafana/Prometheus/Loki, Nginx Proxy Manager + your DNS names, ddclient on dynamic IPs, and finely tuned QEMU for legacy servers — with backups and fleet visibility.",
+      "descriptionDe": "Ops-Edge der Suite: Grafana/Prometheus/Loki, Nginx Proxy Manager + eigene DNS-Namen, ddclient bei dynamischen IPs und fein abgestimmtes QEMU für Legacy-Server — mit Backups und Fleet-Sicht.",
       "bulletsEn": [
-        "One Grafana + Prometheus + Loki per site (no nested monitoring sprawl)",
-        "Alerts to Matrix / on-prem chat via Alertmanager relay",
+        "NPM routes + own hostnames/TLS; ddclient when WAN IP changes",
+        "QEMU legacy VMs: pinned profiles, backup drills, Grafana QEMU dashboard",
         "Live reference: grafana.produktor.io"
       ],
       "bulletsDe": [
-        "Ein Grafana + Prometheus + Loki pro Site (kein Nested-Monitoring-Wildwuchs)",
-        "Alerts nach Matrix / On-Prem-Chat via Alertmanager-Relay",
+        "NPM-Routes + eigene Hostnames/TLS; ddclient bei WAN-IP-Wechsel",
+        "QEMU-Legacy-VMs: gepinnte Profile, Backup-Drills, Grafana-QEMU-Dashboard",
         "Live-Referenz: grafana.produktor.io"
       ],
       "liveDemoUrl": "https://grafana.produktor.io/"
