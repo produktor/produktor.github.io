@@ -47,6 +47,7 @@
 
   function findMainNav(header) {
     return (
+      header.querySelector('nav[data-pk-nav="1"]') ||
       header.querySelector("nav.hidden.md\\:flex") ||
       header.querySelector("nav") ||
       null
@@ -94,7 +95,10 @@
     header.querySelectorAll("button[type='button']").forEach((button) => {
       const label = button.textContent?.trim();
       if (label === "Sign in" || label === "Anmelden") {
-        button.remove();
+        // Hide — do not removeChild (React owns these nodes).
+        button.hidden = true;
+        button.setAttribute("aria-hidden", "true");
+        button.style.display = "none";
         hasSignIn = true;
       }
     });
@@ -112,7 +116,9 @@
     header.querySelectorAll("a, button").forEach((el) => {
       const label = el.textContent?.trim();
       if (label === "Book a demo" || label === "Demo buchen") {
-        el.remove();
+        el.hidden = true;
+        el.setAttribute("aria-hidden", "true");
+        el.style.display = "none";
         removed = true;
       }
     });
@@ -138,29 +144,63 @@
     const mainNav = findMainNav(header);
     if (!mainNav) return false;
 
+    // Hide extra navs — never remove (React owns the tree).
     header.querySelectorAll("nav").forEach((nav) => {
-      if (nav !== mainNav) nav.remove();
+      if (nav !== mainNav && nav.dataset.pkNav !== "1") {
+        nav.hidden = true;
+        nav.setAttribute("aria-hidden", "true");
+        nav.style.display = "none";
+      }
     });
 
     const de = isGerman();
-    if (!navIsCorrect(mainNav, de)) {
-      mainNav.replaceChildren(
-        ...NAV_ITEMS.map((item) => {
-          const link = document.createElement("a");
-          link.href = item.href;
-          link.className = linkClass(item.href);
-          link.textContent = de ? item.labelDe : item.labelEn;
-          link.setAttribute(
-            "aria-current",
-            item.href === activeHref ? "true" : "false",
-          );
-          return link;
-        }),
-      );
-    } else {
-      applyActiveStyles(mainNav);
+    const links = [...mainNav.querySelectorAll(":scope > a")];
+
+    // Prefer in-place updates so React keeps the same <a> nodes.
+    if (links.length === NAV_ITEMS.length) {
+      NAV_ITEMS.forEach((item, index) => {
+        const link = links[index];
+        if (!link) return;
+        if (link.getAttribute("href") !== item.href) link.setAttribute("href", item.href);
+        const label = de ? item.labelDe : item.labelEn;
+        if (link.textContent !== label) link.textContent = label;
+        link.className = linkClass(item.href);
+        link.setAttribute(
+          "aria-current",
+          item.href === activeHref ? "true" : "false",
+        );
+      });
+      return navIsCorrect(mainNav, de);
     }
-    return navIsCorrect(mainNav, de);
+
+    // Structure mismatch: hide React nav, mount our own sibling (outside React ownership).
+    let pkNav = header.querySelector('nav[data-pk-nav="1"]');
+    if (!pkNav) {
+      pkNav = document.createElement("nav");
+      pkNav.dataset.pkNav = "1";
+      pkNav.className = mainNav.className || "hidden md:flex items-center gap-1";
+      mainNav.insertAdjacentElement("afterend", pkNav);
+    }
+    mainNav.hidden = true;
+    mainNav.setAttribute("aria-hidden", "true");
+    mainNav.style.display = "none";
+    pkNav.hidden = false;
+    pkNav.removeAttribute("aria-hidden");
+    pkNav.style.display = "";
+    pkNav.replaceChildren(
+      ...NAV_ITEMS.map((item) => {
+        const link = document.createElement("a");
+        link.href = item.href;
+        link.className = linkClass(item.href);
+        link.textContent = de ? item.labelDe : item.labelEn;
+        link.setAttribute(
+          "aria-current",
+          item.href === activeHref ? "true" : "false",
+        );
+        return link;
+      }),
+    );
+    return navIsCorrect(pkNav, de);
   }
 
   function sectionIdFromHref(href) {

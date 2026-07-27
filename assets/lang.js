@@ -45,6 +45,9 @@
 
   function syncSwitcherActive(lang) {
     document.querySelectorAll('[role="group"]').forEach((group) => {
+      // Never rewrite React-owned switchers inside #root — causes removeChild crashes.
+      if (group.closest("#root")) return;
+
       const dark = switcherVariant(group) === "dark";
       // Match homepage LanguageSwitcher: fixed height so h-full buttons are not squashed
       if (!dark) {

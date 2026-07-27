@@ -177,7 +177,7 @@
       if (document.getElementById("team")) return;
 
       const [, response] = await Promise.all([
-        waitFor("footer, #pk-site-footer-host, #root"),
+        waitFor("#root main #contact, #root main #faq, #pk-site-footer-host"),
         fetch("/data/team.json", { cache: "no-store" }),
       ]);
       if (!response.ok) throw new Error(`team.json ${response.status}`);

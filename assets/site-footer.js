@@ -173,7 +173,8 @@
           sync();
         }
       });
-      mo.observe(document.body, { childList: true, subtree: true });
+      // Only top-level body children — subtree observe fights React renders.
+      mo.observe(document.body, { childList: true, subtree: false });
     } catch (err) {
       console.warn("[produktor site-footer]", err);
     } finally {
