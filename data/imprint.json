@@ -5,9 +5,14 @@
   "website": "https://produktor.io",
   "team": [
     {
+      "name": "Artem Maltschenko",
+      "roleEn": "Managing Director · Sovereign IT for Healthcare",
+      "roleDe": "Geschäftsführer · Sovereign IT for Healthcare"
+    },
+    {
       "name": "Andriy Oblivantsev",
-      "roleEn": "Managing Director · Platform & Data",
-      "roleDe": "Geschäftsführer · Plattform & Daten"
+      "roleEn": "Senior Software Engineer · Platform & Data",
+      "roleDe": "Senior Software Engineer · Plattform & Daten"
     }
   ],
   "en": {
