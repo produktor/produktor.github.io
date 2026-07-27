@@ -8,6 +8,8 @@
     geo: '<svg class="pk-mod__icon stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
     ai: '<svg class="pk-mod__icon stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4 12H2"/><path d="M22 12h-2"/><path d="M19.78 4.22l-2.83 2.83"/><path d="M7.05 16.95l-2.83 2.83"/><path d="M19.78 19.78l-2.83-2.83"/><path d="M7.05 7.05 4.22 4.22"/><path d="M12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10Z"/></svg>',
     ui: '<svg class="pk-mod__icon stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>',
+    monitoring:
+      '<svg class="pk-mod__icon stroke-[2.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>',
   };
 
   const ARROW =

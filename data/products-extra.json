@@ -69,10 +69,45 @@
         "Auch für Low-Memory-Setups (leichte Tasks, Edge-Use-Cases)"
       ],
       "liveDemoUrl": "https://ai.produktor.io/"
+    },
+    {
+      "code": "08",
+      "slug": "monitoring",
+      "accent": "bg-[#7bfa63] text-[#0a0a0a]",
+      "icon": "monitoring",
+      "nameEn": "Observing",
+      "nameDe": "Observing",
+      "tagEn": "Grafana · Prometheus · Loki · on-premise",
+      "tagDe": "Grafana · Prometheus · Loki · On-Premise",
+      "descriptionEn": "Shared observability plane: Grafana dashboards, Prometheus metrics, Loki logs, Alertmanager into on-prem chat. Fleet views for compose, disks, VMs, and GPUs — without Datadog egress.",
+      "descriptionDe": "Gemeinsame Observability-Plane: Grafana-Dashboards, Prometheus-Metriken, Loki-Logs, Alertmanager in On-Prem-Chat. Fleet-Views für Compose, Disks, VMs und GPUs — ohne Datadog-Egress.",
+      "bulletsEn": [
+        "One Grafana + Prometheus + Loki per site (no nested monitoring sprawl)",
+        "Alerts to Matrix / on-prem chat via Alertmanager relay",
+        "Live reference: grafana.produktor.io"
+      ],
+      "bulletsDe": [
+        "Ein Grafana + Prometheus + Loki pro Site (kein Nested-Monitoring-Wildwuchs)",
+        "Alerts nach Matrix / On-Prem-Chat via Alertmanager-Relay",
+        "Live-Referenz: grafana.produktor.io"
+      ],
+      "liveDemoUrl": "https://grafana.produktor.io/"
     }
   ],
   "footerLinks": {
-    "modulesEn": ["Service Produkt", "Geo-Service", "Stack AI", "UI"],
-    "modulesDe": ["Service Produkt", "Geo-Service", "Stack AI", "UI"]
+    "modulesEn": [
+      "Service Produkt",
+      "Geo-Service",
+      "Stack AI",
+      "UI",
+      "Observing"
+    ],
+    "modulesDe": [
+      "Service Produkt",
+      "Geo-Service",
+      "Stack AI",
+      "UI",
+      "Observing"
+    ]
   }
 }

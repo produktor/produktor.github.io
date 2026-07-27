@@ -37,57 +37,67 @@
       "footerLabels": ["Stack CRM"],
       "en": {
         "name": "Stack CRM",
-        "tag": "Customer & deal management",
+        "tag": "Office stack · CRM · documents · data plane",
         "titleHighlight": "CRM",
-        "titleRest": "on your hardware.",
-        "lead": "Pipeline, accounts, contacts, and forecasting on Postgres — with SSO against your IdP and webhooks for every state change. Built for teams that cannot put pipeline data in a US SaaS tenancy.",
-        "replaces": ["HubSpot", "Salesforce"],
-        "overview": "Stack CRM is the customer system of record for sovereign installs. It runs on your Postgres (or ours on your metal), speaks REST and GraphQL, and fits the same identity and observability plane as Chat and Meet — so adding modules later is wiring, not a re-platform.",
+        "titleRest": "and the office data plane.",
+        "lead": "Pipeline, accounts, contacts, tasks, and document originals on your OnlyOffice / Postgres plane — plus a file data plane (S3, SMB, SSH) so desks, agents, and backups share one corpus without SaaS egress.",
+        "replaces": ["HubSpot", "Salesforce", "Google Drive / Dropbox for ops files"],
+        "overview": "Stack CRM is the structured office system of record for sovereign installs: deals and contacts live next to document originals in OnlyOffice. Underneath sits a data plane you control — S3-compatible object storage (MinIO) for docs, media, and backups; SMB for Windows/desktop mounts; SSH/SFTP for ops sync and air-gapped drop zones. Same IdP and observability plane as Chat and Meet — adding modules later is wiring, not a re-platform.",
         "features": [
           "Self-hosted Postgres or your existing database",
-          "Custom fields, stages, and roles without vendor lock-in",
-          "Public REST + GraphQL APIs out of the box",
-          "SSO / IdP integration for staff access",
+          "OnlyOffice documents and tasks as structured business SSOT",
+          "S3-compatible object storage (MinIO) for originals, attachments, and backups",
+          "SMB shares for desktop workflows against the same corpora",
+          "SSH / SFTP paths for agent drop zones and controlled file transfer",
+          "Custom fields, stages, roles; REST + GraphQL; SSO / IdP",
           "Webhooks on deal and contact state changes",
           "Air-gap capable — no mandatory cloud phone-home"
         ],
         "useCases": [
-          "Healthcare and advisory firms that need CRM inside their compliance boundary",
-          "Field sales teams that sync from on-site networks with intermittent WAN",
-          "Operators replacing HubSpot/Salesforce while keeping historical deals"
+          "Healthcare and advisory firms that need CRM + docs inside their compliance boundary",
+          "Teams that mount the same project files via SMB while CRM holds pipeline state",
+          "Ops that push dumps and agent artifacts over SSH/SFTP into MinIO without public cloud",
+          "Operators replacing HubSpot/Salesforce while keeping historical deals and document trees"
         ],
         "deploy": [
           "Install beside Stack Chat / Meet on bare metal, VM, or your cloud tenancy",
+          "Provision MinIO (or your S3) buckets for office docs and backup prefixes",
+          "Expose SMB and/or SSH endpoints with IdP-aligned access policy",
           "Connect IdP and map roles before cutover",
-          "Migrate accounts and opportunities via connectors; dry-run then zero-downtime switch",
+          "Migrate accounts, opportunities, and file trees; dry-run then zero-downtime switch",
           "Operate with quarterly upgrades and on-call under the same support contract"
         ]
       },
       "de": {
         "name": "Stack CRM",
-        "tag": "Kunden- und Deal-Management",
+        "tag": "Office-Stack · CRM · Dokumente · Data Plane",
         "titleHighlight": "CRM",
-        "titleRest": "auf Ihrer Hardware.",
-        "lead": "Pipeline, Accounts, Kontakte und Forecasting auf Postgres — SSO mit Ihrem IdP und Webhooks für jede Statusänderung. Für Teams, die Pipeline-Daten nicht in eine US-SaaS-Tenancy legen dürfen.",
-        "replaces": ["HubSpot", "Salesforce"],
-        "overview": "Stack CRM ist das Kundensystem der Wahrheit für souveräne Installationen. Es läuft auf Ihrem Postgres (oder unserem auf Ihrer Hardware), spricht REST und GraphQL und teilt Identity- und Observability-Plane mit Chat und Meet — spätere Module sind Verkabelung, kein Re-Platforming.",
+        "titleRest": "und die Office-Data-Plane.",
+        "lead": "Pipeline, Accounts, Kontakte, Tasks und Dokument-Originale auf Ihrer OnlyOffice-/Postgres-Ebene — plus File-Data-Plane (S3, SMB, SSH), damit Desks, Agents und Backups ein Corpus teilen ohne SaaS-Egress.",
+        "replaces": ["HubSpot", "Salesforce", "Google Drive / Dropbox für Ops-Dateien"],
+        "overview": "Stack CRM ist das strukturierte Office-System der Wahrheit für souveräne Installationen: Deals und Kontakte liegen neben Dokument-Originalen in OnlyOffice. Darunter eine Data Plane unter Ihrer Kontrolle — S3-kompatibler Object Storage (MinIO) für Docs, Media und Backups; SMB für Windows-/Desktop-Mounts; SSH/SFTP für Ops-Sync und Air-Gap-Dropzones. Gleiche IdP- und Observability-Plane wie Chat und Meet — spätere Module sind Verkabelung, kein Re-Platforming.",
         "features": [
           "Selbstgehostetes Postgres oder Ihre bestehende Datenbank",
-          "Eigene Felder, Stages und Rollen ohne Vendor-Lock-in",
-          "Public REST- und GraphQL-APIs out of the box",
-          "SSO / IdP für Mitarbeiterzugang",
+          "OnlyOffice-Dokumente und Tasks als strukturierte Business-SSOT",
+          "S3-kompatibler Object Storage (MinIO) für Originale, Anhänge und Backups",
+          "SMB-Shares für Desktop-Workflows gegen dieselben Corpora",
+          "SSH-/SFTP-Pfade für Agent-Dropzones und kontrollierten File-Transfer",
+          "Eigene Felder, Stages, Rollen; REST + GraphQL; SSO / IdP",
           "Webhooks bei Deal- und Kontakt-Statusänderungen",
           "Air-Gap-fähig — kein verpflichtendes Cloud-Phone-Home"
         ],
         "useCases": [
-          "Healthcare- und Advisory-Firmen mit CRM innerhalb der Compliance-Grenze",
-          "Field-Sales mit Sync aus On-Site-Netzen und intermittierendem WAN",
-          "Ablösung von HubSpot/Salesforce unter Beibehalt der Deal-Historie"
+          "Healthcare- und Advisory-Firmen mit CRM + Docs innerhalb der Compliance-Grenze",
+          "Teams, die dieselben Projektdateien per SMB mounten, während CRM den Pipeline-State hält",
+          "Ops, die Dumps und Agent-Artefakte per SSH/SFTP nach MinIO schieben ohne Public Cloud",
+          "Ablösung von HubSpot/Salesforce unter Beibehalt von Deal-Historie und Dokumentbäumen"
         ],
         "deploy": [
           "Installation neben Stack Chat / Meet auf Bare Metal, VM oder Ihrer Cloud-Tenancy",
+          "MinIO- (oder Ihr S3-) Buckets für Office-Docs und Backup-Prefixes provisionieren",
+          "SMB- und/oder SSH-Endpoints mit IdP-abgestimmter Access-Policy freigeben",
           "IdP anbinden und Rollen vor dem Cutover mappen",
-          "Accounts und Opportunities per Konnektor migrieren; Dry-Run, dann Zero-Downtime",
+          "Accounts, Opportunities und File-Trees migrieren; Dry-Run, dann Zero-Downtime",
           "Betrieb mit Quartals-Upgrades und On-Call im gleichen Support-Vertrag"
         ]
       }
@@ -495,6 +505,106 @@
           "Tile- und Search-Base-URLs auf Geo-Service setzen",
           "Zugriff mit Suite-IdP absichern, falls außerhalb LAN",
           "Mit Geo-Service-Dataset-Refreshes synchron halten"
+        ]
+      }
+    },
+    {
+      "slug": "monitoring",
+      "code": "08",
+      "accent": "bg-[#7bfa63] text-[#0a0a0a]",
+      "icon": "monitoring",
+      "liveDemoUrl": "https://grafana.produktor.io/",
+      "footerLabels": ["Observing", "Monitoring"],
+      "en": {
+        "name": "Observing",
+        "tag": "Monitoring · Grafana · Prometheus · Loki",
+        "titleHighlight": "Observe",
+        "titleRest": "the whole fleet.",
+        "lead": "One shared observability plane for the suite: Grafana dashboards, Prometheus metrics, Loki logs, and Alertmanager routes into your chat — on metal you control, not a vendor SaaS tenancy.",
+        "replaces": ["Datadog", "New Relic", "CloudWatch-only ops"],
+        "overview": "Observing is how produktor runs day-2 ops. A single Grafana is the UI; Prometheus scrapes host and container exporters; Loki holds docker and app logs; Alertmanager fans out to Matrix (or your on-prem channel). Compose labels plus an inventory of critical / lab / ignore stacks keep dashboards honest. Remote sites ship metrics and logs over SSH reverse tunnels — same plane for HQ and field hosts.",
+        "features": [
+          "Grafana as the shared BI / ops UI (one instance per site, not nested copies)",
+          "Prometheus scrape of node-exporter, cAdvisor, SMART, and app exporters",
+          "Loki + Alloy for container and host log pipelines",
+          "Alertmanager → on-prem chat (Matrix relay) for actionable pages",
+          "Fleet dashboards: overview, compose fleet, disks, QEMU, GPU",
+          "Inventory-driven tiers so labs do not page like production",
+          "SSH tunnel pattern for remote agents without opening scrape ports to the internet",
+          "Air-gap friendly — metrics stay inside your boundary"
+        ],
+        "useCases": [
+          "Operators watching compose fleets, disks, and VMs from one Grafana",
+          "On-call that wants alerts in Matrix instead of a SaaS pager only",
+          "Multi-host installs (HQ + field) under one Prometheus / Loki plane",
+          "Acceptance environments that prove SLOs before cutover"
+        ],
+        "deploy": [
+          "Stand up Grafana + Prometheus + Loki + Alertmanager beside the suite",
+          "Wire exporters and inventory; reload Prometheus scrape config",
+          "Point Alertmanager at your Matrix (or other) relay",
+          "Deploy remote agents and SSH tunnels for field hosts",
+          "Hand operators starter dashboards (overview, fleet, disks, alerts)"
+        ],
+        "refs": [
+          {
+            "label": "Grafana (live)",
+            "href": "https://grafana.produktor.io/"
+          },
+          {
+            "label": "Arc-1 overview dashboard",
+            "href": "https://grafana.produktor.io/d/arc1-overview"
+          },
+          {
+            "label": "Compose fleet dashboard",
+            "href": "https://grafana.produktor.io/d/arc1-compose-fleet"
+          }
+        ]
+      },
+      "de": {
+        "name": "Observing",
+        "tag": "Monitoring · Grafana · Prometheus · Loki",
+        "titleHighlight": "Observe",
+        "titleRest": "die gesamte Fleet.",
+        "lead": "Eine gemeinsame Observability-Plane für die Suite: Grafana-Dashboards, Prometheus-Metriken, Loki-Logs und Alertmanager-Routen in Ihren Chat — auf Hardware unter Ihrer Kontrolle, nicht in einer Vendor-SaaS-Tenancy.",
+        "replaces": ["Datadog", "New Relic", "CloudWatch-only Ops"],
+        "overview": "Observing ist Day-2-Ops bei produktor. Ein Grafana als UI; Prometheus scrapt Host- und Container-Exporter; Loki hält Docker- und App-Logs; Alertmanager fannt nach Matrix (oder Ihren On-Prem-Kanal). Compose-Labels plus Inventory (critical / lab / ignore) halten Dashboards ehrlich. Remote-Sites liefern Metriken und Logs über SSH-Reverse-Tunnels — eine Plane für HQ und Field.",
+        "features": [
+          "Grafana als gemeinsame BI-/Ops-UI (eine Instanz pro Site, keine Nested-Kopien)",
+          "Prometheus-Scrape von node-exporter, cAdvisor, SMART und App-Exportern",
+          "Loki + Alloy für Container- und Host-Log-Pipelines",
+          "Alertmanager → On-Prem-Chat (Matrix-Relay) für actionable Pages",
+          "Fleet-Dashboards: Overview, Compose Fleet, Disks, QEMU, GPU",
+          "Inventory-Tiers, damit Labs nicht wie Production pagieren",
+          "SSH-Tunnel-Pattern für Remote-Agents ohne offene Scrape-Ports ins Internet",
+          "Air-Gap-freundlich — Metriken bleiben in Ihrer Grenze"
+        ],
+        "useCases": [
+          "Ops, die Compose-Fleets, Disks und VMs aus einem Grafana sehen",
+          "On-Call mit Alerts in Matrix statt nur SaaS-Pager",
+          "Multi-Host-Installs (HQ + Field) unter einer Prometheus-/Loki-Plane",
+          "Abnahme-Umgebungen, die SLOs vor dem Cutover beweisen"
+        ],
+        "deploy": [
+          "Grafana + Prometheus + Loki + Alertmanager neben der Suite aufsetzen",
+          "Exporter und Inventory verdrahten; Prometheus-Scrape-Config reloaden",
+          "Alertmanager auf Ihr Matrix- (oder anderes) Relay zeigen",
+          "Remote-Agents und SSH-Tunnels für Field-Hosts deployen",
+          "Operatoren Starter-Dashboards geben (Overview, Fleet, Disks, Alerts)"
+        ],
+        "refs": [
+          {
+            "label": "Grafana (Live)",
+            "href": "https://grafana.produktor.io/"
+          },
+          {
+            "label": "Arc-1 Overview-Dashboard",
+            "href": "https://grafana.produktor.io/d/arc1-overview"
+          },
+          {
+            "label": "Compose-Fleet-Dashboard",
+            "href": "https://grafana.produktor.io/d/arc1-compose-fleet"
+          }
         ]
       }
     }

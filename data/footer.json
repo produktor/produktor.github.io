@@ -11,31 +11,80 @@
       {
         "title": "Modules",
         "items": [
-          { "label": "Stack CRM", "href": "/modules/crm/" },
-          { "label": "Stack Chat", "href": "/modules/chat/" },
-          { "label": "Stack Meet", "href": "/modules/meet/" },
-          { "label": "Service Produkt", "href": "/modules/service/" },
-          { "label": "Geo-Service", "href": "/modules/geo/" },
-          { "label": "Stack AI", "href": "/modules/ai/" },
-          { "label": "UI", "href": "/modules/ui/" }
+          {
+            "label": "Stack CRM",
+            "href": "/modules/crm/"
+          },
+          {
+            "label": "Stack Chat",
+            "href": "/modules/chat/"
+          },
+          {
+            "label": "Stack Meet",
+            "href": "/modules/meet/"
+          },
+          {
+            "label": "Service Produkt",
+            "href": "/modules/service/"
+          },
+          {
+            "label": "Geo-Service",
+            "href": "/modules/geo/"
+          },
+          {
+            "label": "Stack AI",
+            "href": "/modules/ai/"
+          },
+          {
+            "label": "UI",
+            "href": "/modules/ui/"
+          },
+          {
+            "label": "Observing",
+            "href": "/modules/monitoring/"
+          }
         ]
       },
       {
         "title": "Company",
         "items": [
-          { "label": "Install method", "href": "/#how-it-works" },
-          { "label": "Pricing", "href": "/#pricing" },
-          { "label": "Compliance", "href": "/#compare" },
-          { "label": "Team", "href": "/#team" },
-          { "label": "Careers", "href": "/careers/" },
-          { "label": "Imprint", "href": "/impressum/" }
+          {
+            "label": "Install method",
+            "href": "/#how-it-works"
+          },
+          {
+            "label": "Pricing",
+            "href": "/#pricing"
+          },
+          {
+            "label": "Compliance",
+            "href": "/#compare"
+          },
+          {
+            "label": "Team",
+            "href": "/#team"
+          },
+          {
+            "label": "Careers",
+            "href": "/careers/"
+          },
+          {
+            "label": "Imprint",
+            "href": "/impressum/"
+          }
         ]
       },
       {
         "title": "Contact",
         "items": [
-          { "label": "Book a demo", "href": "/contact/" },
-          { "label": "info@produktor.io", "href": "mailto:info@produktor.io" }
+          {
+            "label": "Book a demo",
+            "href": "/contact/"
+          },
+          {
+            "label": "info@produktor.io",
+            "href": "mailto:info@produktor.io"
+          }
         ]
       }
     ]
@@ -50,31 +99,80 @@
       {
         "title": "Module",
         "items": [
-          { "label": "Stack CRM", "href": "/modules/crm/" },
-          { "label": "Stack Chat", "href": "/modules/chat/" },
-          { "label": "Stack Meet", "href": "/modules/meet/" },
-          { "label": "Service Produkt", "href": "/modules/service/" },
-          { "label": "Geo-Service", "href": "/modules/geo/" },
-          { "label": "Stack AI", "href": "/modules/ai/" },
-          { "label": "UI", "href": "/modules/ui/" }
+          {
+            "label": "Stack CRM",
+            "href": "/modules/crm/"
+          },
+          {
+            "label": "Stack Chat",
+            "href": "/modules/chat/"
+          },
+          {
+            "label": "Stack Meet",
+            "href": "/modules/meet/"
+          },
+          {
+            "label": "Service Produkt",
+            "href": "/modules/service/"
+          },
+          {
+            "label": "Geo-Service",
+            "href": "/modules/geo/"
+          },
+          {
+            "label": "Stack AI",
+            "href": "/modules/ai/"
+          },
+          {
+            "label": "UI",
+            "href": "/modules/ui/"
+          },
+          {
+            "label": "Observing",
+            "href": "/modules/monitoring/"
+          }
         ]
       },
       {
         "title": "Unternehmen",
         "items": [
-          { "label": "Installationsmethode", "href": "/#how-it-works" },
-          { "label": "Preise", "href": "/#pricing" },
-          { "label": "Compliance", "href": "/#compare" },
-          { "label": "Team", "href": "/#team" },
-          { "label": "Karriere", "href": "/careers/" },
-          { "label": "Impressum", "href": "/impressum/" }
+          {
+            "label": "Installationsmethode",
+            "href": "/#how-it-works"
+          },
+          {
+            "label": "Preise",
+            "href": "/#pricing"
+          },
+          {
+            "label": "Compliance",
+            "href": "/#compare"
+          },
+          {
+            "label": "Team",
+            "href": "/#team"
+          },
+          {
+            "label": "Karriere",
+            "href": "/careers/"
+          },
+          {
+            "label": "Impressum",
+            "href": "/impressum/"
+          }
         ]
       },
       {
         "title": "Kontakt",
         "items": [
-          { "label": "Demo buchen", "href": "/contact/" },
-          { "label": "info@produktor.io", "href": "mailto:info@produktor.io" }
+          {
+            "label": "Demo buchen",
+            "href": "/contact/"
+          },
+          {
+            "label": "info@produktor.io",
+            "href": "mailto:info@produktor.io"
+          }
         ]
       }
     ]
