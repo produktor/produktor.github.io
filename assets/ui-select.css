@@ -1,0 +1,30 @@
+/* Disallow accidental selection on controls and non-text chrome */
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+[role="button"],
+summary {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+img,
+svg,
+picture,
+video,
+canvas,
+iframe,
+object,
+embed,
+[aria-hidden="true"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="color"],
+input[type="file"],
+input[type="image"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
