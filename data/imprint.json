@@ -7,19 +7,14 @@
     "name": "Andriy Oblivantsev",
     "nameEn": "Andriy Oblivantsev",
     "nameDe": "Andriy Oblivantsev",
-    "roleEn": "",
-    "roleDe": ""
+    "roleEn": "Managing Director · Content responsible (TMG / RStV)",
+    "roleDe": "Geschäftsführer · Verantwortlicher i. S. d. TMG / RStV"
   },
   "team": [
     {
-      "name": "Artem Maltschenko",
-      "roleEn": "Managing Director · Sovereign IT for Healthcare",
-      "roleDe": "Geschäftsführer · Sovereign IT for Healthcare"
-    },
-    {
       "name": "Andriy Oblivantsev",
-      "roleEn": "Senior Software Engineer · Platform & Data",
-      "roleDe": "Senior Software Engineer · Plattform & Daten"
+      "roleEn": "Managing Director · Platform & Data",
+      "roleDe": "Geschäftsführer · Plattform & Daten"
     }
   ],
   "en": {
