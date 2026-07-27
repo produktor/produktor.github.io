@@ -35,6 +35,7 @@
     // sync after DOM updated below
     const syncFooter = () => {
       setLangButtons(lang);
+      if (window.pkSyncBrandTaglines) window.pkSyncBrandTaglines(lang);
       if (window.pkMountSiteFooter) window.pkMountSiteFooter();
     };
 

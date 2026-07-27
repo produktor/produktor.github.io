@@ -89,13 +89,11 @@
     root.innerHTML = `
       <header class="sticky top-0 z-40 border-b-[3px] border-black bg-[#faf5ea]/95 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
-          <a href="/" class="flex items-center gap-3 no-underline text-inherit">
-            <img src="/logo.svg" alt="" width="32" height="32" class="border-[3px] border-black" />
-            <span class="leading-none">
-              <span class="block font-black uppercase tracking-tight text-base sm:text-lg">produktor.io</span>
-              <span class="block text-[10px] uppercase tracking-[0.22em] text-[#0a0a0a]/70 mt-1">On-premise stack</span>
-            </span>
-          </a>
+          ${
+            window.pkBrandLinkHtml
+              ? window.pkBrandLinkHtml({ size: 32, lang })
+              : `<a href="/" class="flex items-center gap-3 group no-underline text-inherit"><span class="font-black uppercase tracking-tight text-base sm:text-lg">produktor.io</span></a>`
+          }
           <div class="flex items-center gap-2 sm:gap-3">
             <div class="inline-flex border-[3px] border-black" role="group" aria-label="Language">
               <button type="button" data-lang="en" class="pk-mod__lang px-3 h-10 font-black uppercase tracking-[0.14em] text-[11px]">EN</button>
