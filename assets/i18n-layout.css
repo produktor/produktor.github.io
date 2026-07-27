@@ -1,0 +1,69 @@
+/* Prevent DE compound words / wide tables from causing page-level X scroll */
+
+html {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+#root,
+#root > div {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@media (max-width: 767px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  td,
+  th,
+  label,
+  button,
+  a,
+  span,
+  article {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Grid cards default min-width:auto — long DE strings blow past viewport */
+  #pricing .grid > *,
+  #products .grid > *,
+  #how-it-works .grid > *,
+  #faq .grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #compare .overflow-x-auto,
+  #compare [class*="overflow-x-auto"] {
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #compare table {
+    max-width: 100%;
+  }
+
+  #compare th,
+  #compare td {
+    white-space: normal;
+  }
+
+  /* CTA / badge chips that use whitespace-nowrap */
+  #pricing a,
+  #pricing span,
+  #how-it-works a {
+    max-width: 100%;
+  }
+}
