@@ -19,37 +19,17 @@
       "featured": false
     },
     {
-      "name": "Edelweiss",
-      "url": "https://edelweiss-pflegedienst.de/",
-      "links": [
-        {
-          "label": "edelweiss-pflegedienst.de",
-          "href": "https://edelweiss-pflegedienst.de/"
-        },
-        {
-          "label": "office.pro-dukt.de",
-          "href": "https://office.pro-dukt.de/"
-        }
-      ],
-      "tagEn": "Healthcare · Nürnberg · office stack",
-      "tagDe": "Gesundheitswesen · Nürnberg · Office-Stack",
+      "name": "produktor.io",
+      "url": "https://produktor.io/",
+      "tagEn": "Platform · on-premise stack",
+      "tagDe": "Plattform · On-Premise-Stack",
       "featured": false
     },
     {
-      "name": "produktor.io",
-      "url": "https://produktor.io/",
-      "links": [
-        {
-          "label": "produktor.io",
-          "href": "https://produktor.io/"
-        },
-        {
-          "label": "git.produktor.io",
-          "href": "https://git.produktor.io/"
-        }
-      ],
-      "tagEn": "Platform · forge · on-premise",
-      "tagDe": "Plattform · Forge · On-Premise",
+      "name": "Edelweiss Pflegedienst",
+      "url": "https://edelweiss-pflegedienst.de/",
+      "tagEn": "Healthcare · Nürnberg",
+      "tagDe": "Gesundheitswesen · Nürnberg",
       "featured": false
     },
     {
