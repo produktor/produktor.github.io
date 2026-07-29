@@ -19,31 +19,37 @@
       "featured": false
     },
     {
+      "name": "Edelweiss",
+      "url": "https://edelweiss-pflegedienst.de/",
+      "links": [
+        {
+          "label": "edelweiss-pflegedienst.de",
+          "href": "https://edelweiss-pflegedienst.de/"
+        },
+        {
+          "label": "office.pro-dukt.de",
+          "href": "https://office.pro-dukt.de/"
+        }
+      ],
+      "tagEn": "Healthcare · Nürnberg · office stack",
+      "tagDe": "Gesundheitswesen · Nürnberg · Office-Stack",
+      "featured": false
+    },
+    {
       "name": "produktor.io",
       "url": "https://produktor.io/",
-      "tagEn": "Platform · on-premise stack",
-      "tagDe": "Plattform · On-Premise-Stack",
-      "featured": false
-    },
-    {
-      "name": "Edelweiss Pflegedienst",
-      "url": "https://edelweiss-pflegedienst.de/",
-      "tagEn": "Healthcare · Nürnberg",
-      "tagDe": "Gesundheitswesen · Nürnberg",
-      "featured": false
-    },
-    {
-      "name": "Edelweiss",
-      "url": "https://office.pro-dukt.de/",
-      "tagEn": "Healthcare stack · office.pro-dukt.de",
-      "tagDe": "Gesundheitswesen-Stack · office.pro-dukt.de",
-      "featured": false
-    },
-    {
-      "name": "git.produktor.io",
-      "url": "https://git.produktor.io/",
-      "tagEn": "Gitea · git · npm · docker",
-      "tagDe": "Gitea · Git · npm · Docker",
+      "links": [
+        {
+          "label": "produktor.io",
+          "href": "https://produktor.io/"
+        },
+        {
+          "label": "git.produktor.io",
+          "href": "https://git.produktor.io/"
+        }
+      ],
+      "tagEn": "Platform · forge · on-premise",
+      "tagDe": "Plattform · Forge · On-Premise",
       "featured": false
     },
     {

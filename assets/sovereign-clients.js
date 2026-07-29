@@ -51,27 +51,51 @@
     node.style.display = "none";
   }
 
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   function cardHtml(client, de) {
     const tag = de ? client.tagDe : client.tagEn;
     const featured = client.featured
       ? " shadow-[6px_6px_0_0_#f2c849] ring-2 ring-[#f2c849]/40"
       : "";
     const cardClass = `pk-sovereign__card border-[3px] border-black bg-[#faf5ea] text-[#0a0a0a] px-4 py-4 flex flex-col gap-1.5${featured}`;
-    const inner = `
-            <span class="pk-sovereign__title font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight text-[#0a0a0a]">${client.name}</span>
-            <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#0a0a0a]/65 leading-snug">${tag}</span>`;
+    const name = escapeHtml(client.name);
+    const tagSafe = escapeHtml(tag);
+    const links = Array.isArray(client.links) ? client.links.filter((l) => l && l.href) : [];
+
+    const title = `<span class="pk-sovereign__title font-black uppercase text-[13px] sm:text-sm tracking-[0.08em] leading-tight text-[#0a0a0a]">${name}</span>`;
+    const tagLine = `<span class="text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#0a0a0a]/65 leading-snug">${tagSafe}</span>`;
+    const linksHtml =
+      links.length > 1
+        ? `<span class="pk-sovereign__links mt-0.5 flex flex-wrap gap-x-2 gap-y-1">${links
+            .map(
+              (l) =>
+                `<a href="${escapeHtml(l.href)}" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] text-[#143a6f] underline underline-offset-2 hover:text-[#0a0a0a]">${escapeHtml(l.label || l.href)}</a>`,
+            )
+            .join("")}</span>`
+        : "";
 
     if (client.onPrem || !client.url) {
-      return `<div class="${cardClass} pk-sovereign__card--onprem" aria-label="${client.name}">${inner}</div>`;
+      return `<div class="${cardClass} pk-sovereign__card--onprem" aria-label="${name}">${title}${tagLine}${linksHtml}</div>`;
+    }
+
+    if (links.length > 1) {
+      return `<div class="${cardClass}" aria-label="${name}"><a href="${escapeHtml(client.url)}" target="_blank" rel="noopener noreferrer" class="no-underline text-inherit hover:underline">${title}${tagLine}</a>${linksHtml}</div>`;
     }
 
     return `
           <a
-            href="${client.url}"
+            href="${escapeHtml(client.url)}"
             target="_blank"
             rel="noopener noreferrer"
             class="${cardClass} transition-shadow hover:shadow-[6px_6px_0_0_#f2c849]"
-          >${inner}</a>`;
+          >${title}${tagLine}</a>`;
   }
 
   function ensurePkGrid(section) {

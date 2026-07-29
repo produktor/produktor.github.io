@@ -6,21 +6,21 @@
       "slug": "service",
       "accent": "bg-[#efe6cf] text-[#0a0a0a]",
       "icon": "service",
-      "nameEn": "Service Produkt",
-      "nameDe": "Service Produkt",
-      "tagEn": "Gitea · git · npm · docker · on-premise",
-      "tagDe": "Gitea · Git · npm · Docker · On-Premise",
-      "descriptionEn": "Self-hosted artifact and repository plane built on Gitea — Git source control plus npm, OCI/Docker, and other package registries on infrastructure you own. No GitHub/GitLab SaaS dependency for builds, releases, or internal libraries.",
-      "descriptionDe": "Self-hosted Artefakt- und Repository-Ebene auf Gitea — Git-Quellcodeverwaltung plus npm-, OCI/Docker- und weitere Paket-Registries auf eigener Infrastruktur. Keine GitHub-/GitLab-SaaS-Abhängigkeit für Builds, Releases oder interne Libraries.",
+      "nameEn": "Stack Platform",
+      "nameDe": "Stack Platform",
+      "tagEn": "Forge · observe · edge · on-premise",
+      "tagDe": "Forge · Observe · Edge · On-Premise",
+      "descriptionEn": "The platform plane for sovereign installs: Service Produkt (Gitea forge + npm/OCI registries) plus Observing (Grafana/Prometheus/Loki, Nginx Proxy Manager, DNS/ddclient, and tuned QEMU for legacy). Build, release, route, and watch the fleet on infrastructure you own.",
+      "descriptionDe": "Die Platform-Ebene für souveräne Installationen: Service Produkt (Gitea-Forge + npm/OCI-Registries) plus Observing (Grafana/Prometheus/Loki, Nginx Proxy Manager, DNS/ddclient und abgestimmtes QEMU für Legacy). Bauen, releasen, routen und die Fleet beobachten — auf eigener Infrastruktur.",
       "bulletsEn": [
-        "Git repos, issues, PRs, Actions — Gitea-native workflows",
-        "npm, container, and generic package registries beside Git",
-        "Live stack: git.produktor.io (produktor Gitea instance)"
+        "Service Produkt: Git, issues, PRs, Actions + npm/OCI registries (git.produktor.io)",
+        "Observing: Grafana/Prometheus/Loki, NPM routes + own DNS, ddclient, QEMU legacy",
+        "One install edge for forge, packages, metrics, and front-door TLS"
       ],
       "bulletsDe": [
-        "Git-Repos, Issues, PRs, Actions — Gitea-native Workflows",
-        "npm-, Container- und generische Paket-Registries neben Git",
-        "Live-Stack: git.produktor.io (produktor-Gitea-Instanz)"
+        "Service Produkt: Git, Issues, PRs, Actions + npm/OCI-Registries (git.produktor.io)",
+        "Observing: Grafana/Prometheus/Loki, NPM-Routes + eigene DNS, ddclient, QEMU-Legacy",
+        "Eine Install-Edge für Forge, Packages, Metriken und Front-Door-TLS"
       ],
       "liveDemoUrl": "https://git.produktor.io/"
     },
@@ -29,21 +29,21 @@
       "slug": "geo",
       "accent": "bg-[#143a6f] text-[#faf5ea]",
       "icon": "geo",
-      "nameEn": "Geo-Service",
-      "nameDe": "Geo-Service",
-      "tagEn": "Location · on-premise",
-      "tagDe": "Standort · On-Premise",
-      "descriptionEn": "Vector maps and geo search fully generated on-premise from up-to-date OSM and other datasets: tiles, Proton search, geocoding, and reverse geocoding — rendered with MapLibre with no commercial-license restrictions.",
-      "descriptionDe": "Vektor-Karten und Geo-Suche vollständig On-Premise aus aktuellen OSM- und weiteren Datensätzen: Tiles, Proton-Suche, Geocoding und Reverse-Geocoding — Darstellung mit MapLibre ohne Einschränkungen durch kommerzielle Lizenzen.",
+      "nameEn": "Stack Geo",
+      "nameDe": "Stack Geo",
+      "tagEn": "GIS · search · routing · on-premise",
+      "tagDe": "GIS · Suche · Routing · On-Premise",
+      "descriptionEn": "Full on-premise geo stack: GIS layers, vector tiles, geo search, reverse geocoding, routing, plus display and storage of geolocation data — generated from up-to-date OSM and other datasets, rendered with MapLibre, no commercial map SaaS.",
+      "descriptionDe": "Vollständiger On-Premise-Geo-Stack: GIS-Layer, Vektor-Tiles, Geo-Suche, Reverse-Geocoding, Routing sowie Anzeige und Speicherung von Geolocation-Daten — aus aktuellen OSM- und weiteren Datensätzen, MapLibre-Rendering, ohne kommerzielles Map-SaaS.",
       "bulletsEn": [
-        "Vector tiles + MapLibre rendering (no external map API calls)",
-        "Proton search + geocoding + reverse geocoding on your infrastructure",
-        "Fresh OSM-based data pipeline (updates on your schedule)"
+        "GIS + vector tiles + MapLibre (no external map API calls)",
+        "Geo search, reverse geocoding, and routing on your infrastructure",
+        "Store and display geolocation data; fresh OSM pipeline on your schedule"
       ],
       "bulletsDe": [
-        "Vektor-Tiles + MapLibre-Rendering (keine externen Map-API-Calls)",
-        "Proton-Suche + Geocoding + Reverse-Geocoding auf Ihrer Infrastruktur",
-        "Aktuelle OSM-basierte Datenpipeline (Updates nach Ihrem Rhythmus)"
+        "GIS + Vektor-Tiles + MapLibre (keine externen Map-API-Calls)",
+        "Geo-Suche, Reverse-Geocoding und Routing auf Ihrer Infrastruktur",
+        "Geolocation-Daten speichern und anzeigen; OSM-Pipeline nach Ihrem Rhythmus"
       ],
       "liveDemoUrl": "https://produktor.io/ui/#"
     },
@@ -69,45 +69,20 @@
         "Auch für Low-Memory-Setups (leichte Tasks, Edge-Use-Cases)"
       ],
       "liveDemoUrl": "https://ai.produktor.io/"
-    },
-    {
-      "code": "08",
-      "slug": "monitoring",
-      "accent": "bg-[#7bfa63] text-[#0a0a0a]",
-      "icon": "monitoring",
-      "nameEn": "Observing",
-      "nameDe": "Observing",
-      "tagEn": "Grafana · NPM · DNS · QEMU · on-premise",
-      "tagDe": "Grafana · NPM · DNS · QEMU · On-Premise",
-      "descriptionEn": "Ops edge for the suite: Grafana/Prometheus/Loki, Nginx Proxy Manager + your DNS names, ddclient on dynamic IPs, and finely tuned QEMU for legacy servers — with backups and fleet visibility.",
-      "descriptionDe": "Ops-Edge der Suite: Grafana/Prometheus/Loki, Nginx Proxy Manager + eigene DNS-Namen, ddclient bei dynamischen IPs und fein abgestimmtes QEMU für Legacy-Server — mit Backups und Fleet-Sicht.",
-      "bulletsEn": [
-        "NPM routes + own hostnames/TLS; ddclient when WAN IP changes",
-        "QEMU legacy VMs: pinned profiles, backup drills, Grafana QEMU dashboard",
-        "Live reference: grafana.produktor.io"
-      ],
-      "bulletsDe": [
-        "NPM-Routes + eigene Hostnames/TLS; ddclient bei WAN-IP-Wechsel",
-        "QEMU-Legacy-VMs: gepinnte Profile, Backup-Drills, Grafana-QEMU-Dashboard",
-        "Live-Referenz: grafana.produktor.io"
-      ],
-      "liveDemoUrl": "https://grafana.produktor.io/"
     }
   ],
   "footerLinks": {
     "modulesEn": [
-      "Service Produkt",
-      "Geo-Service",
+      "Stack Platform",
+      "Stack Geo",
       "Stack AI",
-      "UI",
-      "Observing"
+      "Stack UI"
     ],
     "modulesDe": [
-      "Service Produkt",
-      "Geo-Service",
+      "Stack Platform",
+      "Stack Geo",
       "Stack AI",
-      "UI",
-      "Observing"
+      "Stack UI"
     ]
   }
 }

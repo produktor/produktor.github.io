@@ -24,11 +24,11 @@
             "href": "/modules/meet/"
           },
           {
-            "label": "Service Produkt",
+            "label": "Stack Platform",
             "href": "/modules/service/"
           },
           {
-            "label": "Geo-Service",
+            "label": "Stack Geo",
             "href": "/modules/geo/"
           },
           {
@@ -36,12 +36,8 @@
             "href": "/modules/ai/"
           },
           {
-            "label": "UI",
+            "label": "Stack UI",
             "href": "/modules/ui/"
-          },
-          {
-            "label": "Observing",
-            "href": "/modules/monitoring/"
           }
         ]
       },
@@ -112,11 +108,11 @@
             "href": "/modules/meet/"
           },
           {
-            "label": "Service Produkt",
+            "label": "Stack Platform",
             "href": "/modules/service/"
           },
           {
-            "label": "Geo-Service",
+            "label": "Stack Geo",
             "href": "/modules/geo/"
           },
           {
@@ -124,12 +120,8 @@
             "href": "/modules/ai/"
           },
           {
-            "label": "UI",
+            "label": "Stack UI",
             "href": "/modules/ui/"
-          },
-          {
-            "label": "Observing",
-            "href": "/modules/monitoring/"
           }
         ]
       },

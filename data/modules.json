@@ -258,61 +258,89 @@
       "accent": "bg-[#efe6cf] text-[#0a0a0a]",
       "icon": "service",
       "liveDemoUrl": "https://git.produktor.io/",
-      "footerLabels": ["Service Produkt"],
+      "footerLabels": ["Stack Platform"],
       "en": {
-        "name": "Service Produkt",
-        "tag": "Gitea · git · npm · docker · on-premise",
-        "titleHighlight": "Repos",
-        "titleRest": "& packages you own.",
-        "lead": "Self-hosted artifact and repository plane on Gitea — Git plus npm, OCI/Docker, and other registries on infrastructure you own. No GitHub/GitLab SaaS dependency for builds, releases, or internal libraries.",
-        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS"],
-        "overview": "Service Produkt is the forge and package hub for sovereign product teams. Source, issues, PRs, Actions-style workflows, and package registries sit together so CI and release never require a foreign tenancy.",
+        "name": "Stack Platform",
+        "tag": "Forge · observe · edge · on-premise",
+        "titleHighlight": "Platform",
+        "titleRest": "forge and observe.",
+        "lead": "Stack Platform bundles Service Produkt and Observing: Gitea forge + package registries for code you own, and the ops edge — Grafana/Prometheus/Loki, Nginx Proxy Manager, DNS/ddclient, and tuned QEMU for legacy — so build, release, route, and watch stay on one sovereign plane.",
+        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS", "Datadog", "CloudWatch-only ops"],
+        "overview": "Stack Platform is the install and day-2 backbone. Service Produkt is the forge and package hub — Git, issues, PRs, Actions-style workflows, npm/OCI registries without a foreign tenancy. Observing is the shared ops edge — metrics and logs in Grafana/Prometheus/Loki, NPM hostnames and TLS, dynamic DNS when WAN IPs move, and QEMU/KVM for legacy boxes you cannot rewrite yet. One plane for product delivery and fleet visibility.",
         "features": [
-          "Git repos, issues, PRs, Actions — Gitea-native workflows",
-          "npm, container, and generic package registries beside Git",
-          "Live reference stack at git.produktor.io",
+          "Service Produkt: Git repos, issues, PRs, Actions — Gitea-native workflows",
+          "Service Produkt: npm, container, and generic package registries beside Git",
+          "Live forge reference at git.produktor.io",
+          "Observing: Grafana / Prometheus / Loki + Alertmanager → Matrix",
+          "Observing: Nginx Proxy Manager, own DNS names, ddclient on dynamic WAN",
+          "Observing: QEMU/KVM for legacy servers with backup drills and Grafana visibility",
           "Org/team permissions aligned with suite identity",
-          "Mirror and migrate from GitHub/GitLab when you cut over",
           "Runs on your metal or private cloud"
         ],
         "useCases": [
           "Internal libraries and container images that must not leave the org",
           "Customer-delivered software with on-prem build provenance",
-          "Air-gapped engineering orgs that still need modern Git UX"
+          "Sites that need forge + NPM routes + Grafana as one install package",
+          "Keeping legacy Windows / ERP alive beside modern compose without dual ops stacks"
         ],
         "deploy": [
           "Provision Gitea + registry storage with backup targets",
-          "Import orgs/repos; validate Actions runners on your network",
-          "Point CI and deploy pipelines at the new remotes",
+          "Stand up Grafana + Prometheus + Loki + NPM beside the suite",
+          "Point DNS (and ddclient if needed); publish services under TLS hostnames",
+          "Import orgs/repos; validate Actions runners; wire exporters and QEMU guests",
           "Decommission SaaS mirrors after dual-run window"
+        ],
+        "refs": [
+          {
+            "label": "Observing (detail)",
+            "href": "/modules/monitoring/"
+          },
+          {
+            "label": "Grafana (live)",
+            "href": "https://grafana.produktor.io/"
+          }
         ]
       },
       "de": {
-        "name": "Service Produkt",
-        "tag": "Gitea · Git · npm · Docker · On-Premise",
-        "titleHighlight": "Repos",
-        "titleRest": "& Packages unter Ihrer Kontrolle.",
-        "lead": "Self-hosted Artefakt- und Repository-Ebene auf Gitea — Git plus npm, OCI/Docker und weitere Registries auf eigener Infrastruktur. Keine GitHub-/GitLab-SaaS-Abhängigkeit für Builds, Releases oder interne Libraries.",
-        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS"],
-        "overview": "Service Produkt ist Forge und Package-Hub für souveräne Product-Teams. Source, Issues, PRs, Actions-ähnliche Workflows und Package-Registries liegen zusammen — CI und Release brauchen keine fremde Tenancy.",
+        "name": "Stack Platform",
+        "tag": "Forge · Observe · Edge · On-Premise",
+        "titleHighlight": "Platform",
+        "titleRest": "Forge und Observe.",
+        "lead": "Stack Platform bündelt Service Produkt und Observing: Gitea-Forge + Package-Registries für Code unter Ihrer Kontrolle, und die Ops-Edge — Grafana/Prometheus/Loki, Nginx Proxy Manager, DNS/ddclient und abgestimmtes QEMU für Legacy — damit Build, Release, Routing und Fleet-Sicht auf einer souveränen Ebene bleiben.",
+        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS", "Datadog", "CloudWatch-only Ops"],
+        "overview": "Stack Platform ist Install- und Day-2-Rückgrat. Service Produkt ist Forge und Package-Hub — Git, Issues, PRs, Actions-ähnliche Workflows, npm/OCI-Registries ohne fremde Tenancy. Observing ist die gemeinsame Ops-Edge — Metriken und Logs in Grafana/Prometheus/Loki, NPM-Hostnames und TLS, dynamisches DNS bei WAN-IP-Wechsel, QEMU/KVM für Legacy-Boxen. Eine Ebene für Product Delivery und Fleet-Sicht.",
         "features": [
-          "Git-Repos, Issues, PRs, Actions — Gitea-native Workflows",
-          "npm-, Container- und generische Paket-Registries neben Git",
-          "Live-Referenzstack unter git.produktor.io",
+          "Service Produkt: Git-Repos, Issues, PRs, Actions — Gitea-native Workflows",
+          "Service Produkt: npm-, Container- und generische Paket-Registries neben Git",
+          "Live-Forge-Referenz unter git.produktor.io",
+          "Observing: Grafana / Prometheus / Loki + Alertmanager → Matrix",
+          "Observing: Nginx Proxy Manager, eigene DNS-Namen, ddclient bei dynamischem WAN",
+          "Observing: QEMU/KVM für Legacy-Server mit Backup-Drills und Grafana-Sicht",
           "Org-/Team-Rechte aligned mit Suite-Identity",
-          "Mirror und Migration von GitHub/GitLab beim Cutover",
           "Auf Ihrer Hardware oder Private Cloud"
         ],
         "useCases": [
           "Interne Libraries und Container-Images, die die Org nicht verlassen dürfen",
           "Kunden-Software mit On-Prem Build-Provenance",
-          "Air-Gap-Engineering mit modernem Git-UX"
+          "Sites, die Forge + NPM-Routes + Grafana als ein Install-Paket brauchen",
+          "Legacy-Windows-/ERP neben modernem Compose ohne doppelten Ops-Stack"
         ],
         "deploy": [
           "Gitea + Registry-Storage mit Backup-Zielen provisionieren",
-          "Orgs/Repos importieren; Actions-Runner im eigenen Netz validieren",
-          "CI und Deploy-Pipelines auf neue Remotes umstellen",
+          "Grafana + Prometheus + Loki + NPM neben der Suite aufsetzen",
+          "DNS (und ddclient falls nötig) setzen; Services unter TLS-Hostnames publizieren",
+          "Orgs/Repos importieren; Actions-Runner validieren; Exporter und QEMU-Guests verdrahten",
           "SaaS-Mirror nach Dual-Run abschalten"
+        ],
+        "refs": [
+          {
+            "label": "Observing (Detail)",
+            "href": "/modules/monitoring/"
+          },
+          {
+            "label": "Grafana (Live)",
+            "href": "https://grafana.produktor.io/"
+          }
         ]
       }
     },
@@ -322,60 +350,64 @@
       "accent": "bg-[#143a6f] text-[#faf5ea]",
       "icon": "geo",
       "liveDemoUrl": "https://produktor.io/ui/#",
-      "footerLabels": ["Geo-Service"],
+      "footerLabels": ["Stack Geo"],
       "en": {
-        "name": "Geo-Service",
-        "tag": "Location · on-premise",
-        "titleHighlight": "Maps",
+        "name": "Stack Geo",
+        "tag": "GIS · search · routing · on-premise",
+        "titleHighlight": "Geo",
         "titleRest": "without map SaaS.",
-        "lead": "Vector maps and geo search fully generated on-premise from up-to-date OSM and other datasets: tiles, Proton search, geocoding, and reverse geocoding — MapLibre rendering with no commercial-license tax on every view.",
+        "lead": "On-premise GIS and location stack: vector maps, geo search, reverse geocoding, routing, plus display and storage of geolocation data — fully generated from up-to-date OSM and other datasets, MapLibre rendering, no commercial-license tax on every view.",
         "replaces": ["Google Maps Platform", "Mapbox SaaS"],
-        "overview": "Geo-Service keeps location intelligence inside your boundary. Tile generation, search, and geocoding run on your schedule against datasets you host — useful for logistics, care routing, and field ops that cannot call out to commercial map APIs.",
+        "overview": "Stack Geo keeps location intelligence inside your boundary. GIS layers, tile generation, geo search, reverse geocoding, and routing run on your schedule against datasets you host. Geolocation records stay in storage you control and render in the produktor UI shell — for logistics, care routing, and field ops that cannot call out to commercial map APIs.",
         "features": [
+          "GIS layers and geolocation data storage under your control",
           "Vector tiles + MapLibre rendering (no external map API calls)",
-          "Proton search + geocoding + reverse geocoding on your infrastructure",
+          "Geo search (Proton) + geocoding + reverse geocoding on your infrastructure",
+          "Routing for field / care / logistics paths without SaaS egress",
           "Fresh OSM-based data pipeline (updates on your schedule)",
-          "Works with the produktor UI map shell",
+          "Works with Stack UI map shell at produktor.io/ui",
           "No per-request commercial license metering",
           "Deployable beside the rest of the stack"
         ],
         "useCases": [
           "Care and field routing with patient/site addresses kept on-prem",
-          "Internal ops dashboards that embed maps without Google keys",
-          "Sovereign apps that need geocode + reverse without egress"
+          "Internal ops dashboards that embed maps and store location history without Google keys",
+          "Sovereign apps that need GIS + geocode + reverse + routing without egress"
         ],
         "deploy": [
-          "Size disk/CPU for tile builds and search indexes",
+          "Size disk/CPU for tile builds, search indexes, and geo storage",
           "Schedule OSM (and other) refresh jobs",
-          "Point UI / apps at your tile and geocode endpoints",
+          "Point UI / apps at your tile, search, geocode, and routing endpoints",
           "Monitor build lag vs your freshness SLO"
         ]
       },
       "de": {
-        "name": "Geo-Service",
-        "tag": "Standort · On-Premise",
-        "titleHighlight": "Karten",
+        "name": "Stack Geo",
+        "tag": "GIS · Suche · Routing · On-Premise",
+        "titleHighlight": "Geo",
         "titleRest": "ohne Map-SaaS.",
-        "lead": "Vektor-Karten und Geo-Suche vollständig On-Premise aus aktuellen OSM- und weiteren Datensätzen: Tiles, Proton-Suche, Geocoding und Reverse-Geocoding — MapLibre ohne kommerzielle Lizenzgebühr pro View.",
+        "lead": "On-Premise-GIS- und Location-Stack: Vektor-Karten, Geo-Suche, Reverse-Geocoding, Routing sowie Anzeige und Speicherung von Geolocation-Daten — vollständig aus aktuellen OSM- und weiteren Datensätzen, MapLibre-Rendering, ohne kommerzielle Lizenzgebühr pro View.",
         "replaces": ["Google Maps Platform", "Mapbox SaaS"],
-        "overview": "Geo-Service hält Location-Intelligence innerhalb Ihrer Grenze. Tile-Generierung, Suche und Geocoding laufen nach Ihrem Rhythmus gegen Datasets, die Sie hosten — für Logistik, Care-Routing und Field-Ops ohne Commercial-Map-APIs.",
+        "overview": "Stack Geo hält Location-Intelligence innerhalb Ihrer Grenze. GIS-Layer, Tile-Generierung, Geo-Suche, Reverse-Geocoding und Routing laufen nach Ihrem Rhythmus gegen Datasets, die Sie hosten. Geolocation-Records bleiben in Storage unter Ihrer Kontrolle und rendern in der produktor-UI-Shell — für Logistik, Care-Routing und Field-Ops ohne Commercial-Map-APIs.",
         "features": [
+          "GIS-Layer und Speicherung von Geolocation-Daten unter Ihrer Kontrolle",
           "Vektor-Tiles + MapLibre-Rendering (keine externen Map-API-Calls)",
-          "Proton-Suche + Geocoding + Reverse-Geocoding auf Ihrer Infrastruktur",
+          "Geo-Suche (Proton) + Geocoding + Reverse-Geocoding auf Ihrer Infrastruktur",
+          "Routing für Field-/Care-/Logistik-Pfade ohne SaaS-Egress",
           "Aktuelle OSM-basierte Datenpipeline (Updates nach Ihrem Rhythmus)",
-          "Anbindung an die produktor-UI-Map-Shell",
+          "Zusammenspiel mit Stack-UI-Map-Shell unter produktor.io/ui",
           "Kein Commercial-License-Metering pro Request",
           "Deploybar neben dem Rest des Stacks"
         ],
         "useCases": [
           "Care- und Field-Routing mit Patienten-/Standortadressen On-Prem",
-          "Interne Ops-Dashboards mit Karten ohne Google-Keys",
-          "Souveräne Apps mit Geocode + Reverse ohne Egress"
+          "Interne Ops-Dashboards mit Karten und Location-Historie ohne Google-Keys",
+          "Souveräne Apps mit GIS + Geocode + Reverse + Routing ohne Egress"
         ],
         "deploy": [
-          "Disk/CPU für Tile-Builds und Search-Indexes dimensionieren",
+          "Disk/CPU für Tile-Builds, Search-Indexes und Geo-Storage dimensionieren",
           "OSM- (und weitere) Refresh-Jobs planen",
-          "UI / Apps auf Ihre Tile- und Geocode-Endpoints zeigen",
+          "UI / Apps auf Tile-, Search-, Geocode- und Routing-Endpoints zeigen",
           "Build-Lag gegen Ihr Freshness-SLO monitoren"
         ]
       }
@@ -405,13 +437,13 @@
         ],
         "useCases": [
           "Private RAG over care or legal corpora that cannot leave the site",
-          "Dev assistants against internal repos on Service Produkt",
+          "Dev assistants against internal repos on Stack Platform",
           "Classification and routing jobs on CPU-only appliances"
         ],
         "deploy": [
           "Pick models and engines for VRAM / CPU budget",
           "Wire embedding endpoints into search and agents",
-          "Lock model artifacts in your registry (Service Produkt)",
+          "Lock model artifacts in your registry (Stack Platform)",
           "Monitor latency and queue depth under real traffic"
         ]
       },
@@ -433,13 +465,13 @@
         ],
         "useCases": [
           "Privates RAG über Care- oder Legal-Corpora ohne Site-Egress",
-          "Dev-Assistenten gegen interne Repos auf Service Produkt",
+          "Dev-Assistenten gegen interne Repos auf Stack Platform",
           "Klassifikation und Routing auf CPU-only Appliances"
         ],
         "deploy": [
           "Modelle und Engines nach VRAM-/CPU-Budget wählen",
           "Embedding-Endpoints in Suche und Agents verdrahten",
-          "Model-Artefakte in Ihrer Registry (Service Produkt) sichern",
+          "Model-Artefakte in Ihrer Registry (Stack Platform) sichern",
           "Latenz und Queue-Tiefe unter Realverkehr monitoren"
         ]
       }
@@ -450,61 +482,61 @@
       "accent": "bg-[#efe6cf] text-[#0a0a0a]",
       "icon": "ui",
       "liveDemoUrl": "https://produktor.io/ui/#",
-      "footerLabels": ["UI"],
+      "footerLabels": ["Stack UI"],
       "en": {
-        "name": "UI",
+        "name": "Stack UI",
         "tag": "Map & ops shell · on-premise",
         "titleHighlight": "UI",
         "titleRest": "for sovereign maps.",
-        "lead": "The produktor map and ops shell that sits on Geo-Service tiles and search — a browser UI for exploring layers, geocoding, and operational views without shipping queries to a commercial map vendor.",
+        "lead": "The produktor map and ops shell on Stack Geo tiles and search — a browser UI for exploring layers, geocoding, routing views, and stored geolocation without shipping queries to a commercial map vendor.",
         "replaces": ["Vendor map consoles", "Ad-hoc Leaflet demos"],
-        "overview": "UI is the front door for Geo-Service. Operators and integrators get a consistent shell for tiles, search, and debugging — deployable with the stack or pointed at your own endpoints.",
+        "overview": "Stack UI is the front door for Stack Geo. Operators and integrators get a consistent shell for tiles, search, routing debug, and geolocation display — deployable with the stack or pointed at your own endpoints.",
         "features": [
           "MapLibre-based interactive map shell",
-          "Hooks into on-prem tiles and Proton search",
+          "Hooks into on-prem tiles, Proton search, and routing",
           "Geocode / reverse helpers for ops workflows",
-          "Works with Geo-Service data pipelines",
+          "Works with Stack Geo data pipelines and geo storage",
           "Hosted reference at produktor.io/ui",
           "Embeddable patterns for your own apps"
         ],
         "useCases": [
-          "Internal ops desks validating geocode quality",
-          "Demo and acceptance environments for Geo-Service installs",
+          "Internal ops desks validating geocode and routing quality",
+          "Demo and acceptance environments for Stack Geo installs",
           "Starter shell for product teams building location features"
         ],
         "deploy": [
           "Serve static UI behind your reverse proxy",
-          "Configure tile and search base URLs to Geo-Service",
+          "Configure tile, search, and routing base URLs to Stack Geo",
           "Lock down access with the suite IdP if exposed beyond LAN",
-          "Keep in sync with Geo-Service dataset refreshes"
+          "Keep in sync with Stack Geo dataset refreshes"
         ]
       },
       "de": {
-        "name": "UI",
+        "name": "Stack UI",
         "tag": "Karten- & Ops-Shell · On-Premise",
         "titleHighlight": "UI",
         "titleRest": "für souveräne Karten.",
-        "lead": "Die produktor Map- und Ops-Shell auf Geo-Service-Tiles und -Suche — Browser-UI für Layer, Geocoding und operative Views, ohne Queries an einen kommerziellen Map-Vendor zu schicken.",
+        "lead": "Die produktor Map- und Ops-Shell auf Stack-Geo-Tiles und -Suche — Browser-UI für Layer, Geocoding, Routing-Views und gespeicherte Geolocation, ohne Queries an einen kommerziellen Map-Vendor zu schicken.",
         "replaces": ["Vendor-Map-Consoles", "Ad-hoc-Leaflet-Demos"],
-        "overview": "UI ist die Haustür zu Geo-Service. Ops und Integratoren bekommen eine konsistente Shell für Tiles, Suche und Debugging — mit dem Stack deploybar oder auf eigene Endpoints gerichtet.",
+        "overview": "Stack UI ist die Haustür zu Stack Geo. Ops und Integratoren bekommen eine konsistente Shell für Tiles, Suche, Routing-Debug und Geolocation-Anzeige — mit dem Stack deploybar oder auf eigene Endpoints gerichtet.",
         "features": [
           "MapLibre-basierte interaktive Map-Shell",
-          "Anbindung an On-Prem-Tiles und Proton-Suche",
+          "Anbindung an On-Prem-Tiles, Proton-Suche und Routing",
           "Geocode-/Reverse-Hilfen für Ops-Workflows",
-          "Zusammenspiel mit Geo-Service-Datenpipelines",
+          "Zusammenspiel mit Stack-Geo-Datenpipelines und Geo-Storage",
           "Referenz unter produktor.io/ui",
           "Einbettbare Patterns für eigene Apps"
         ],
         "useCases": [
-          "Interne Ops-Desks zur Geocode-Qualitätsprüfung",
-          "Demo- und Abnahme-Umgebungen für Geo-Service-Installs",
+          "Interne Ops-Desks zur Geocode- und Routing-Qualitätsprüfung",
+          "Demo- und Abnahme-Umgebungen für Stack-Geo-Installs",
           "Starter-Shell für Product-Teams mit Location-Features"
         ],
         "deploy": [
           "Statische UI hinter Ihrem Reverse-Proxy ausliefern",
-          "Tile- und Search-Base-URLs auf Geo-Service setzen",
+          "Tile-, Search- und Routing-Base-URLs auf Stack Geo setzen",
           "Zugriff mit Suite-IdP absichern, falls außerhalb LAN",
-          "Mit Geo-Service-Dataset-Refreshes synchron halten"
+          "Mit Stack-Geo-Dataset-Refreshes synchron halten"
         ]
       }
     },
@@ -514,15 +546,15 @@
       "accent": "bg-[#7bfa63] text-[#0a0a0a]",
       "icon": "monitoring",
       "liveDemoUrl": "https://grafana.produktor.io/",
-      "footerLabels": ["Observing", "Monitoring"],
+      "footerLabels": ["Stack Platform", "Observing"],
       "en": {
         "name": "Observing",
-        "tag": "Monitoring · edge · DNS · QEMU legacy",
+        "tag": "Part of Stack Platform · monitoring · edge · DNS · QEMU",
         "titleHighlight": "Observe",
         "titleRest": "route, and run legacy safely.",
-        "lead": "One shared ops plane: Grafana / Prometheus / Loki for the fleet, Nginx Proxy Manager for service front-doors and your own DNS names, ddclient when the WAN IP moves — plus finely tuned QEMU for legacy servers you cannot rewrite yet.",
+        "lead": "Observing is the ops half of Stack Platform: Grafana / Prometheus / Loki for the fleet, Nginx Proxy Manager for service front-doors and your own DNS names, ddclient when the WAN IP moves — plus finely tuned QEMU for legacy servers you cannot rewrite yet.",
         "replaces": ["Datadog", "New Relic", "CloudWatch-only ops", "Ad-hoc port forwards / ISP DDNS gadgets"],
-        "overview": "Observing is day-2 ops and the install edge for the suite. Metrics and logs land in one Grafana/Prometheus/Loki plane; Alertmanager fans out to Matrix. In front of every module sits Nginx Proxy Manager: TLS, host-based routing, and your own DNS names (produktor.io or customer zones) instead of raw ports. On dynamic WAN links, ddclient (or equivalent) keeps A/AAAA records fresh so cutovers and demos keep working after DHCP renumbering — that DNS + proxy pair is part of standard setup, not an afterthought. Where Windows / old Linux appliances still matter, we virtualize them under QEMU/KVM with explicit CPU, disk, and network profiles, scheduled backups, and Grafana visibility — so legacy and modern compose stacks share one site without surprise coupling.",
+        "overview": "Observing is day-2 ops inside Stack Platform. Metrics and logs land in one Grafana/Prometheus/Loki plane; Alertmanager fans out to Matrix. In front of every module sits Nginx Proxy Manager: TLS, host-based routing, and your own DNS names (produktor.io or customer zones) instead of raw ports. On dynamic WAN links, ddclient (or equivalent) keeps A/AAAA records fresh so cutovers and demos keep working after DHCP renumbering — that DNS + proxy pair is part of standard setup, not an afterthought. Where Windows / old Linux appliances still matter, we virtualize them under QEMU/KVM with explicit CPU, disk, and network profiles, scheduled backups, and Grafana visibility — so legacy and modern compose stacks share one site without surprise coupling.",
         "features": [
           "Grafana as the shared BI / ops UI (one instance per site, not nested copies)",
           "Prometheus scrape of node-exporter, cAdvisor, SMART, app exporters, and QEMU guests",
@@ -576,10 +608,10 @@
       },
       "de": {
         "name": "Observing",
-        "tag": "Monitoring · Edge · DNS · QEMU-Legacy",
+        "tag": "Teil von Stack Platform · Monitoring · Edge · DNS · QEMU",
         "titleHighlight": "Observe",
         "titleRest": "routen und Legacy sicher betreiben.",
-        "lead": "Eine gemeinsame Ops-Plane: Grafana / Prometheus / Loki für die Fleet, Nginx Proxy Manager für Service-Front-Doors und eigene DNS-Namen, ddclient wenn die WAN-IP wechselt — plus fein abgestimmtes QEMU für Legacy-Server, die Sie noch nicht ersetzen können.",
+        "lead": "Observing ist die Ops-Hälfte von Stack Platform: Grafana / Prometheus / Loki für die Fleet, Nginx Proxy Manager für Service-Front-Doors und eigene DNS-Namen, ddclient wenn die WAN-IP wechselt — plus fein abgestimmtes QEMU für Legacy-Server, die Sie noch nicht ersetzen können.",
         "replaces": ["Datadog", "New Relic", "CloudWatch-only Ops", "Ad-hoc Port-Forwards / ISP-DDNS-Gadgets"],
         "overview": "Observing ist Day-2-Ops und die Install-Edge der Suite. Metriken und Logs landen in einer Grafana-/Prometheus-/Loki-Plane; Alertmanager fannt nach Matrix. Vor jedem Modul sitzt Nginx Proxy Manager: TLS, Host-basiertes Routing und Ihre eigenen DNS-Namen (produktor.io oder Kunden-Zonen) statt nackter Ports. An dynamischen WAN-Links hält ddclient (oder Äquivalent) A/AAAA-Records frisch, damit Cutover und Demos nach DHCP-Renumbering weiterlaufen — DNS + Proxy sind Teil des Standard-Setups, kein Nachgedanke. Wo Windows- / alte Linux-Appliances noch zählen, virtualisieren wir sie unter QEMU/KVM mit expliziten CPU-, Disk- und Netz-Profilen, geplanten Backups und Grafana-Sicht — Legacy und moderne Compose-Stacks teilen eine Site ohne überraschende Kopplung.",
         "features": [
