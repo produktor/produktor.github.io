@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>produktor.io — Souveränität für den bayerischen Mittelstand · IHK</title>
+  <meta name="description" content="Souveräne On-Premise-Stacks für KMU und Gesundheitsbetriebe in Bayern. Partnerschaft und Zertifizierung mit der IHK — praxisnah, langfristig, vor Ort." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c1624;
+      --ink-soft: #2a3648;
+      --paper: #f7f3ea;
+      --paper-2: #ebe4d4;
+      --navy: #143a6f;
+      --navy-bright: #1f5296;
+      --gold: #e0b43a;
+      --gold-soft: #f2d98a;
+      --stone: #6b6458;
+      --line: rgba(12, 22, 36, 0.14);
+      --good: #1a5c45;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(12, 22, 36, 0.22);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; height: 100%; overflow: hidden;
+      background: var(--ink); color: var(--ink);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+    }
+    .stage {
+      position: relative; width: 100%; height: 100%;
+      background:
+        radial-gradient(1100px 640px at 8% -8%, rgba(224, 180, 58, 0.22), transparent 55%),
+        radial-gradient(900px 560px at 100% 10%, rgba(31, 82, 150, 0.35), transparent 50%),
+        linear-gradient(155deg, #08101a 0%, #12253f 48%, #0c1624 100%);
+    }
+    .stage::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(247, 243, 234, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247, 243, 234, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at center, black 28%, transparent 75%);
+    }
+    .slide {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      opacity: 0; visibility: hidden;
+      transform: translateY(16px) scale(0.985);
+      transition: opacity 420ms ease, transform 420ms ease, visibility 0s linear 420ms;
+    }
+    .slide.active {
+      opacity: 1; visibility: visible; transform: none;
+      transition: opacity 420ms ease, transform 420ms ease;
+    }
+    .card {
+      width: min(1080px, 100%);
+      max-height: min(860px, 100%);
+      overflow: auto;
+      background: linear-gradient(180deg, rgba(247,243,234,0.98), rgba(235,228,212,0.96));
+      border: 1px solid rgba(247,243,234,0.18);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      padding: clamp(1.4rem, 3.5vw, 3rem);
+      position: relative;
+    }
+    .card::after {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+      border-radius: calc(var(--radius) + 6px) 0 0 calc(var(--radius) + 6px);
+      background: linear-gradient(180deg, var(--gold), var(--navy-bright));
+    }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--navy); margin-bottom: 0.85rem;
+    }
+    .kicker .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(224,180,58,0.25);
+    }
+    .brand {
+      font-family: Fraunces, Georgia, serif; font-weight: 700;
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem); color: var(--navy); margin-bottom: 0.35rem;
+    }
+    h1, h2 {
+      font-family: Fraunces, Georgia, serif; font-weight: 700;
+      line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 0.75rem; color: var(--ink);
+    }
+    h1 { font-size: clamp(2.1rem, 5.2vw, 3.8rem); }
+    h2 { font-size: clamp(1.65rem, 3.6vw, 2.55rem); }
+    .lead {
+      font-size: clamp(1.02rem, 2vw, 1.25rem); line-height: 1.45;
+      color: var(--ink-soft); max-width: 44rem; margin: 0 0 1.4rem;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 1.35rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.2rem; border-radius: 999px; text-decoration: none;
+      font-weight: 700; font-size: 0.95rem;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+    .btn-primary { background: var(--ink); color: var(--paper); box-shadow: 0 10px 24px rgba(12,22,36,0.25); }
+    .btn-primary:hover { transform: translateY(-2px); background: #050a12; }
+    .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+    .btn-ghost:hover { background: rgba(12,22,36,0.05); }
+    .ext-link { color: var(--navy); word-break: break-all; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    @media (max-width: 760px) {
+      .grid-2, .split-list, .route-art { grid-template-columns: 1fr !important; }
+      .card { max-height: calc(100% - 4.5rem); }
+    }
+    .feature {
+      background: rgba(255,255,255,0.42); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1rem 1.1rem 1.15rem; min-height: 100%;
+    }
+    .feature h3 { margin: 0 0 0.4rem; font-size: 1.05rem; font-weight: 700; }
+    .feature p { margin: 0; color: var(--ink-soft); line-height: 1.4; font-size: 0.95rem; }
+    .feature .tag {
+      display: inline-block; margin-bottom: 0.55rem; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #8a6420;
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .pill {
+      border-radius: 999px; padding: 0.4rem 0.75rem; font-size: 0.8rem; font-weight: 600;
+      background: rgba(20,58,111,0.1); color: var(--navy); border: 1px solid rgba(20,58,111,0.18);
+    }
+    .pill.gold {
+      background: rgba(224,180,58,0.18); color: #6b4e10; border-color: rgba(224,180,58,0.35);
+    }
+    .split-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.4rem; }
+    .panel {
+      border-radius: var(--radius); padding: 1.1rem 1.15rem; border: 1px solid var(--line);
+    }
+    .panel.navy { background: linear-gradient(160deg, rgba(20,58,111,0.12), rgba(255,255,255,0.35)); }
+    .panel.gold { background: linear-gradient(160deg, rgba(224,180,58,0.16), rgba(255,255,255,0.35)); }
+    .panel h3 { margin: 0 0 0.7rem; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; }
+    .panel ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); line-height: 1.45; }
+    .panel li { margin-bottom: 0.45rem; }
+    .compare {
+      width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.92rem;
+      overflow: hidden; border-radius: 14px; border: 1px solid var(--line);
+      background: rgba(255,255,255,0.35);
+    }
+    .compare th, .compare td {
+      padding: 0.75rem 0.85rem; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top;
+    }
+    .compare th {
+      background: rgba(12,22,36,0.06); font-size: 0.72rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--ink-soft);
+    }
+    .compare tr:last-child td { border-bottom: 0; }
+    .compare td:first-child { font-weight: 600; width: 30%; }
+    .yes { color: var(--good); font-weight: 700; }
+    .mid { color: #6b5a2a; font-weight: 600; }
+    .tiny { margin-top: 1.1rem; font-size: 0.8rem; color: rgba(12,22,36,0.55); }
+    .footer-bar {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 5;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 0.85rem clamp(1rem, 3vw, 2rem);
+      color: rgba(247,243,234,0.78); font-size: 0.82rem;
+      backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.3));
+    }
+    .progress { display: flex; gap: 0.35rem; align-items: center; }
+    .progress button {
+      width: 9px; height: 9px; border-radius: 50%; border: 0;
+      background: rgba(247,243,234,0.28); cursor: pointer; padding: 0;
+    }
+    .progress button.on { width: 22px; border-radius: 999px; background: var(--gold-soft); }
+    .nav-btns { display: flex; gap: 0.45rem; }
+    .nav-btns button {
+      border: 1px solid rgba(247,243,234,0.25); background: rgba(247,243,234,0.08);
+      color: var(--paper); border-radius: 999px; padding: 0.4rem 0.85rem;
+      cursor: pointer; font: inherit; font-weight: 600;
+    }
+    .nav-btns button:hover { background: rgba(247,243,234,0.16); }
+    .route-art { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.25rem; align-items: center; }
+    .stat-stack { display: grid; gap: 0.7rem; }
+    .stat {
+      background: rgba(255,255,255,0.45); border: 1px solid var(--line);
+      border-radius: 14px; padding: 0.85rem 1rem;
+    }
+    .stat strong {
+      display: block; font-family: Fraunces, Georgia, serif; font-size: 1.45rem;
+      color: var(--ink); line-height: 1.1; margin-bottom: 0.2rem;
+    }
+    .stat span { color: var(--ink-soft); font-size: 0.88rem; }
+    .quote {
+      margin: 0.4rem 0 0; padding: 1rem 1.15rem; border-left: 4px solid var(--gold);
+      background: rgba(255,255,255,0.4); border-radius: 0 14px 14px 0;
+      color: var(--ink-soft); font-size: 1.02rem; line-height: 1.45;
+    }
+    .quote strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="deck" id="deck" aria-live="polite">
+
+      <section class="slide active" data-title="Titel">
+        <div class="card">
+          <div class="brand">produktor.io · ProProdukt SL</div>
+          <div class="kicker"><span class="dot"></span> IHK Bayern · Digitale Souveränität</div>
+          <h1>Souveränität ist Praxis — nicht Folie.</h1>
+          <p class="lead">
+            On-Premise-Stacks für den Mittelstand und Gesundheitsbetriebe in Bayern:
+            Daten, Office, Chat, Meet, Geo und lokale KI unter Ihrer Kontrolle —
+            mit langfristiger Partnerschaft im Geist der IHK.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://produktor.io/" target="_blank" rel="noopener">produktor.io öffnen</a>
+            <a class="btn btn-ghost" href="#partner">Partnerschaft &amp; Zertifizierung</a>
+          </div>
+          <p class="tiny">Externer Link dieser Präsentation: https://produktor.io/ihk/</p>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Warum">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Warum Souveränität</div>
+          <h2>Kontrolle statt Cloud-Zwang.</h2>
+          <p class="lead">
+            Souveränität heißt: wer speichert, wer zugreift, wer upgradet — und was bei
+            Ausfall oder Rechtswechsel noch Ihnen gehört. Für KMU und Pflege ist das
+            Betriebssicherheit, DSGVO und Verlässlichkeit — kein Marketingwort.
+          </p>
+          <div class="grid-2">
+            <div class="feature">
+              <span class="tag">Daten</span>
+              <h3>Eigentum behalten</h3>
+              <p>CRM, Dokumente, Chat und Backups bleiben in Ihrem Perimeter — ohne Pflicht-SaaS-Egress und ohne Vendor-Lock durch fremde Mandantenmodelle.</p>
+            </div>
+            <div class="feature">
+              <span class="tag">Recht</span>
+              <h3>DSGVO handfest</h3>
+              <p>Gesundheits- und Kundendaten brauchen klare Verantwortlichkeiten. On-Premise macht Auftragsverarbeitung und Audit-Pfade greifbar.</p>
+            </div>
+            <div class="feature">
+              <span class="tag">Betrieb</span>
+              <h3>Laufend statt einmalig</h3>
+              <p>Installation, Migration, Monitoring, Updates: ein Stack, den Betriebe selbst hosten oder mit Partnern betreiben — nicht „Projekt und weg“.</p>
+            </div>
+            <div class="feature">
+              <span class="tag">KI</span>
+              <h3>Inferenz vor Ort</h3>
+              <p>Lokale Modelle (vLLM, Ollama u. a.) auf eigener Hardware: Assistenz ohne Datenabfluss in öffentliche Clouds.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Stack">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Was wir liefern</div>
+          <h2>Ein kohärenter souveräner Stack</h2>
+          <div class="grid-2" style="margin-top:0.35rem">
+            <div class="feature"><span class="tag">01</span><h3>Stack CRM / Office</h3><p>OnlyOffice-Datenplane: Kontakte, Deals, Tasks, Dokument-Originale — plus S3/SMB/SSH unter Ihrer Kontrolle.</p></div>
+            <div class="feature"><span class="tag">02</span><h3>Stack Chat</h3><p>Matrix-Chat für Teams und Partner — Föderation möglich, Hosting bei Ihnen.</p></div>
+            <div class="feature"><span class="tag">03</span><h3>Stack Meet</h3><p>Videokonferenz ohne Pflicht-Cloud-Meet — an IdP und Observability angebunden.</p></div>
+            <div class="feature"><span class="tag">04</span><h3>Platform &amp; Observability</h3><p>Forge, Metrics, Alerts: Betriebssichtbarkeit statt Blackbox-SaaS.</p></div>
+            <div class="feature"><span class="tag">05</span><h3>Geo-Service</h3><p>Karten und Routing ohne kommerzielles Map-SaaS als Zwangsmodell — GIS-fähig für Kommunen und Betriebe.</p></div>
+            <div class="feature"><span class="tag">06</span><h3>Stack AI</h3><p>Lokale Inferenz: Edge bis GPU — Daten und Modelle im eigenen Haus.</p></div>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Bare Metal · VM · eigene Cloud-Tenancy</span>
+            <span class="pill gold">Air-Gap fähig</span>
+            <span class="pill">Keine Pflicht-SaaS</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Bayern">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Mittelfranken · Praxis</div>
+          <div class="route-art">
+            <div>
+              <h2>Schon im Einsatz — hier in der Region</h2>
+              <p class="lead" style="margin-bottom:0.9rem">
+                Keine Theorie aus Folien: souveräne Installationen bei Pflegediensten in Nürnberg
+                und weiteren Betrieben — greifbare Use Cases für IHK-Mitglieder.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Medex Pflegedienst · Nürnberg</span>
+                <span class="pill">Edelweiss Pflegedienst · Nürnberg</span>
+                <span class="pill">Advisory · Canarias / DE remote</span>
+              </div>
+              <p class="quote" style="margin-top:1.1rem">
+                <strong>Für die IHK zählt Praxis.</strong> Mitglieder sollen sehen, wie Souveränität
+                im Alltag eines Gesundheitsbetriebs aussieht — nicht nur in Keynotes.
+              </p>
+            </div>
+            <div class="stat-stack">
+              <div class="stat"><strong>Nürnberg</strong><span>Standort &amp; Betrieb vor Ort</span></div>
+              <div class="stat"><strong>Pflege</strong><span>Sensible Daten · hohe Verfügbarkeit</span></div>
+              <div class="stat"><strong>Langfristig</strong><span>Support statt Einmal-Projekt</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="IHK">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Passung zur IHK</div>
+          <h2>Ergänzung zur Souveränitäts-Linie</h2>
+          <p class="lead">
+            Die IHK Bayern / Nürnberg treibt Open Source, digitale Selbstbestimmung und Formate
+            wie NUEDIGITAL. Wir wollen kein Parallelprogramm — sondern betriebsreife Stacks
+            und regionale Umsetzungskraft ergänzen.
+          </p>
+          <div style="overflow-x:auto">
+            <table class="compare">
+              <thead>
+                <tr><th>IHK-Schwerpunkt</th><th>Unser Beitrag</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Open Source &amp; Kollaboration</td><td class="yes">Ergänzung zu OpenCloud / OpenTalk: CRM, Chat, Meet, Geo, AI als kohärenter Stack</td></tr>
+                <tr><td>Praxis für KMU</td><td class="yes">Live-Referenzen Pflege/Mittelstand in Mittelfranken</td></tr>
+                <tr><td>Souveräne KI</td><td class="yes">Lokale Inferenz on-prem / Edge — Daten bleiben</td></tr>
+                <tr><td>Orientierung Mitglieder</td><td class="mid">Workshops, Demos, Pilot-Roadmaps „Cloud-Abhängigkeit kartieren“</td></tr>
+                <tr><td>Vertrauen &amp; Qualität</td><td class="yes">Ziel: IHK-Partnerschaft / Zertifizierung als sichtbares Gütesiegel</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="partner" data-title="Partnerschaft">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Zielbild</div>
+          <h2>Zertifizierung &amp; dauerhafte Kooperation</h2>
+          <div class="split-list">
+            <div class="panel navy">
+              <h3>Was wir anstreben</h3>
+              <ul>
+                <li>Langfristige Partnerschaft mit der IHK Bayern / Nürnberg</li>
+                <li>Zertifizierung bzw. Qualitätskennzeichnung zu beiderseits fairen Bedingungen</li>
+                <li>Sichtbarkeit im Souveränitätsnetzwerk für Mitglieder</li>
+                <li>Gemeinsame Formate: Impulse, Demos, Piloten</li>
+              </ul>
+            </div>
+            <div class="panel gold">
+              <h3>Was Mitglieder davon haben</h3>
+              <ul>
+                <li>Orientierung: wer liefert On-Premise wirklich betriebsreif?</li>
+                <li>Regionale Ansprechpartner statt anonymer Cloud-Vertrieb</li>
+                <li>Greifbare Use Cases aus Pflege &amp; KMU</li>
+                <li>Weg von Folien zu installierbaren Stacks</li>
+              </ul>
+            </div>
+          </div>
+          <p class="tiny">Kein Parallelangebot zu bestehenden Partnern — Ergänzung der IHK-Linie zu Open Source und digitaler Selbstbestimmung.</p>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Support">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Haltung</div>
+          <h2>Support im Geist Bayerns</h2>
+          <p class="lead">
+            Verlässlich. Vor Ort, wenn’s drauf ankommt. Klar in der Sprache.
+            Langfristig denken — nicht Quartals-Hype.
+          </p>
+          <div class="grid-2">
+            <div class="feature">
+              <span class="tag">Handschlag</span>
+              <h3>Partnerschaft statt Ticket-Slot</h3>
+              <p>Wir betreuen Installationen über Jahre: Upgrade-Pfade, Monitoring, Incident-Hilfe — mit Menschen, die den Stack kennen.</p>
+            </div>
+            <div class="feature">
+              <span class="tag">Nähe</span>
+              <h3>Mittelfranken verankert</h3>
+              <p>Korrespondenz Nürnberg · Betrieb in der Region · Pflegedienste als täglicher Härtetest für Verfügbarkeit und Datenschutz.</p>
+            </div>
+            <div class="feature">
+              <span class="tag">Klarheit</span>
+              <h3>Was wir nicht tun</h3>
+              <p>Kein Lock-in über undurchsichtige SaaS-Abos. Keine Secrets in Folien. Keine Souveränitäts-Rhetorik ohne laufende Instanz.</p>
+            </div>
+            <div class="feature">
+              <span class="tag">Tempo</span>
+              <h3>Praxis zuerst</h3>
+              <p>Demo-Stack, Pilot, dann Skalierung. 30–45 Minuten Gespräch reichen oft, um den nächsten sinnvollen Schritt zu finden.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Nächste Schritte">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Weiter</div>
+          <h1 style="font-size:clamp(1.9rem,4.2vw,3.2rem)">Nächster Schritt</h1>
+          <p class="lead">
+            Gespräch mit der IHK (Nürnberg / Bayern): Bedarfe der Mitgliedschaft abgleichen,
+            Rahmen für Kooperation und Zertifizierung skizzieren, kompakten Pilot definieren.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://produktor.io/" target="_blank" rel="noopener">https://produktor.io/</a>
+            <a class="btn btn-ghost" href="mailto:info@produktor.io">info@produktor.io</a>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Deck: produktor.io/ihk/</span>
+            <span class="pill gold">Ziel: IHK-Zertifizierung</span>
+            <span class="pill">Langfristige Partnerschaft</span>
+          </div>
+          <p class="tiny">
+            ProProdukt SL · produktor.io · Artem Maltschenko (GF) · Andriy Oblivantsev (Platform) ·
+            Korrespondenz: Nordring 169, 90409 Nürnberg
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="footer-bar">
+      <div class="progress" id="dots" aria-label="Folien"></div>
+      <div style="opacity:0.85">← → · Space · Swipe</div>
+      <div class="nav-btns">
+        <button type="button" id="prev" aria-label="Zurück">Zurück</button>
+        <button type="button" id="next" aria-label="Weiter">Weiter</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const slides = [...document.querySelectorAll(".slide")];
+      const dots = document.getElementById("dots");
+      let i = 0, touchX = null;
+      slides.forEach((_, idx) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Folie " + (idx + 1));
+        b.addEventListener("click", () => go(idx));
+        dots.appendChild(b);
+      });
+      function go(n) {
+        i = (n + slides.length) % slides.length;
+        slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+        [...dots.children].forEach((d, idx) => d.classList.toggle("on", idx === i));
+        history.replaceState(null, "", "#" + (i + 1));
+      }
+      document.getElementById("prev").addEventListener("click", () => go(i - 1));
+      document.getElementById("next").addEventListener("click", () => go(i + 1));
+      window.addEventListener("keydown", (e) => {
+        if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) { e.preventDefault(); go(i + 1); }
+        else if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) { e.preventDefault(); go(i - 1); }
+        else if (e.key === "Home") go(0);
+        else if (e.key === "End") go(slides.length - 1);
+      });
+      window.addEventListener("touchstart", (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+      window.addEventListener("touchend", (e) => {
+        if (touchX == null) return;
+        const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+        if (Math.abs(dx) < 50) return;
+        go(dx < 0 ? i + 1 : i - 1);
+      }, { passive: true });
+      document.querySelectorAll('a[href="#partner"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const idx = slides.findIndex((s) => s.id === "partner");
+          if (idx >= 0) go(idx);
+        });
+      });
+      const hash = parseInt((location.hash || "").replace("#", ""), 10);
+      go(Number.isFinite(hash) && hash >= 1 && hash <= slides.length ? hash - 1 : 0);
+    })();
+  </script>
+</body>
+</html>
