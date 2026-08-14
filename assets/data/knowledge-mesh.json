@@ -1,0 +1,1764 @@
+{
+  "meta": {
+    "generated": "2026-08-08T08:33:00.127886+00:00",
+    "version": 2,
+    "source": "projects/knowledge-mesh-seed.yaml"
+  },
+  "categories": [
+    {
+      "id": "person",
+      "color": "#6b7280",
+      "label": "Person"
+    },
+    {
+      "id": "org",
+      "color": "#7c3aed",
+      "label": "Organizations"
+    },
+    {
+      "id": "project",
+      "color": "#319177",
+      "label": "Projects"
+    },
+    {
+      "id": "product",
+      "color": "#d5c67a",
+      "label": "Products"
+    },
+    {
+      "id": "module",
+      "color": "#a78bfa",
+      "label": "Modules"
+    },
+    {
+      "id": "service",
+      "color": "#0ea5e9",
+      "label": "Services"
+    },
+    {
+      "id": "technology",
+      "color": "#052f5f",
+      "label": "Technologies"
+    },
+    {
+      "id": "domain",
+      "color": "#f1a208",
+      "label": "Domains / service types"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "go-second-brain",
+      "label": "go-second-brain",
+      "type": "project",
+      "tags": [
+        "ai",
+        "rag",
+        "go",
+        "neo4j",
+        "qdrant",
+        "matrix"
+      ],
+      "period": "2025–present",
+      "url": "https://eslider.github.io/posts/go-second-brain-knowledge-graph-rag/",
+      "weight": 3,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 4,
+      "summary": "Self-hosted second brain platform: Markdown knowledge base → Neo4j knowledge graph + Qdrant vector store → Matrix RAG bot and optional voice assistant (STT/TTS via Inworld/Cartesia). Embeddings and generation via Ollama.",
+      "commits": 39,
+      "stack": [
+        "Go",
+        "Neo4j (Cypher)",
+        "Qdrant",
+        "Ollama",
+        "Matrix",
+        "Docker Compose",
+        "MkDocs"
+      ]
+    },
+    {
+      "id": "ai-fabric",
+      "label": "AI Fabric",
+      "type": "project",
+      "tags": [
+        "ai",
+        "go",
+        "gitea",
+        "devops",
+        "agents"
+      ],
+      "period": "2025–present",
+      "url": "https://eslider.github.io/posts/ai-fabric-agent-delivery/",
+      "weight": 3,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 5,
+      "summary": "Self-hosted AI software-delivery fabric for Gitea-based teams. Automates issue → plan → implement → validate → review → PR with policy gates (fmt, lint, test) and human approval checkpoints. Includes Telegram control bot and issue-handler services.",
+      "commits": 72,
+      "stack": [
+        "Go",
+        "Gitea API",
+        "Gitea Actions runners",
+        "Docker Compose",
+        "Telegram Bot API",
+        "MCP",
+        "cursor-agent"
+      ]
+    },
+    {
+      "id": "aws-gcp-azure",
+      "label": "LAMBDA",
+      "type": "project",
+      "tags": [
+        "aws",
+        "gcp",
+        "azure",
+        "terraform",
+        "python",
+        "serverless"
+      ],
+      "period": "2026",
+      "url": "https://eslider.github.io/posts/multi-cloud-serverless-lambda/",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 3,
+      "summary": "LAMBDA (multi-cloud minimal serverless): one Python HTTP app in src/, deployed to AWS Lambda, GCP Cloud Functions, and Azure Functions with per-cloud adapters and Terraform roots. Webhook ingest writes hive-partitioned JSON to object storage; optional cross-cloud peer fan-out notifies other regions after each event.",
+      "stack": [
+        "test"
+      ]
+    },
+    {
+      "id": "go-onlyoffice",
+      "label": "go-onlyoffice",
+      "type": "project",
+      "tags": [
+        "go",
+        "onlyoffice",
+        "devops"
+      ],
+      "period": "2024–present",
+      "url": "https://eslider.github.io/posts/go-onlyoffice-oo-cli/",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 4,
+      "summary": "Go client library and oo CLI for the OnlyOffice Project Management API — projects, tasks, subtasks, milestones, calendar, CRM (companies, contacts, deals). Includes application folder → CRM sync used in job-hunt workflow.",
+      "commits": 10,
+      "stack": [
+        "Go",
+        "OnlyOffice REST API",
+        "cobra CLI"
+      ]
+    },
+    {
+      "id": "matrix-rtc-voip",
+      "label": "Matrix / WebRTC",
+      "type": "project",
+      "tags": [
+        "matrix",
+        "webrtc",
+        "livekit",
+        "jitsi",
+        "devops"
+      ],
+      "period": "2024–present",
+      "url": "https://eslider.github.io/posts/edelweiss-video-assistant-mvp/",
+      "weight": 3,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 4,
+      "summary": "Production video and audio over WebRTC: self-hosted Matrix homeservers with Element clients, coturn TURN/STUN, LiveKit SFU (MatrixRTC / Element Call), and Jitsi Meet for on-premise conferences. Operated across three organizations in a federated setup plus an additional trading-platform deployment.",
+      "stack": [
+        "Docker Compose",
+        "Synapse",
+        "Element Web",
+        "coturn",
+        "LiveKit",
+        "lk-jwt-service",
+        "Jitsi Meet",
+        "Nginx Proxy Manager",
+        "Let's Encrypt",
+        "Python (Synapse modules)",
+        "federation TLS on :443"
+      ]
+    },
+    {
+      "id": "edelweiss",
+      "label": "Edelweiss",
+      "type": "project",
+      "tags": [
+        "healthcare",
+        "rag",
+        "webdav",
+        "go"
+      ],
+      "period": "2025–present",
+      "url": "https://eslider.github.io/posts/edelweiss-healthcare-knowledge-base/",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 4,
+      "summary": "Edelweiss second-brain stack and related healthcare work: CuraSoft integrations, WebDAV sharing, sublimation tooling, federated Matrix chat for pflege partners."
+    },
+    {
+      "id": "edelweiss-video-assistant",
+      "label": "Edelweiss video assistant MVP",
+      "type": "project",
+      "tags": [
+        "healthcare",
+        "matrix",
+        "stt",
+        "tts",
+        "rag",
+        "ollama",
+        "wan-streamer"
+      ],
+      "period": "2025–present",
+      "url": "https://eslider.github.io/posts/edelweiss-video-assistant-mvp/",
+      "weight": 2,
+      "kind": "own",
+      "relevance": 2
+    },
+    {
+      "id": "markets-platform",
+      "label": "Markets Platform",
+      "type": "project",
+      "tags": [
+        "go",
+        "react",
+        "kafka",
+        "trading"
+      ],
+      "period": "2024–2025",
+      "url": "https://eslider.github.io/posts/markets-platform-tradeplatform/",
+      "weight": 3,
+      "kind": "client",
+      "org": "markets",
+      "relevance": 4,
+      "summary": "Large-scale trading platform engineering: backend consumers, general platform code, React/MUI frontends, data services, analytics, and ATAS integrations. Highest commit volume in personal git history on this engagement.",
+      "stack": [
+        "Go",
+        "TypeScript",
+        "React",
+        "MUI",
+        "WebGL charts",
+        "Kafka-style consumers",
+        "PostgreSQL + DuckDB extension",
+        "ClickHouse",
+        "MinIO",
+        "Grafana",
+        "Loki",
+        "Promtail"
+      ]
+    },
+    {
+      "id": "dyvenia",
+      "label": "Dyvenia",
+      "type": "org",
+      "tags": [
+        "employer",
+        "data-engineering"
+      ],
+      "period": "2023–2025",
+      "url": "https://dyvenia.com/",
+      "weight": 3,
+      "kind": "employer",
+      "org": "dyvenia",
+      "relevance": 5,
+      "summary": "Data platform engineering consultancy (Kraków + Tenerife). Employer.",
+      "commits": 625,
+      "stack": [
+        "Python (FastAPI",
+        "ARQ)",
+        "SQL",
+        "dbt",
+        "Parquet",
+        "PostgreSQL",
+        "Redis",
+        "HubSpot",
+        "Salesforce APIs",
+        "MinIO",
+        "Grafana",
+        "Loki"
+      ]
+    },
+    {
+      "id": "immowelt",
+      "label": "Immowelt AG",
+      "type": "org",
+      "tags": [
+        "employer"
+      ],
+      "period": "2019–2021",
+      "weight": 4,
+      "kind": "employer",
+      "org": "immowelt",
+      "relevance": 5,
+      "commits": 2926,
+      "stack": [
+        "Go",
+        "C#",
+        "NET",
+        "Vue.js",
+        "PHP",
+        "PostgreSQL",
+        "PostGIS",
+        "SpatiaLite",
+        "Solr",
+        "AWS (Lambda",
+        "ECS",
+        "API Gateway)"
+      ]
+    },
+    {
+      "id": "dreamteam-hocr",
+      "label": "Dreamteam HOCR",
+      "type": "project",
+      "tags": [
+        "go",
+        "ocr",
+        "pdf"
+      ],
+      "period": "2022–2023",
+      "url": "https://eslider.github.io/posts/dreamteam-hocr-pipelines/",
+      "weight": 2,
+      "kind": "client",
+      "org": "produktor",
+      "relevance": 3,
+      "summary": "~200+ author commits on document/OCR and traffic-analytics tooling — client work delivered via ProProdukt SL / produktor.io (own company, not a separate employer).",
+      "commits": 200,
+      "stack": [
+        "Go",
+        "PHP",
+        "HOCR",
+        "OCR",
+        "PDF generation",
+        "analytics",
+        "Docker Compose"
+      ]
+    },
+    {
+      "id": "trading-algorithms",
+      "label": "Trading Algorithms",
+      "type": "project",
+      "tags": [
+        "go",
+        "react",
+        "trading",
+        "finance"
+      ],
+      "period": "2025–2026",
+      "url": "https://eslider.github.io/posts/trading-algorithms-binance-sync/",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 3,
+      "summary": "Algorithmic trading tooling: Binance market data sync (v2/v3), React trading frontends, polymarket experiments. Connects to Markets Platform engagement but also standalone OSS-style repos.",
+      "stack": [
+        "Go",
+        "TypeScript",
+        "React",
+        "exchange APIs",
+        "time-series data",
+        "Grafana",
+        "Loki",
+        "Promtail"
+      ]
+    },
+    {
+      "id": "produktor-platform",
+      "label": "produktor.io platform",
+      "type": "project",
+      "tags": [
+        "k3s",
+        "ollama",
+        "onlyoffice",
+        "self-hosted"
+      ],
+      "period": "2021–present",
+      "url": "https://eslider.github.io/posts/produktor-platform-self-hosted-stack/",
+      "weight": 3,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 5,
+      "summary": "Current produktor.io infrastructure and product stack for ProProdukt SL: self-hosted office, UI, k3s, OnlyOffice, Ollama, and agent tooling. Workspace paths are indexed in cv workspace-catalog and leaf-linked to OnlyOffice projects. Continues the VisCreation geo/product line under the produktor brand.",
+      "stack": [
+        "Go",
+        "Docker",
+        "k3s",
+        "Kubernetes",
+        "OnlyOffice",
+        "Gitea",
+        "Ollama",
+        "Open WebUI",
+        "MinIO",
+        "Grafana",
+        "Loki",
+        "n8n"
+      ]
+    },
+    {
+      "id": "inventar-docs",
+      "label": "Inventar & Docs",
+      "type": "project",
+      "tags": [
+        "governance",
+        "gitea",
+        "markdown"
+      ],
+      "period": "2020–present",
+      "url": "https://eslider.github.io/posts/inventar-docs-governance/",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 2,
+      "summary": "Cross-repo governance and architecture documentation (ASR/ADR inventar), sync tooling between Gitea instances, and long-running technical notes (scratches — 230+ commits combined). OnlyOffice is the business SSOT; Gitea holds code; workspace-catalog.yaml indexes path↔org↔OO for the laptop/8TB workspace."
+    },
+    {
+      "id": "momswap",
+      "label": "MomSwap",
+      "type": "product",
+      "tags": [
+        "go",
+        "geojson",
+        "ed25519",
+        "minio",
+        "vue",
+        "geospatial"
+      ],
+      "period": "2024–present",
+      "url": "https://eslider.github.io/posts/momswap-geojson-ed25519/",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 3,
+      "summary": "User-owned GeoJSON feature collections with Ed25519 challenge-response auth and invitation onboarding. Go API + static Vue/Vuetify frontend; assets on MinIO. Deployed at tenerife.baby.",
+      "stack": [
+        "Go",
+        "Ed25519",
+        "GeoJSON",
+        "MinIO",
+        "PostgreSQL",
+        "Vue",
+        "Vuetify",
+        "Bun",
+        "Docker"
+      ]
+    },
+    {
+      "id": "mail-archive",
+      "label": "mail-archive",
+      "type": "project",
+      "tags": [
+        "go",
+        "duckdb",
+        "imap",
+        "ai"
+      ],
+      "period": "2025–2026",
+      "url": "https://eslider.github.io/posts/mail-archive-imap-search/",
+      "weight": 2,
+      "kind": "own",
+      "relevance": 2
+    },
+    {
+      "id": "self-ca",
+      "label": "self-ca",
+      "type": "project",
+      "tags": [
+        "go",
+        "security",
+        "tls"
+      ],
+      "period": "2026",
+      "url": "https://eslider.github.io/posts/self-ca-private-certificates/",
+      "weight": 1,
+      "kind": "own",
+      "relevance": 2
+    },
+    {
+      "id": "pack-cup",
+      "label": "Pack und Cup GmbH",
+      "type": "org",
+      "tags": [
+        "client"
+      ],
+      "period": "2016–2023",
+      "weight": 2,
+      "kind": "client",
+      "org": "pack-cup",
+      "relevance": 2,
+      "commits": 485,
+      "stack": [
+        "PHP",
+        "e-commerce",
+        "Hetzner hosting",
+        "MySQL",
+        "MariaDB",
+        "Docker Compose"
+      ]
+    },
+    {
+      "id": "grid-gmbh",
+      "label": "GRID GmbH / GRIDFACTOR",
+      "type": "org",
+      "tags": [
+        "agency"
+      ],
+      "period": "2006–2012",
+      "url": "https://gridfactor.de/",
+      "weight": 2,
+      "kind": "agency",
+      "org": "grid-gmbh",
+      "relevance": 2,
+      "summary": "Subcontractor / freelancer, not employment"
+    },
+    {
+      "id": "produktor-map-ui",
+      "label": "produktor UI",
+      "type": "product",
+      "tags": [
+        "vue",
+        "maplibre",
+        "gis",
+        "product"
+      ],
+      "period": "2019–present",
+      "url": "https://eslider.github.io/posts/produktor-io-proprodukt/",
+      "weight": 2
+    },
+    {
+      "id": "vidarr",
+      "label": "vidarr",
+      "type": "product",
+      "tags": [
+        "telegram",
+        "ollama",
+        "ai",
+        "product"
+      ],
+      "period": "2024–present",
+      "weight": 2
+    },
+    {
+      "id": "oo-cli",
+      "label": "oo CLI",
+      "type": "product",
+      "tags": [
+        "go",
+        "onlyoffice",
+        "product"
+      ],
+      "period": "2024–present",
+      "url": "https://eslider.github.io/posts/go-onlyoffice-oo-cli/",
+      "weight": 2
+    },
+    {
+      "id": "office-stack",
+      "label": "OnlyOffice stack",
+      "type": "product",
+      "tags": [
+        "onlyoffice",
+        "minio",
+        "self-hosted"
+      ],
+      "period": "2021–present",
+      "weight": 2
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "type": "technology",
+      "tags": [
+        "language"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "type": "technology",
+      "tags": [
+        "language"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "type": "technology",
+      "tags": [
+        "database",
+        "sql"
+      ],
+      "weight": 5
+    },
+    {
+      "id": "postgis",
+      "label": "PostGIS",
+      "type": "technology",
+      "tags": [
+        "database",
+        "gis"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "kubernetes",
+      "label": "Kubernetes",
+      "type": "technology",
+      "tags": [
+        "devops",
+        "orchestration"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "type": "technology",
+      "tags": [
+        "devops",
+        "containers"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "terraform",
+      "label": "Terraform",
+      "type": "technology",
+      "tags": [
+        "devops",
+        "iac"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "aws",
+      "label": "AWS",
+      "type": "technology",
+      "tags": [
+        "cloud"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "gcp",
+      "label": "GCP",
+      "type": "technology",
+      "tags": [
+        "cloud"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "azure",
+      "label": "Azure",
+      "type": "technology",
+      "tags": [
+        "cloud"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "grafana",
+      "label": "Grafana",
+      "type": "technology",
+      "tags": [
+        "observability"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "loki",
+      "label": "Loki",
+      "type": "technology",
+      "tags": [
+        "observability"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "minio",
+      "label": "MinIO",
+      "type": "technology",
+      "tags": [
+        "storage",
+        "s3"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "ollama",
+      "label": "Ollama",
+      "type": "technology",
+      "tags": [
+        "ai",
+        "llm"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "neo4j",
+      "label": "Neo4j",
+      "type": "technology",
+      "tags": [
+        "database",
+        "graph",
+        "ai"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "qdrant",
+      "label": "Qdrant",
+      "type": "technology",
+      "tags": [
+        "database",
+        "vector",
+        "ai"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "matrix",
+      "label": "Matrix",
+      "type": "technology",
+      "tags": [
+        "chat",
+        "realtime"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "livekit",
+      "label": "LiveKit",
+      "type": "technology",
+      "tags": [
+        "webrtc",
+        "realtime"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "jitsi",
+      "label": "Jitsi",
+      "type": "technology",
+      "tags": [
+        "webrtc",
+        "realtime"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "kafka",
+      "label": "Kafka",
+      "type": "technology",
+      "tags": [
+        "messaging",
+        "data"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "type": "technology",
+      "tags": [
+        "frontend"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "vue",
+      "label": "Vue.js",
+      "type": "technology",
+      "tags": [
+        "frontend"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "maplibre",
+      "label": "MapLibre",
+      "type": "technology",
+      "tags": [
+        "gis",
+        "frontend"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "onlyoffice",
+      "label": "OnlyOffice",
+      "type": "technology",
+      "tags": [
+        "collaboration"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "gitea",
+      "label": "Gitea",
+      "type": "technology",
+      "tags": [
+        "git",
+        "devops"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "duckdb",
+      "label": "DuckDB",
+      "type": "technology",
+      "tags": [
+        "database",
+        "analytics"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "clickhouse",
+      "label": "ClickHouse",
+      "type": "technology",
+      "tags": [
+        "database",
+        "analytics"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "geospatial",
+      "label": "Geospatial",
+      "type": "domain",
+      "tags": [
+        "gis"
+      ],
+      "weight": 3,
+      "summary": "Geospatial domain; prefer service-type node `gis` for classification.",
+      "aka": [
+        "gis"
+      ]
+    },
+    {
+      "id": "data-engineering",
+      "label": "Data Engineering",
+      "type": "domain",
+      "tags": [
+        "data"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "devops",
+      "label": "DevOps",
+      "type": "domain",
+      "tags": [
+        "ops"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "ai-rag",
+      "label": "AI / RAG",
+      "type": "domain",
+      "tags": [
+        "ai"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "realtime-voice",
+      "label": "Real-time Voice",
+      "type": "domain",
+      "tags": [
+        "webrtc"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "self-hosted",
+      "label": "Self-hosted",
+      "type": "domain",
+      "tags": [
+        "ops"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "ecommerce",
+      "label": "E-commerce",
+      "type": "domain",
+      "tags": [
+        "business"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "asesoria-tenerife",
+      "label": "Asesoría Tenerife",
+      "type": "project",
+      "tags": [],
+      "period": "2025–2026",
+      "weight": 1,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 1,
+      "summary": "Business website workspace (HTML/JS). No git repository at project root; activity from file mtimes only."
+    },
+    {
+      "id": "d2s",
+      "label": "D2S/Systems",
+      "type": "project",
+      "tags": [],
+      "period": "2001–2006",
+      "weight": 1,
+      "kind": "apprenticeship",
+      "org": "d2s-systems",
+      "relevance": 1,
+      "summary": "LAMP web development, PHP4, Flash, MySQL/MSSQL — project work for training-company clients while completing the Fachinformatiker track (2003–2006) after an IT internship (2001–2003).",
+      "stack": [
+        "PHP4",
+        "Flash",
+        "ActionScript",
+        "LAMP",
+        "JavaScript",
+        "MySQL",
+        "MSSQL",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "id": "early-archive",
+      "label": "Early Career Archive (GRID era)",
+      "type": "project",
+      "tags": [],
+      "period": "2006–2012 — GRID GmbH subcontractor deliveries (filesystem s",
+      "weight": 1,
+      "kind": "freelance",
+      "org": "grid-gmbh",
+      "relevance": 1,
+      "summary": "GRID GmbH (= GRID / GRIDFACTOR) agency deliveries as freelancer/subcontractor (PHP, Flash, VisCreation VisBack/VisCMS stack): AUDI, O2, HP, Uponor, Baumüller, Weihenstephan, STABILO, and others — full list in grid-gmbh/client-projects-2014.md and gridfactor portfolio."
+    },
+    {
+      "id": "esliderbot",
+      "label": "eSliderbot",
+      "type": "product",
+      "tags": [
+        "go",
+        "telegram",
+        "ai",
+        "product"
+      ],
+      "period": "2022–2025",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "owner": "eslider",
+      "relevance": 2,
+      "summary": "~64 author commits. Early AI Telegram bot with OpenAI API, audio recognition, SQLite persistence, OpenAPI logging. Precursor to vidarr / mental-health bot experiments.",
+      "commits": 64,
+      "stack": [
+        "Go",
+        "OpenAI API",
+        "Telegram Bot API",
+        "SQLite",
+        "Grafana",
+        "Loki",
+        "Prometheus"
+      ]
+    },
+    {
+      "id": "go-config",
+      "label": "go-config",
+      "type": "project",
+      "tags": [],
+      "period": "2026 (active)",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 2,
+      "summary": "Go configuration toolkit: symmetric env / YAML / JSON / INI codecs, deep merge for layered config, LowerAlnum key normalisation across formats, and envc CLI (convert, get, merge). Optimises the “map in the middle” pipeline — bytes → map[string]any → struct — called out in the design essay below."
+    },
+    {
+      "id": "produktor-company",
+      "label": "ProProdukt SL",
+      "type": "project",
+      "tags": [],
+      "weight": 3,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 3,
+      "summary": "Role: Founder / lead engineer (own company — not a third-party employer) Current legal entity: ProProdukt SL (Spain) Product brand: produktor · produktor.io Early company name: VisCreation (Germany, founded 2006; brand ~2006–2019)"
+    },
+    {
+      "id": "sigos",
+      "label": "Keynote SIGOS GmbH",
+      "type": "project",
+      "tags": [],
+      "period": "2012–2013",
+      "weight": 3,
+      "kind": "employer",
+      "org": "keynote-sigos",
+      "relevance": 3,
+      "summary": "Backend and database engineering on production systems at million-record scale: relational schema design across MySQL, Oracle, and PostgreSQL; SQL query optimization; Java APIs and Tcl/Tk components.",
+      "stack": [
+        "Java",
+        "Tcl",
+        "Tk",
+        "MySQL",
+        "Oracle",
+        "PostgreSQL",
+        "SQL tuning",
+        "versioned APIs"
+      ]
+    },
+    {
+      "id": "viscreation",
+      "label": "VisCreation era",
+      "type": "project",
+      "tags": [],
+      "period": "2006–2022 active VisCreation phase (git-documented product w",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "relevance": 2,
+      "summary": "~1,900+ author commits across VisCreation-era work (2006–2022; git from 2014): VisBack (2006) and VisMin / VisCMS (2007) as in-house CMS; direct clients Modelagentur.de, Kluge Texte, Lena-Romme; Magento e-commerce (~1,100 commits on opticfriends + testorino); produktor.io geospatial stack; geo-application; VB-Charging.",
+      "commits": 1900,
+      "stack": [
+        "Go",
+        "PHP",
+        "Magento",
+        "OpenCart",
+        "Angular",
+        "JavaScript",
+        "OSM",
+        "Nominatim",
+        "TensorFlow",
+        "geospatial web services",
+        "Docker Compose"
+      ]
+    },
+    {
+      "id": "eslider",
+      "label": "eSlider",
+      "type": "person",
+      "tags": [
+        "nickname",
+        "brand"
+      ],
+      "weight": 2,
+      "relevance": 5,
+      "summary": "Personal nickname / public brand (Andriy Oblivantsev). Not a company or product."
+    },
+    {
+      "id": "produktor",
+      "label": "ProProdukt SL / produktor.io",
+      "type": "org",
+      "tags": [
+        "VisCreation",
+        "produktor",
+        "produktor.io"
+      ],
+      "period": "2006–present",
+      "url": "https://produktor.io",
+      "weight": 4,
+      "kind": "own",
+      "relevance": 5,
+      "aka": [
+        "VisCreation",
+        "ProProdukt SL",
+        "produktor.io"
+      ]
+    },
+    {
+      "id": "wheregroup",
+      "label": "WhereGroup",
+      "type": "org",
+      "tags": [
+        "employer"
+      ],
+      "period": "2014–2018",
+      "weight": 4,
+      "kind": "employer",
+      "relevance": 5,
+      "summary": "Mapbender GIS product / public sector"
+    },
+    {
+      "id": "keynote-sigos",
+      "label": "Keynote SIGOS",
+      "type": "org",
+      "tags": [
+        "employer"
+      ],
+      "period": "2012–2013",
+      "weight": 3,
+      "kind": "employer",
+      "relevance": 3
+    },
+    {
+      "id": "d2s-systems",
+      "label": "D2S/SYSTEMS",
+      "type": "org",
+      "tags": [
+        "apprenticeship"
+      ],
+      "period": "2001–2006",
+      "url": "https://www.d2s-systems.com/",
+      "weight": 1,
+      "kind": "apprenticeship",
+      "relevance": 1
+    },
+    {
+      "id": "markets",
+      "label": "Markets Platform (client)",
+      "type": "org",
+      "tags": [
+        "client"
+      ],
+      "period": "2024–2025",
+      "weight": 4,
+      "kind": "client",
+      "relevance": 4
+    },
+    {
+      "id": "atttiva",
+      "label": "Atttiva (Attiva / IDflow)",
+      "type": "product",
+      "tags": [
+        "python",
+        "data-engineering",
+        "postgresql",
+        "kubernetes",
+        "dbt"
+      ],
+      "period": "2023–2025",
+      "url": "https://eslider.github.io/posts/dyvenia-data-engineering/",
+      "weight": 3,
+      "kind": "employer",
+      "org": "dyvenia",
+      "relevance": 5,
+      "summary": "Atttiva / IDflow — Dyvenia data platform product: FastAPI, ARQ, HubSpot/Salesforce, dbt/Parquet ELT, PostgreSQL/Redis, K8s deploy.",
+      "commits": 625,
+      "stack": [
+        "Python (FastAPI",
+        "ARQ)",
+        "SQL",
+        "dbt",
+        "Parquet",
+        "PostgreSQL",
+        "Redis",
+        "HubSpot",
+        "Salesforce APIs",
+        "MinIO",
+        "Grafana",
+        "Loki"
+      ],
+      "aka": [
+        "Attiva",
+        "Atttiva",
+        "IDflow"
+      ]
+    },
+    {
+      "id": "mapbender",
+      "label": "Mapbender",
+      "type": "project",
+      "tags": [
+        "php",
+        "postgis",
+        "symfony",
+        "osgeo"
+      ],
+      "period": "2014–2018",
+      "url": "https://eslider.github.io/posts/wheregroup-mapbender-gis/",
+      "weight": 3,
+      "kind": "employer",
+      "org": "wheregroup",
+      "relevance": 5,
+      "summary": "Senior GIS software development as a WhereGroup employee on the Mapbender product line: client deployments and core framework modules for German public-sector geoportals (1M+ users). Built and maintained modules adopted across deployments: Mapbender Digitizer (spatial editing), vis-ui.js (UI generator), search/print integrations.",
+      "stack": [
+        "PHP",
+        "Symfony",
+        "JavaScript",
+        "PostGIS",
+        "Solr",
+        "Mapbender",
+        "OpenLayers"
+      ],
+      "service_type": "gis"
+    },
+    {
+      "id": "digitizer",
+      "label": "Mapbender Digitizer",
+      "type": "module",
+      "tags": [
+        "php",
+        "gis",
+        "mapbender"
+      ],
+      "period": "2015–2019 (primary development); module still maintained ups",
+      "weight": 2,
+      "kind": "employer",
+      "org": "wheregroup",
+      "parent": "mapbender",
+      "relevance": 4,
+      "summary": "Mapbender Digitizer is a Mapbender element (sidepane module) that lets end users create, edit, and delete point, line, and polygon features — and their attributes — directly in the browser. Unlike the Sketch element, geometries are persisted in database tables (PostgreSQL/PostGIS by default; Oracle and SpatiaLite supported experimentally).",
+      "service_type": "gis"
+    },
+    {
+      "id": "gis",
+      "label": "GIS",
+      "type": "domain",
+      "tags": [
+        "service-type",
+        "geospatial"
+      ],
+      "weight": 3,
+      "relevance": 5,
+      "summary": "Geographic Information Systems — service type / domain (not a product name)."
+    },
+    {
+      "id": "eslider-github",
+      "label": "eSlider on GitHub",
+      "type": "service",
+      "tags": [
+        "github",
+        "repositories",
+        "oss"
+      ],
+      "url": "https://github.com/eSlider",
+      "weight": 2,
+      "kind": "own",
+      "org": "produktor",
+      "owner": "eslider",
+      "relevance": 3,
+      "summary": "Public GitHub namespace/services for eSlider repositories (SDKs, experiments, libs). Not a single product — repository hosting / OSS surface."
+    }
+  ],
+  "edges": [
+    {
+      "source": "aws-gcp-azure",
+      "target": "python",
+      "relation": "uses"
+    },
+    {
+      "source": "aws-gcp-azure",
+      "target": "terraform",
+      "relation": "uses"
+    },
+    {
+      "source": "aws-gcp-azure",
+      "target": "aws",
+      "relation": "uses"
+    },
+    {
+      "source": "aws-gcp-azure",
+      "target": "gcp",
+      "relation": "uses"
+    },
+    {
+      "source": "aws-gcp-azure",
+      "target": "azure",
+      "relation": "uses"
+    },
+    {
+      "source": "aws-gcp-azure",
+      "target": "duckdb",
+      "relation": "uses"
+    },
+    {
+      "source": "aws-gcp-azure",
+      "target": "devops",
+      "relation": "in"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "neo4j",
+      "relation": "uses"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "qdrant",
+      "relation": "uses"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "ollama",
+      "relation": "uses"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "matrix",
+      "relation": "uses"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "docker",
+      "relation": "uses"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "ai-rag",
+      "relation": "in"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "self-hosted",
+      "relation": "in"
+    },
+    {
+      "source": "ai-fabric",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "ai-fabric",
+      "target": "gitea",
+      "relation": "uses"
+    },
+    {
+      "source": "ai-fabric",
+      "target": "docker",
+      "relation": "uses"
+    },
+    {
+      "source": "ai-fabric",
+      "target": "ai-rag",
+      "relation": "in"
+    },
+    {
+      "source": "ai-fabric",
+      "target": "devops",
+      "relation": "in"
+    },
+    {
+      "source": "matrix-rtc-voip",
+      "target": "matrix",
+      "relation": "uses"
+    },
+    {
+      "source": "matrix-rtc-voip",
+      "target": "livekit",
+      "relation": "uses"
+    },
+    {
+      "source": "matrix-rtc-voip",
+      "target": "jitsi",
+      "relation": "uses"
+    },
+    {
+      "source": "matrix-rtc-voip",
+      "target": "docker",
+      "relation": "uses"
+    },
+    {
+      "source": "matrix-rtc-voip",
+      "target": "realtime-voice",
+      "relation": "in"
+    },
+    {
+      "source": "matrix-rtc-voip",
+      "target": "self-hosted",
+      "relation": "in"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "kubernetes",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "ollama",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "onlyoffice",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "minio",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "grafana",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "gitea",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "self-hosted",
+      "relation": "in"
+    },
+    {
+      "source": "produktor-platform",
+      "target": "devops",
+      "relation": "in"
+    },
+    {
+      "source": "produktor-map-ui",
+      "target": "vue",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-map-ui",
+      "target": "maplibre",
+      "relation": "uses"
+    },
+    {
+      "source": "produktor-map-ui",
+      "target": "geospatial",
+      "relation": "in"
+    },
+    {
+      "source": "vidarr",
+      "target": "ollama",
+      "relation": "uses"
+    },
+    {
+      "source": "vidarr",
+      "target": "grafana",
+      "relation": "uses"
+    },
+    {
+      "source": "vidarr",
+      "target": "loki",
+      "relation": "uses"
+    },
+    {
+      "source": "office-stack",
+      "target": "onlyoffice",
+      "relation": "uses"
+    },
+    {
+      "source": "office-stack",
+      "target": "minio",
+      "relation": "uses"
+    },
+    {
+      "source": "oo-cli",
+      "target": "onlyoffice",
+      "relation": "uses"
+    },
+    {
+      "source": "oo-cli",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "atttiva",
+      "target": "python",
+      "relation": "uses"
+    },
+    {
+      "source": "atttiva",
+      "target": "postgresql",
+      "relation": "uses"
+    },
+    {
+      "source": "atttiva",
+      "target": "kubernetes",
+      "relation": "uses"
+    },
+    {
+      "source": "atttiva",
+      "target": "data-engineering",
+      "relation": "in"
+    },
+    {
+      "source": "immowelt",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "immowelt",
+      "target": "postgis",
+      "relation": "uses"
+    },
+    {
+      "source": "immowelt",
+      "target": "aws",
+      "relation": "uses"
+    },
+    {
+      "source": "immowelt",
+      "target": "vue",
+      "relation": "uses"
+    },
+    {
+      "source": "immowelt",
+      "target": "geospatial",
+      "relation": "in"
+    },
+    {
+      "source": "mapbender",
+      "target": "postgis",
+      "relation": "uses"
+    },
+    {
+      "source": "mapbender",
+      "target": "gis",
+      "relation": "in"
+    },
+    {
+      "source": "markets-platform",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "markets-platform",
+      "target": "react",
+      "relation": "uses"
+    },
+    {
+      "source": "markets-platform",
+      "target": "kafka",
+      "relation": "uses"
+    },
+    {
+      "source": "trading-algorithms",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "trading-algorithms",
+      "target": "react",
+      "relation": "uses"
+    },
+    {
+      "source": "edelweiss",
+      "target": "neo4j",
+      "relation": "uses"
+    },
+    {
+      "source": "edelweiss",
+      "target": "qdrant",
+      "relation": "uses"
+    },
+    {
+      "source": "edelweiss",
+      "target": "ai-rag",
+      "relation": "in"
+    },
+    {
+      "source": "edelweiss-video-assistant",
+      "target": "edelweiss",
+      "relation": "in"
+    },
+    {
+      "source": "edelweiss-video-assistant",
+      "target": "matrix-rtc-voip",
+      "relation": "uses"
+    },
+    {
+      "source": "edelweiss-video-assistant",
+      "target": "go-second-brain",
+      "relation": "uses"
+    },
+    {
+      "source": "edelweiss-video-assistant",
+      "target": "ollama",
+      "relation": "uses"
+    },
+    {
+      "source": "mail-archive",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "mail-archive",
+      "target": "duckdb",
+      "relation": "uses"
+    },
+    {
+      "source": "mail-archive",
+      "target": "qdrant",
+      "relation": "uses"
+    },
+    {
+      "source": "pack-cup",
+      "target": "ecommerce",
+      "relation": "in"
+    },
+    {
+      "source": "go-onlyoffice",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "go-onlyoffice",
+      "target": "onlyoffice",
+      "relation": "uses"
+    },
+    {
+      "source": "inventar-docs",
+      "target": "gitea",
+      "relation": "uses"
+    },
+    {
+      "source": "inventar-docs",
+      "target": "onlyoffice",
+      "relation": "uses"
+    },
+    {
+      "source": "momswap",
+      "target": "produktor",
+      "relation": "under"
+    },
+    {
+      "source": "momswap",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "momswap",
+      "target": "minio",
+      "relation": "uses"
+    },
+    {
+      "source": "momswap",
+      "target": "geospatial",
+      "relation": "in"
+    },
+    {
+      "source": "momswap",
+      "target": "vue",
+      "relation": "uses"
+    },
+    {
+      "source": "dreamteam-hocr",
+      "target": "go",
+      "relation": "uses"
+    },
+    {
+      "source": "postgresql",
+      "target": "data-engineering",
+      "relation": "in"
+    },
+    {
+      "source": "duckdb",
+      "target": "data-engineering",
+      "relation": "in"
+    },
+    {
+      "source": "clickhouse",
+      "target": "data-engineering",
+      "relation": "in"
+    },
+    {
+      "source": "grafana",
+      "target": "devops",
+      "relation": "in"
+    },
+    {
+      "source": "terraform",
+      "target": "devops",
+      "relation": "in"
+    },
+    {
+      "source": "docker",
+      "target": "devops",
+      "relation": "in"
+    },
+    {
+      "source": "maplibre",
+      "target": "geospatial",
+      "relation": "in"
+    },
+    {
+      "source": "postgis",
+      "target": "geospatial",
+      "relation": "in"
+    },
+    {
+      "source": "atttiva",
+      "target": "dyvenia",
+      "relation": "for"
+    },
+    {
+      "source": "dyvenia",
+      "target": "atttiva",
+      "relation": "delivers"
+    },
+    {
+      "source": "digitizer",
+      "target": "mapbender",
+      "relation": "module-of"
+    },
+    {
+      "source": "mapbender",
+      "target": "wheregroup",
+      "relation": "for"
+    },
+    {
+      "source": "mapbender",
+      "target": "gis",
+      "relation": "service-type"
+    },
+    {
+      "source": "digitizer",
+      "target": "gis",
+      "relation": "service-type"
+    },
+    {
+      "source": "esliderbot",
+      "target": "eslider",
+      "relation": "brand"
+    },
+    {
+      "source": "eslider-github",
+      "target": "eslider",
+      "relation": "brand"
+    },
+    {
+      "source": "esliderbot",
+      "target": "eslider-github",
+      "relation": "hosted-on"
+    },
+    {
+      "source": "go-onlyoffice",
+      "target": "eslider-github",
+      "relation": "hosted-on"
+    },
+    {
+      "source": "go-second-brain",
+      "target": "eslider-github",
+      "relation": "hosted-on"
+    },
+    {
+      "source": "ai-fabric",
+      "target": "eslider",
+      "relation": "brand"
+    },
+    {
+      "source": "immowelt",
+      "target": "gis",
+      "relation": "service-type"
+    },
+    {
+      "source": "postgis",
+      "target": "gis",
+      "relation": "in"
+    },
+    {
+      "source": "maplibre",
+      "target": "gis",
+      "relation": "in"
+    }
+  ]
+}

@@ -54,19 +54,19 @@
       "icon": "ai",
       "nameEn": "Stack AI",
       "nameDe": "Stack AI",
-      "tagEn": "Local inference · on-premise",
-      "tagDe": "Lokale Inferenz · On-Premise",
-      "descriptionEn": "Set up local inference engines and model services — vLLM, Ollama, llama.cpp, sglang — tuned for your hardware and use case. From CPU-only classification to GPU-backed assistants and embedding pipelines.",
-      "descriptionDe": "Lokale Inferenz-Engines und Model-Services aufsetzen — vLLM, Ollama, llama.cpp, sglang — abgestimmt auf Hardware und Use-Case. Von CPU-only Klassifikation bis zu GPU-Assistenten und Embedding-Pipelines.",
+      "tagEn": "Company Brain · evidence-first · on-premise",
+      "tagDe": "Company Brain · evidence-first · On-Premise",
+      "descriptionEn": "Evidence-first Company Brain on your stack: ingest channels, fact-check claims, keep an auditable graph. A lightweight tool-calling agent answers through chat and voice from verified facts. Local inference is the target; hosted inference is a cost compromise, not the product.",
+      "descriptionDe": "Evidence-first Company Brain auf Ihrem Stack: Kanäle aufnehmen, Behauptungen gegenprüfen, prüfbaren Graph halten. Ein leichter Tool-Calling-Agent antwortet über Chat und Sprache aus geprüften Fakten. Lokale Inferenz ist das Ziel; hosted inference ist ein Kostenkompromiss, nicht das Produkt.",
       "bulletsEn": [
-        "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — right-sized deployments",
-        "Works for semantic search, embeddings (Neo4j + Qdrant), and code assistants",
-        "Supports low-memory setups for lightweight tasks and edge use cases"
+        "Confirmed vs unconfirmed facts with source links — not RAG-over-PDFs",
+        "OnlyOffice CRM + Matrix as the skeleton; agent via Element / MCP",
+        "On-prem by design; bring inference inside when hardware allows"
       ],
       "bulletsDe": [
-        "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — passend dimensioniert",
-        "Für semantische Suche, Embeddings (Neo4j + Qdrant) und Code-Assistenten",
-        "Auch für Low-Memory-Setups (leichte Tasks, Edge-Use-Cases)"
+        "Confirmed vs unconfirmed Fakten mit Quellen — kein RAG-über-PDFs",
+        "OnlyOffice CRM + Matrix als Skelett; Agent über Element / MCP",
+        "On-Prem by design; Inferenz nach innen, wenn Hardware es zulässt"
       ],
       "liveDemoUrl": "https://ai.produktor.io/"
     }

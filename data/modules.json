@@ -34,14 +34,20 @@
       "accent": "bg-[#f2c849] text-[#0a0a0a]",
       "icon": "crm",
       "liveDemoUrl": "https://office.produktor.io/sh/Zn4fTxkXJQ",
-      "footerLabels": ["Stack CRM"],
+      "footerLabels": [
+        "Stack CRM"
+      ],
       "en": {
         "name": "Stack CRM",
         "tag": "Office stack · CRM · documents · data plane",
         "titleHighlight": "CRM",
         "titleRest": "and the office data plane.",
         "lead": "Pipeline, accounts, contacts, tasks, and document originals on your OnlyOffice / Postgres plane — plus a file data plane (S3, SMB, SSH) so desks, agents, and backups share one corpus without SaaS egress.",
-        "replaces": ["HubSpot", "Salesforce", "Google Drive / Dropbox for ops files"],
+        "replaces": [
+          "HubSpot",
+          "Salesforce",
+          "Google Drive / Dropbox for ops files"
+        ],
         "overview": "Stack CRM is the structured office system of record for sovereign installs: deals and contacts live next to document originals in OnlyOffice. Underneath sits a data plane you control — S3-compatible object storage (MinIO) for docs, media, and backups; SMB for Windows/desktop mounts; SSH/SFTP for ops sync and air-gapped drop zones. Same IdP and observability plane as Chat and Meet — adding modules later is wiring, not a re-platform.",
         "features": [
           "Self-hosted Postgres or your existing database",
@@ -74,7 +80,11 @@
         "titleHighlight": "CRM",
         "titleRest": "und die Office-Data-Plane.",
         "lead": "Pipeline, Accounts, Kontakte, Tasks und Dokument-Originale auf Ihrer OnlyOffice-/Postgres-Ebene — plus File-Data-Plane (S3, SMB, SSH), damit Desks, Agents und Backups ein Corpus teilen ohne SaaS-Egress.",
-        "replaces": ["HubSpot", "Salesforce", "Google Drive / Dropbox für Ops-Dateien"],
+        "replaces": [
+          "HubSpot",
+          "Salesforce",
+          "Google Drive / Dropbox für Ops-Dateien"
+        ],
         "overview": "Stack CRM ist das strukturierte Office-System der Wahrheit für souveräne Installationen: Deals und Kontakte liegen neben Dokument-Originalen in OnlyOffice. Darunter eine Data Plane unter Ihrer Kontrolle — S3-kompatibler Object Storage (MinIO) für Docs, Media und Backups; SMB für Windows-/Desktop-Mounts; SSH/SFTP für Ops-Sync und Air-Gap-Dropzones. Gleiche IdP- und Observability-Plane wie Chat und Meet — spätere Module sind Verkabelung, kein Re-Platforming.",
         "features": [
           "Selbstgehostetes Postgres oder Ihre bestehende Datenbank",
@@ -108,14 +118,19 @@
       "accent": "bg-[#b6cdec] text-[#0a0a0a]",
       "icon": "chat",
       "liveDemoUrl": "https://chat.pro-dukt.de?ref=freebuf",
-      "footerLabels": ["Stack Chat"],
+      "footerLabels": [
+        "Stack Chat"
+      ],
       "en": {
         "name": "Stack Chat",
         "tag": "Team messaging",
         "titleHighlight": "Chat",
         "titleRest": "without SaaS egress.",
         "lead": "Channels, threads, DMs, voice notes, and file sharing — end-to-end encrypted with keys you hold. Native agent bots with long-term memory, STT/TTS, and optional call join — still on your homeserver.",
-        "replaces": ["Slack", "Discord"],
+        "replaces": [
+          "Slack",
+          "Discord"
+        ],
         "overview": "Stack Chat is the collaboration spine of the suite. Search, files, and presence stay on infrastructure you control. Beyond human rooms, the same Matrix plane hosts knowledge bots that act as agents: they hear text or voice, retrieve durable context via GraphRAG (Neo4j associations + Qdrant vectors), answer with a local LLM, and can reply as text or TTS — with the room timeline as the audit trail. Positive feedback can be written back into long-term memory. Native clients cover desk and mobile so field and office share one secure plane.",
         "features": [
           "E2E encryption with on-prem key custody",
@@ -154,7 +169,10 @@
         "titleHighlight": "Chat",
         "titleRest": "ohne SaaS-Egress.",
         "lead": "Channels, Threads, DMs, Sprachnachrichten und Filesharing — Ende-zu-Ende-verschlüsselt mit Schlüsseln in Ihrer Custody. Native Agent-Bots mit Langzeitgedächtnis, STT/TTS und optionalem Call-Join — weiterhin auf Ihrem Homeserver.",
-        "replaces": ["Slack", "Discord"],
+        "replaces": [
+          "Slack",
+          "Discord"
+        ],
         "overview": "Stack Chat ist die Kollaborations-Wirbelsäule der Suite. Suche, Dateien und Presence bleiben auf Infrastruktur unter Ihrer Kontrolle. Über menschliche Räume hinaus hostet dieselbe Matrix-Ebene Knowledge-Bots als Agenten: Text oder Stimme, Abruf dauerhaften Kontexts per GraphRAG (Neo4j-Assoziationen + Qdrant-Vektoren), Antwort mit lokalem LLM, Reply als Text oder TTS — Timeline bleibt Audit-Trail. Positives Feedback kann zurück ins Langzeitgedächtnis geschrieben werden. Native Clients für Desk und Mobile halten Field und Office auf einer sicheren Ebene.",
         "features": [
           "Ende-zu-Ende-Verschlüsselung mit On-Prem-Schlüsselverwaltung",
@@ -194,14 +212,19 @@
       "accent": "bg-[#143a6f] text-[#faf5ea]",
       "icon": "meet",
       "liveDemoUrl": "https://meet.pro-dukt.de",
-      "footerLabels": ["Stack Meet"],
+      "footerLabels": [
+        "Stack Meet"
+      ],
       "en": {
         "name": "Stack Meet",
         "tag": "Video conferencing",
         "titleHighlight": "Meet",
         "titleRest": "on your SFU.",
         "lead": "Low-latency video, screen share, recording, and webinars — routed on your LAN and peered through your own SFU cluster. Recordings land in your object store, not a vendor vault.",
-        "replaces": ["Zoom", "Google Meet"],
+        "replaces": [
+          "Zoom",
+          "Google Meet"
+        ],
         "overview": "Stack Meet closes the loop for sovereign collaboration: the same people who chat and work deals can meet without a third-party media path. Scale rooms on hardware you size; keep recordings under your retention policy.",
         "features": [
           "Self-hosted SFU with WebRTC fall-back",
@@ -229,7 +252,10 @@
         "titleHighlight": "Meet",
         "titleRest": "auf Ihrer SFU.",
         "lead": "Latenzarme Videoübertragung, Bildschirmfreigabe, Aufzeichnung und Webinare — geroutet über Ihr LAN und Ihre eigene SFU-Cluster-Topologie. Aufzeichnungen landen in Ihrem Object-Store, nicht im Vendor-Vault.",
-        "replaces": ["Zoom", "Google Meet"],
+        "replaces": [
+          "Zoom",
+          "Google Meet"
+        ],
         "overview": "Stack Meet schließt den Kreis souveräner Kollaboration: dieselben Personen, die chatten und Deals führen, treffen sich ohne Third-Party-Medienpfad. Räume auf Hardware dimensionieren, die Sie wählen; Aufzeichnungen unter Ihrer Retention-Policy.",
         "features": [
           "Selbstgehostete SFU mit WebRTC-Fallback",
@@ -258,14 +284,21 @@
       "accent": "bg-[#efe6cf] text-[#0a0a0a]",
       "icon": "service",
       "liveDemoUrl": "https://git.produktor.io/",
-      "footerLabels": ["Stack Platform"],
+      "footerLabels": [
+        "Stack Platform"
+      ],
       "en": {
         "name": "Stack Platform",
         "tag": "Forge · observe · edge · on-premise",
         "titleHighlight": "Platform",
         "titleRest": "forge and observe.",
         "lead": "Stack Platform bundles Service Produkt and Observing: Gitea forge + package registries for code you own, and the ops edge — Grafana/Prometheus/Loki, Nginx Proxy Manager, DNS/ddclient, and tuned QEMU for legacy — so build, release, route, and watch stay on one sovereign plane.",
-        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS", "Datadog", "CloudWatch-only ops"],
+        "replaces": [
+          "GitHub Enterprise Cloud",
+          "GitLab SaaS",
+          "Datadog",
+          "CloudWatch-only ops"
+        ],
         "overview": "Stack Platform is the install and day-2 backbone. Service Produkt is the forge and package hub — Git, issues, PRs, Actions-style workflows, npm/OCI registries without a foreign tenancy. Observing is the shared ops edge — metrics and logs in Grafana/Prometheus/Loki, NPM hostnames and TLS, dynamic DNS when WAN IPs move, and QEMU/KVM for legacy boxes you cannot rewrite yet. One plane for product delivery and fleet visibility.",
         "features": [
           "Service Produkt: Git repos, issues, PRs, Actions — Gitea-native workflows",
@@ -307,7 +340,12 @@
         "titleHighlight": "Platform",
         "titleRest": "Forge und Observe.",
         "lead": "Stack Platform bündelt Service Produkt und Observing: Gitea-Forge + Package-Registries für Code unter Ihrer Kontrolle, und die Ops-Edge — Grafana/Prometheus/Loki, Nginx Proxy Manager, DNS/ddclient und abgestimmtes QEMU für Legacy — damit Build, Release, Routing und Fleet-Sicht auf einer souveränen Ebene bleiben.",
-        "replaces": ["GitHub Enterprise Cloud", "GitLab SaaS", "Datadog", "CloudWatch-only Ops"],
+        "replaces": [
+          "GitHub Enterprise Cloud",
+          "GitLab SaaS",
+          "Datadog",
+          "CloudWatch-only Ops"
+        ],
         "overview": "Stack Platform ist Install- und Day-2-Rückgrat. Service Produkt ist Forge und Package-Hub — Git, Issues, PRs, Actions-ähnliche Workflows, npm/OCI-Registries ohne fremde Tenancy. Observing ist die gemeinsame Ops-Edge — Metriken und Logs in Grafana/Prometheus/Loki, NPM-Hostnames und TLS, dynamisches DNS bei WAN-IP-Wechsel, QEMU/KVM für Legacy-Boxen. Eine Ebene für Product Delivery und Fleet-Sicht.",
         "features": [
           "Service Produkt: Git-Repos, Issues, PRs, Actions — Gitea-native Workflows",
@@ -350,14 +388,19 @@
       "accent": "bg-[#143a6f] text-[#faf5ea]",
       "icon": "geo",
       "liveDemoUrl": "https://produktor.io/ui/#",
-      "footerLabels": ["Stack Geo"],
+      "footerLabels": [
+        "Stack Geo"
+      ],
       "en": {
         "name": "Stack Geo",
         "tag": "GIS · search · routing · on-premise",
         "titleHighlight": "Geo",
         "titleRest": "without map SaaS.",
         "lead": "On-premise GIS and location stack: vector maps, geo search, reverse geocoding, routing, plus display and storage of geolocation data — fully generated from up-to-date OSM and other datasets, MapLibre rendering, no commercial-license tax on every view.",
-        "replaces": ["Google Maps Platform", "Mapbox SaaS"],
+        "replaces": [
+          "Google Maps Platform",
+          "Mapbox SaaS"
+        ],
         "overview": "Stack Geo keeps location intelligence inside your boundary. GIS layers, tile generation, geo search, reverse geocoding, and routing run on your schedule against datasets you host. Geolocation records stay in storage you control and render in the produktor UI shell — for logistics, care routing, and field ops that cannot call out to commercial map APIs.",
         "features": [
           "GIS layers and geolocation data storage under your control",
@@ -387,7 +430,10 @@
         "titleHighlight": "Geo",
         "titleRest": "ohne Map-SaaS.",
         "lead": "On-Premise-GIS- und Location-Stack: Vektor-Karten, Geo-Suche, Reverse-Geocoding, Routing sowie Anzeige und Speicherung von Geolocation-Daten — vollständig aus aktuellen OSM- und weiteren Datensätzen, MapLibre-Rendering, ohne kommerzielle Lizenzgebühr pro View.",
-        "replaces": ["Google Maps Platform", "Mapbox SaaS"],
+        "replaces": [
+          "Google Maps Platform",
+          "Mapbox SaaS"
+        ],
         "overview": "Stack Geo hält Location-Intelligence innerhalb Ihrer Grenze. GIS-Layer, Tile-Generierung, Geo-Suche, Reverse-Geocoding und Routing laufen nach Ihrem Rhythmus gegen Datasets, die Sie hosten. Geolocation-Records bleiben in Storage unter Ihrer Kontrolle und rendern in der produktor-UI-Shell — für Logistik, Care-Routing und Field-Ops ohne Commercial-Map-APIs.",
         "features": [
           "GIS-Layer und Speicherung von Geolocation-Daten unter Ihrer Kontrolle",
@@ -418,61 +464,75 @@
       "accent": "bg-[#b6cdec] text-[#0a0a0a]",
       "icon": "ai",
       "liveDemoUrl": "https://ai.produktor.io/",
-      "footerLabels": ["Stack AI"],
+      "footerLabels": [
+        "Stack AI"
+      ],
       "en": {
         "name": "Stack AI",
-        "tag": "Local inference · on-premise",
-        "titleHighlight": "AI",
-        "titleRest": "on your silicon.",
-        "lead": "Local inference engines and model services — vLLM, Ollama, llama.cpp, sglang — tuned to your hardware and use case. From CPU-only classification to GPU assistants and embedding pipelines.",
-        "replaces": ["Cloud LLM APIs", "Managed inference SaaS"],
-        "overview": "Stack AI is how the suite stays smart without shipping prompts to a foreign API. Embeddings feed Neo4j/Qdrant search; assistants stay next to your documents. Right-size from edge CPU boxes to multi-GPU nodes.",
+        "tag": "Company Brain · evidence-first · on-premise",
+        "titleHighlight": "Company Brain",
+        "titleRest": "on your stack.",
+        "lead": "An evidence-first knowledge core on OnlyOffice (CRM + docs) and Matrix: ingest channels, extract claims, fact-check, keep an auditable graph. A lightweight tool-calling agent answers through chat and voice — it queries verified facts, it does not guess.",
+        "replaces": [
+          "Cloud RAG chatbots",
+          "Enterprise search that cannot say “unconfirmed”",
+          "Managed inference SaaS as the system of record"
+        ],
+        "overview": "Stack AI is the Company Brain layer of the suite, not a chatbot over PDFs. OnlyOffice is the relationship skeleton; Matrix is the live conversation layer. Claims are confirmed only with independent evidence; everything else is marked unconfirmed. A small tool-calling model calls search/get/audit tools. Local inference is the target; some installs currently use hosted inference for cost — the architecture is ready to bring it inside.",
         "features": [
-          "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — right-sized deployments",
-          "Semantic search and embeddings (Neo4j + Qdrant)",
-          "Code assistants and internal chatbots on local models",
-          "Low-memory setups for lightweight and edge tasks",
-          "Engine choice: vLLM, Ollama, llama.cpp, sglang",
-          "Fits the same install and support practice as other modules"
+          "Evidence-first graph: confirmed vs unconfirmed, with source links",
+          "OnlyOffice CRM + docs as the relationship skeleton",
+          "Matrix / Element as the live conversation and agent interface",
+          "Continuous ingest from mail, chat, documents (calls via STT where installed)",
+          "Lightweight tool-calling agent — no giant in-model corpus",
+          "MCP / HTTP so other internal tools query the same verified layer",
+          "On-prem by design; data stays inside the perimeter",
+          "Local inference engines (vLLM, Ollama, llama.cpp) when hardware allows"
         ],
         "useCases": [
-          "Private RAG over care or legal corpora that cannot leave the site",
-          "Dev assistants against internal repos on Stack Platform",
-          "Classification and routing jobs on CPU-only appliances"
+          "Regulated teams that cannot send company knowledge to a cloud LLM",
+          "Operators asking who / with whom / when / what — with evidence",
+          "Agents that must refuse to invent facts when sources disagree"
         ],
         "deploy": [
-          "Pick models and engines for VRAM / CPU budget",
-          "Wire embedding endpoints into search and agents",
-          "Lock model artifacts in your registry (Stack Platform)",
-          "Monitor latency and queue depth under real traffic"
+          "Stand up beside Stack CRM and Stack Chat on the same IdP",
+          "Point the agent at the brain MCP (search → get → audit)",
+          "Keep inference local when the GPU/CPU budget allows; hosted inference is a cost compromise, not the product",
+          "Do not treat the model weights as the Source of Truth"
         ]
       },
       "de": {
         "name": "Stack AI",
-        "tag": "Lokale Inferenz · On-Premise",
-        "titleHighlight": "AI",
-        "titleRest": "auf Ihrer Hardware.",
-        "lead": "Lokale Inferenz-Engines und Model-Services — vLLM, Ollama, llama.cpp, sglang — abgestimmt auf Hardware und Use-Case. Von CPU-only Klassifikation bis zu GPU-Assistenten und Embedding-Pipelines.",
-        "replaces": ["Cloud-LLM-APIs", "Managed-Inference-SaaS"],
-        "overview": "Stack AI hält den Stack smart, ohne Prompts an eine fremde API zu schicken. Embeddings speisen Neo4j/Qdrant-Suche; Assistenten bleiben neben Ihren Dokumenten. Von Edge-CPU bis Multi-GPU richtig dimensionieren.",
+        "tag": "Company Brain · evidence-first · On-Premise",
+        "titleHighlight": "Company Brain",
+        "titleRest": "auf Ihrem Stack.",
+        "lead": "Evidence-first Wissenskern auf OnlyOffice (CRM + Docs) und Matrix: Kanäle aufnehmen, Behauptungen extrahieren, gegenprüfen, prüfbaren Graph halten. Ein leichter Tool-Calling-Agent antwortet über Chat und Sprache — er fragt geprüfte Fakten, er rät nicht.",
+        "replaces": [
+          "Cloud-RAG-Chatbots",
+          "Enterprise-Suche, die nicht „unbestätigt“ sagen kann",
+          "Managed-Inference-SaaS als System of Record"
+        ],
+        "overview": "Stack AI ist die Company-Brain-Schicht der Suite, kein Chatbot über PDFs. OnlyOffice ist das Beziehungsskelett; Matrix die lebende Gesprächsebene. Behauptungen gelten nur mit unabhängigen Belegen; sonst unconfirmed. Ein kleines Tool-Calling-Modell ruft search/get/audit. Lokale Inferenz ist das Ziel; manche Installationen nutzen hosted inference aus Kostengründen — die Architektur kann sie nach innen holen.",
         "features": [
-          "Intel, AMD, ARM, Apple M1–M5, NVIDIA, CPU-only — passend dimensioniert",
-          "Semantische Suche und Embeddings (Neo4j + Qdrant)",
-          "Code-Assistenten und interne Chatbots auf lokalen Modellen",
-          "Low-Memory-Setups für leichte und Edge-Tasks",
-          "Engine-Wahl: vLLM, Ollama, llama.cpp, sglang",
-          "Gleiche Install- und Support-Praxis wie andere Module"
+          "Evidence-first Graph: confirmed vs unconfirmed, mit Quellen",
+          "OnlyOffice CRM + Docs als Beziehungsskelett",
+          "Matrix / Element als Live-Conversation und Agent-Interface",
+          "Kontinuierlicher Ingest aus Mail, Chat, Dokumenten (Calls via STT wo installiert)",
+          "Leichter Tool-Calling-Agent — kein riesiges Modell-Corpus",
+          "MCP / HTTP, damit interne Tools dieselbe geprüfte Schicht nutzen",
+          "On-Prem by design; Daten bleiben im Perimeter",
+          "Lokale Inference-Engines (vLLM, Ollama, llama.cpp), wenn Hardware es zulässt"
         ],
         "useCases": [
-          "Privates RAG über Care- oder Legal-Corpora ohne Site-Egress",
-          "Dev-Assistenten gegen interne Repos auf Stack Platform",
-          "Klassifikation und Routing auf CPU-only Appliances"
+          "Regulierte Teams, die Firmenwissen nicht an eine Cloud-LLM geben dürfen",
+          "Ops-Fragen wer / mit wem / wann / was — mit Beleg",
+          "Agenten, die nichts erfinden dürfen, wenn Quellen widersprechen"
         ],
         "deploy": [
-          "Modelle und Engines nach VRAM-/CPU-Budget wählen",
-          "Embedding-Endpoints in Suche und Agents verdrahten",
-          "Model-Artefakte in Ihrer Registry (Stack Platform) sichern",
-          "Latenz und Queue-Tiefe unter Realverkehr monitoren"
+          "Neben Stack CRM und Stack Chat mit derselben IdP aufsetzen",
+          "Agent auf Brain-MCP zeigen (search → get → audit)",
+          "Inferenz lokal halten, wenn GPU/CPU reicht; hosted inference ist ein Kostenkompromiss, nicht das Produkt",
+          "Modellgewichte nicht als Source of Truth behandeln"
         ]
       }
     },
@@ -482,14 +542,19 @@
       "accent": "bg-[#efe6cf] text-[#0a0a0a]",
       "icon": "ui",
       "liveDemoUrl": "https://produktor.io/ui/#",
-      "footerLabels": ["Stack UI"],
+      "footerLabels": [
+        "Stack UI"
+      ],
       "en": {
         "name": "Stack UI",
         "tag": "Map & ops shell · on-premise",
         "titleHighlight": "UI",
         "titleRest": "for sovereign maps.",
         "lead": "The produktor map and ops shell on Stack Geo tiles and search — a browser UI for exploring layers, geocoding, routing views, and stored geolocation without shipping queries to a commercial map vendor.",
-        "replaces": ["Vendor map consoles", "Ad-hoc Leaflet demos"],
+        "replaces": [
+          "Vendor map consoles",
+          "Ad-hoc Leaflet demos"
+        ],
         "overview": "Stack UI is the front door for Stack Geo. Operators and integrators get a consistent shell for tiles, search, routing debug, and geolocation display — deployable with the stack or pointed at your own endpoints.",
         "features": [
           "MapLibre-based interactive map shell",
@@ -517,7 +582,10 @@
         "titleHighlight": "UI",
         "titleRest": "für souveräne Karten.",
         "lead": "Die produktor Map- und Ops-Shell auf Stack-Geo-Tiles und -Suche — Browser-UI für Layer, Geocoding, Routing-Views und gespeicherte Geolocation, ohne Queries an einen kommerziellen Map-Vendor zu schicken.",
-        "replaces": ["Vendor-Map-Consoles", "Ad-hoc-Leaflet-Demos"],
+        "replaces": [
+          "Vendor-Map-Consoles",
+          "Ad-hoc-Leaflet-Demos"
+        ],
         "overview": "Stack UI ist die Haustür zu Stack Geo. Ops und Integratoren bekommen eine konsistente Shell für Tiles, Suche, Routing-Debug und Geolocation-Anzeige — mit dem Stack deploybar oder auf eigene Endpoints gerichtet.",
         "features": [
           "MapLibre-basierte interaktive Map-Shell",
@@ -546,14 +614,22 @@
       "accent": "bg-[#7bfa63] text-[#0a0a0a]",
       "icon": "monitoring",
       "liveDemoUrl": "https://grafana.produktor.io/",
-      "footerLabels": ["Stack Platform", "Observing"],
+      "footerLabels": [
+        "Stack Platform",
+        "Observing"
+      ],
       "en": {
         "name": "Observing",
         "tag": "Part of Stack Platform · monitoring · edge · DNS · QEMU",
         "titleHighlight": "Observe",
         "titleRest": "route, and run legacy safely.",
         "lead": "Observing is the ops half of Stack Platform: Grafana / Prometheus / Loki for the fleet, Nginx Proxy Manager for service front-doors and your own DNS names, ddclient when the WAN IP moves — plus finely tuned QEMU for legacy servers you cannot rewrite yet.",
-        "replaces": ["Datadog", "New Relic", "CloudWatch-only ops", "Ad-hoc port forwards / ISP DDNS gadgets"],
+        "replaces": [
+          "Datadog",
+          "New Relic",
+          "CloudWatch-only ops",
+          "Ad-hoc port forwards / ISP DDNS gadgets"
+        ],
         "overview": "Observing is day-2 ops inside Stack Platform. Metrics and logs land in one Grafana/Prometheus/Loki plane; Alertmanager fans out to Matrix. In front of every module sits Nginx Proxy Manager: TLS, host-based routing, and your own DNS names (produktor.io or customer zones) instead of raw ports. On dynamic WAN links, ddclient (or equivalent) keeps A/AAAA records fresh so cutovers and demos keep working after DHCP renumbering — that DNS + proxy pair is part of standard setup, not an afterthought. Where Windows / old Linux appliances still matter, we virtualize them under QEMU/KVM with explicit CPU, disk, and network profiles, scheduled backups, and Grafana visibility — so legacy and modern compose stacks share one site without surprise coupling.",
         "features": [
           "Grafana as the shared BI / ops UI (one instance per site, not nested copies)",
@@ -612,7 +688,12 @@
         "titleHighlight": "Observe",
         "titleRest": "routen und Legacy sicher betreiben.",
         "lead": "Observing ist die Ops-Hälfte von Stack Platform: Grafana / Prometheus / Loki für die Fleet, Nginx Proxy Manager für Service-Front-Doors und eigene DNS-Namen, ddclient wenn die WAN-IP wechselt — plus fein abgestimmtes QEMU für Legacy-Server, die Sie noch nicht ersetzen können.",
-        "replaces": ["Datadog", "New Relic", "CloudWatch-only Ops", "Ad-hoc Port-Forwards / ISP-DDNS-Gadgets"],
+        "replaces": [
+          "Datadog",
+          "New Relic",
+          "CloudWatch-only Ops",
+          "Ad-hoc Port-Forwards / ISP-DDNS-Gadgets"
+        ],
         "overview": "Observing ist Day-2-Ops und die Install-Edge der Suite. Metriken und Logs landen in einer Grafana-/Prometheus-/Loki-Plane; Alertmanager fannt nach Matrix. Vor jedem Modul sitzt Nginx Proxy Manager: TLS, Host-basiertes Routing und Ihre eigenen DNS-Namen (produktor.io oder Kunden-Zonen) statt nackter Ports. An dynamischen WAN-Links hält ddclient (oder Äquivalent) A/AAAA-Records frisch, damit Cutover und Demos nach DHCP-Renumbering weiterlaufen — DNS + Proxy sind Teil des Standard-Setups, kein Nachgedanke. Wo Windows- / alte Linux-Appliances noch zählen, virtualisieren wir sie unter QEMU/KVM mit expliziten CPU-, Disk- und Netz-Profilen, geplanten Backups und Grafana-Sicht — Legacy und moderne Compose-Stacks teilen eine Site ohne überraschende Kopplung.",
         "features": [
           "Grafana als gemeinsame BI-/Ops-UI (eine Instanz pro Site, keine Nested-Kopien)",
