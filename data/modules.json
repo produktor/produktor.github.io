@@ -71,7 +71,7 @@
           "Expose SMB and/or SSH endpoints with IdP-aligned access policy",
           "Connect IdP and map roles before cutover",
           "Migrate accounts, opportunities, and file trees; dry-run then zero-downtime switch",
-          "Operate with quarterly upgrades and on-call under the same support contract"
+          "Operate with quarterly upgrades and EU business-hours support under the same contract"
         ]
       },
       "de": {
@@ -108,7 +108,7 @@
           "SMB- und/oder SSH-Endpoints mit IdP-abgestimmter Access-Policy freigeben",
           "IdP anbinden und Rollen vor dem Cutover mappen",
           "Accounts, Opportunities und File-Trees migrieren; Dry-Run, dann Zero-Downtime",
-          "Betrieb mit Quartals-Upgrades und On-Call im gleichen Support-Vertrag"
+          "Betrieb mit Quartals-Upgrades und Support zu EU-Geschäftszeiten im gleichen Vertrag"
         ]
       }
     },
