@@ -11,7 +11,7 @@
       "contactCta": "Talk install",
       "otherModules": "Other modules",
       "replaces": "Replaces",
-      "refs": "Further reading"
+      "refs": "Repos & reading"
     },
     "de": {
       "backHome": "Zurück zum Stack",
@@ -24,7 +24,7 @@
       "contactCta": "Installation besprechen",
       "otherModules": "Andere Module",
       "replaces": "Ersetzt",
-      "refs": "Weiterlesen"
+      "refs": "Repos & Weiterlesen"
     }
   },
   "modules": [
@@ -72,6 +72,20 @@
           "Connect IdP and map roles before cutover",
           "Migrate accounts, opportunities, and file trees; dry-run then zero-downtime switch",
           "Operate with quarterly upgrades and EU business-hours support under the same contract"
+        ],
+        "refs": [
+          {
+            "label": "go-onlyoffice — OnlyOffice CLI (oo)",
+            "href": "https://github.com/eSlider/go-onlyoffice"
+          },
+          {
+            "label": "Post — oo CLI",
+            "href": "https://eslider.github.io/posts/go-onlyoffice-oo-cli/"
+          },
+          {
+            "label": "Post — OnlyOffice association graph",
+            "href": "https://eslider.github.io/posts/onlyoffice-association-graph/"
+          }
         ]
       },
       "de": {
@@ -109,6 +123,20 @@
           "IdP anbinden und Rollen vor dem Cutover mappen",
           "Accounts, Opportunities und File-Trees migrieren; Dry-Run, dann Zero-Downtime",
           "Betrieb mit Quartals-Upgrades und Support zu EU-Geschäftszeiten im gleichen Vertrag"
+        ],
+        "refs": [
+          {
+            "label": "go-onlyoffice — OnlyOffice-CLI (oo)",
+            "href": "https://github.com/eSlider/go-onlyoffice"
+          },
+          {
+            "label": "Post — oo CLI",
+            "href": "https://eslider.github.io/posts/go-onlyoffice-oo-cli/"
+          },
+          {
+            "label": "Post — OnlyOffice Association Graph",
+            "href": "https://eslider.github.io/posts/onlyoffice-association-graph/"
+          }
         ]
       }
     },
@@ -158,6 +186,18 @@
         ],
         "refs": [
           {
+            "label": "go-matrix-bot — Matrix bots / E2E / AI",
+            "href": "https://github.com/eSlider/go-matrix-bot"
+          },
+          {
+            "label": "go-second-brain — GraphRAG predecessor",
+            "href": "https://github.com/eSlider/go-second-brain"
+          },
+          {
+            "label": "Post — go-matrix-bot",
+            "href": "https://eslider.github.io/posts/go-matrix-bot-matrix-integrations/"
+          },
+          {
             "label": "Edelweiss — Video Assistant MVP (Matrix + GraphRAG)",
             "href": "https://eslider.github.io/posts/edelweiss-video-assistant-mvp/"
           }
@@ -199,6 +239,18 @@
           "Patch und Upgrade im Suite-Rhythmus"
         ],
         "refs": [
+          {
+            "label": "go-matrix-bot — Matrix-Bots / E2E / AI",
+            "href": "https://github.com/eSlider/go-matrix-bot"
+          },
+          {
+            "label": "go-second-brain — GraphRAG-Vorgänger",
+            "href": "https://github.com/eSlider/go-second-brain"
+          },
+          {
+            "label": "Post — go-matrix-bot",
+            "href": "https://eslider.github.io/posts/go-matrix-bot-matrix-integrations/"
+          },
           {
             "label": "Edelweiss — Video Assistant MVP (Matrix + GraphRAG)",
             "href": "https://eslider.github.io/posts/edelweiss-video-assistant-mvp/"
@@ -244,6 +296,16 @@
           "Point recordings at S3-compatible storage you control",
           "Join the suite SSO and calendar hooks as needed",
           "Load-test before cutover; keep Zoom as fall-back only if policy allows"
+        ],
+        "refs": [
+          {
+            "label": "Post — Matrix / WebRTC / LiveKit in production",
+            "href": "https://eslider.github.io/posts/matrix-webrtc-voip-production/"
+          },
+          {
+            "label": "go-matrix-bot — call / voice agent hooks",
+            "href": "https://github.com/eSlider/go-matrix-bot"
+          }
         ]
       },
       "de": {
@@ -275,6 +337,16 @@
           "Recordings auf S3-kompatiblen Storage unter Ihrer Kontrolle legen",
           "Suite-SSO und Kalender-Hooks nach Bedarf anbinden",
           "Vor Cutover Last testen; Zoom nur als Policy-Fallback behalten"
+        ],
+        "refs": [
+          {
+            "label": "Post — Matrix / WebRTC / LiveKit in Produktion",
+            "href": "https://eslider.github.io/posts/matrix-webrtc-voip-production/"
+          },
+          {
+            "label": "go-matrix-bot — Call- / Voice-Agent-Hooks",
+            "href": "https://github.com/eSlider/go-matrix-bot"
+          }
         ]
       }
     },
@@ -325,6 +397,22 @@
         ],
         "refs": [
           {
+            "label": "ai-fabric — Gitea agent delivery",
+            "href": "https://github.com/eSlider/ai-fabric"
+          },
+          {
+            "label": "go-gitea-helpers",
+            "href": "https://github.com/eSlider/go-gitea-helpers"
+          },
+          {
+            "label": "Post — AI Fabric",
+            "href": "https://eslider.github.io/posts/ai-fabric-agent-delivery/"
+          },
+          {
+            "label": "Post — produktor platform stack",
+            "href": "https://eslider.github.io/posts/produktor-platform-self-hosted-stack/"
+          },
+          {
             "label": "Observing (detail)",
             "href": "/modules/monitoring/"
           },
@@ -371,6 +459,22 @@
           "SaaS-Mirror nach Dual-Run abschalten"
         ],
         "refs": [
+          {
+            "label": "ai-fabric — Gitea Agent Delivery",
+            "href": "https://github.com/eSlider/ai-fabric"
+          },
+          {
+            "label": "go-gitea-helpers",
+            "href": "https://github.com/eSlider/go-gitea-helpers"
+          },
+          {
+            "label": "Post — AI Fabric",
+            "href": "https://eslider.github.io/posts/ai-fabric-agent-delivery/"
+          },
+          {
+            "label": "Post — produktor Platform-Stack",
+            "href": "https://eslider.github.io/posts/produktor-platform-self-hosted-stack/"
+          },
           {
             "label": "Observing (Detail)",
             "href": "/modules/monitoring/"
@@ -422,6 +526,24 @@
           "Schedule OSM (and other) refresh jobs",
           "Point UI / apps at your tile, search, geocode, and routing endpoints",
           "Monitor build lag vs your freshness SLO"
+        ],
+        "refs": [
+          {
+            "label": "geo-tools — fast geo data tools",
+            "href": "https://github.com/eSlider/geo-tools"
+          },
+          {
+            "label": "go-spatialite",
+            "href": "https://github.com/eSlider/go-spatialite"
+          },
+          {
+            "label": "Post — Immowelt geospatial search (80M+)",
+            "href": "https://eslider.github.io/posts/immowelt-geospatial-search/"
+          },
+          {
+            "label": "Post — Nominatim geocoder deploy",
+            "href": "https://eslider.github.io/posts/nominatim-geocoder-deploy/"
+          }
         ]
       },
       "de": {
@@ -455,6 +577,24 @@
           "OSM- (und weitere) Refresh-Jobs planen",
           "UI / Apps auf Tile-, Search-, Geocode- und Routing-Endpoints zeigen",
           "Build-Lag gegen Ihr Freshness-SLO monitoren"
+        ],
+        "refs": [
+          {
+            "label": "geo-tools — schnelle Geo-Tools",
+            "href": "https://github.com/eSlider/geo-tools"
+          },
+          {
+            "label": "go-spatialite",
+            "href": "https://github.com/eSlider/go-spatialite"
+          },
+          {
+            "label": "Post — Immowelt Geo-Suche (80M+)",
+            "href": "https://eslider.github.io/posts/immowelt-geospatial-search/"
+          },
+          {
+            "label": "Post — Nominatim-Geocoder Deploy",
+            "href": "https://eslider.github.io/posts/nominatim-geocoder-deploy/"
+          }
         ]
       }
     },
@@ -499,6 +639,28 @@
           "Point the agent at the brain MCP (search → get → audit)",
           "Keep inference local when the GPU/CPU budget allows; hosted inference is a cost compromise, not the product",
           "Do not treat the model weights as the Source of Truth"
+        ],
+        "refs": [
+          {
+            "label": "2dph — evidence-first Company Brain (current)",
+            "href": "https://github.com/eSlider/2dph"
+          },
+          {
+            "label": "go-second-brain — Neo4j + Qdrant GraphRAG predecessor",
+            "href": "https://github.com/eSlider/go-second-brain"
+          },
+          {
+            "label": "ai-fabric — agent delivery on Gitea",
+            "href": "https://github.com/eSlider/ai-fabric"
+          },
+          {
+            "label": "Post — go-second-brain",
+            "href": "https://eslider.github.io/posts/go-second-brain-knowledge-graph-rag/"
+          },
+          {
+            "label": "Post — produktor self-hosted stack",
+            "href": "https://eslider.github.io/posts/produktor-platform-self-hosted-stack/"
+          }
         ]
       },
       "de": {
@@ -533,6 +695,28 @@
           "Agent auf Brain-MCP zeigen (search → get → audit)",
           "Inferenz lokal halten, wenn GPU/CPU reicht; hosted inference ist ein Kostenkompromiss, nicht das Produkt",
           "Modellgewichte nicht als Source of Truth behandeln"
+        ],
+        "refs": [
+          {
+            "label": "2dph — evidence-first Company Brain (aktuell)",
+            "href": "https://github.com/eSlider/2dph"
+          },
+          {
+            "label": "go-second-brain — Neo4j + Qdrant GraphRAG-Vorgänger",
+            "href": "https://github.com/eSlider/go-second-brain"
+          },
+          {
+            "label": "ai-fabric — Agent Delivery auf Gitea",
+            "href": "https://github.com/eSlider/ai-fabric"
+          },
+          {
+            "label": "Post — go-second-brain",
+            "href": "https://eslider.github.io/posts/go-second-brain-knowledge-graph-rag/"
+          },
+          {
+            "label": "Post — produktor Self-Hosted-Stack",
+            "href": "https://eslider.github.io/posts/produktor-platform-self-hosted-stack/"
+          }
         ]
       }
     },
@@ -574,6 +758,20 @@
           "Configure tile, search, and routing base URLs to Stack Geo",
           "Lock down access with the suite IdP if exposed beyond LAN",
           "Keep in sync with Stack Geo dataset refreshes"
+        ],
+        "refs": [
+          {
+            "label": "vis-ui.js — Mapbender / OSGeo (1M+ users)",
+            "href": "https://github.com/mapbender/vis-ui.js"
+          },
+          {
+            "label": "eSlider fork — vis-ui.js",
+            "href": "https://github.com/eSlider/vis-ui.js"
+          },
+          {
+            "label": "Post — vis-ui.js / Mapbender",
+            "href": "https://eslider.github.io/posts/vis-ui-js-mapbender/"
+          }
         ]
       },
       "de": {
@@ -605,6 +803,20 @@
           "Tile-, Search- und Routing-Base-URLs auf Stack Geo setzen",
           "Zugriff mit Suite-IdP absichern, falls außerhalb LAN",
           "Mit Stack-Geo-Dataset-Refreshes synchron halten"
+        ],
+        "refs": [
+          {
+            "label": "vis-ui.js — Mapbender / OSGeo (1M+ Nutzer)",
+            "href": "https://github.com/mapbender/vis-ui.js"
+          },
+          {
+            "label": "eSlider-Fork — vis-ui.js",
+            "href": "https://github.com/eSlider/vis-ui.js"
+          },
+          {
+            "label": "Post — vis-ui.js / Mapbender",
+            "href": "https://eslider.github.io/posts/vis-ui-js-mapbender/"
+          }
         ]
       }
     },
