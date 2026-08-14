@@ -1,6 +1,7 @@
 {
   "brand": "produktor.io",
-  "email": "info@produktor.io",
+  "telegram": "https://t.me/eSIider",
+  "whatsapp": "https://wa.me/34643861471",
   "en": {
     "brandTagline": "On-Premise CRM · Chat · Video",
     "lead": "On-premise install, migration, and support for the customer-ops stack your team is too busy building to operate itself.",
@@ -78,8 +79,12 @@
             "href": "/contact/"
           },
           {
-            "label": "info@produktor.io",
-            "href": "mailto:info@produktor.io"
+            "label": "Telegram @eSIider",
+            "href": "https://t.me/eSIider"
+          },
+          {
+            "label": "WhatsApp +34 643 86 14 71",
+            "href": "https://wa.me/34643861471"
           }
         ]
       }
@@ -162,8 +167,12 @@
             "href": "/contact/"
           },
           {
-            "label": "info@produktor.io",
-            "href": "mailto:info@produktor.io"
+            "label": "Telegram @eSIider",
+            "href": "https://t.me/eSIider"
+          },
+          {
+            "label": "WhatsApp +34 643 86 14 71",
+            "href": "https://wa.me/34643861471"
           }
         ]
       }

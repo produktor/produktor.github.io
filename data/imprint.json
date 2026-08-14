@@ -1,7 +1,10 @@
 {
   "legalName": "ProProdukt SL",
   "tradeName": "produktor.io",
-  "email": "info@produktor.io",
+  "telegram": "https://t.me/eSIider",
+  "telegramHandle": "@eSIider",
+  "whatsapp": "https://wa.me/34643861471",
+  "whatsappLabel": "+34 643 86 14 71",
   "website": "https://produktor.io",
   "team": [
     {
@@ -25,7 +28,7 @@
       "contact": "Contact",
       "team": "Management & contacts",
       "register": "Commercial register",
-      "registerBody": "ProProdukt SL is a Spanish limited company (Sociedad Limitada). Commercial-register number, registered seat, and VAT ID are available on request at the contact email above and will be published here once confirmed for this domain.",
+      "registerBody": "ProProdukt SL is a Spanish limited company (Sociedad Limitada). Commercial-register number, registered seat, and VAT ID are available on request via Telegram or WhatsApp below and will be published here once confirmed for this domain.",
       "dispute": "EU dispute resolution",
       "disputeBody": "The European Commission provides a platform for online dispute resolution (ODR):",
       "disputeNote": "We are neither obliged nor willing to participate in dispute-resolution proceedings before a consumer arbitration board.",
@@ -38,7 +41,8 @@
     "labels": {
       "legalName": "Legal name",
       "tradeName": "Brand / trade name",
-      "email": "Email",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
       "web": "Website",
       "address": "Correspondence address"
     }
@@ -53,7 +57,7 @@
       "contact": "Kontakt",
       "team": "Leitung & Ansprechpartner",
       "register": "Handelsregister",
-      "registerBody": "ProProdukt SL ist eine spanische Sociedad Limitada (SL). Handelsregisternummer, Sitz und USt-IdNr. sind auf Anfrage unter der oben genannten E-Mail erhältlich und werden hier veröffentlicht, sobald sie für diese Domain bestätigt sind.",
+      "registerBody": "ProProdukt SL ist eine spanische Sociedad Limitada (SL). Handelsregisternummer, Sitz und USt-IdNr. sind auf Anfrage per Telegram oder WhatsApp erhältlich und werden hier veröffentlicht, sobald sie für diese Domain bestätigt sind.",
       "dispute": "EU-Streitschlichtung",
       "disputeBody": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
       "disputeNote": "Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
@@ -66,7 +70,8 @@
     "labels": {
       "legalName": "Firma",
       "tradeName": "Marke / Auftreten",
-      "email": "E-Mail",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
       "web": "Website",
       "address": "Korrespondenzadresse"
     }

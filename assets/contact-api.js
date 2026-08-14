@@ -8,14 +8,14 @@
       sending: "Sending…",
       successTitle: "Request received",
       successBody: "We will reply within one business day.",
-      error: "Could not send your request. Please email info@produktor.io directly.",
+      error: "Could not send your request. Please reach us on Telegram @eSIider or WhatsApp +34 643 86 14 71.",
       again: "Send another request",
     },
     de: {
       sending: "Wird gesendet…",
       successTitle: "Anfrage erhalten",
       successBody: "Wir melden uns innerhalb eines Werktags.",
-      error: "Anfrage konnte nicht gesendet werden. Bitte schreiben Sie an info@produktor.io.",
+      error: "Anfrage konnte nicht gesendet werden. Bitte Telegram @eSIider oder WhatsApp +34 643 86 14 71.",
       again: "Weitere Anfrage senden",
     },
   };

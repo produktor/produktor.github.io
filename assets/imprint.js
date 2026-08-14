@@ -91,8 +91,10 @@
         <section>
           <h2 class="m-0 font-black uppercase tracking-tight text-xl sm:text-2xl">${escapeHtml(s.contact)}</h2>
           <dl class="mt-4">
-            <dt>${escapeHtml(labels.email)}</dt>
-            <dd><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></dd>
+            <dt>${escapeHtml(labels.telegram)}</dt>
+            <dd><a href="${escapeHtml(data.telegram)}" target="_blank" rel="noopener noreferrer">${escapeHtml(data.telegramHandle)}</a></dd>
+            <dt>${escapeHtml(labels.whatsapp)}</dt>
+            <dd><a href="${escapeHtml(data.whatsapp)}" target="_blank" rel="noopener noreferrer">${escapeHtml(data.whatsappLabel)}</a></dd>
             <dt>${escapeHtml(labels.web)}</dt>
             <dd><a href="${escapeHtml(data.website)}">${escapeHtml(String(data.website || "").replace(/^https?:\/\//, ""))}</a></dd>
           </dl>
