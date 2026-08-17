@@ -1,7 +1,7 @@
 {
-  "name": "produktor.io — On-Premise CRM, Chat & Video",
+  "name": "produktor.io — On-prem stack + Company Brain",
   "short_name": "produktor.io",
-  "description": "On-premise install, migration, and support for the customer-ops stack.",
+  "description": "On-premise stack plus Company Brain — install, migration, and support.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#faf5ea",

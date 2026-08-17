@@ -3,8 +3,8 @@
   "telegram": "https://t.me/eSIider",
   "whatsapp": "https://wa.me/34643861471",
   "en": {
-    "brandTagline": "On-Premise CRM · Chat · Video",
-    "lead": "On-premise install, migration, and support for the customer-ops stack your team is too busy building to operate itself.",
+    "brandTagline": "On-prem stack + Company Brain",
+    "lead": "On-premise stack plus Company Brain — install, migration, and support for the suite your team is too busy building to operate itself.",
     "systemsOk": "Systems OK",
     "copyright": "© {{year}} produktor.io",
     "tagline": "ProProdukt SL · On-premise install & support.",
@@ -91,8 +91,8 @@
     ]
   },
   "de": {
-    "brandTagline": "Vor-Ort-CRM · Chat · Video",
-    "lead": "Installation, Migration und Support für den Customer-Ops-Stack, den Ihr Team zu beschäftigt ist, um ihn selbst zu betreiben.",
+    "brandTagline": "On-Prem-Stack + Company Brain",
+    "lead": "On-Prem-Stack plus Company Brain — Installation, Migration und Support für die Suite, die Ihr Team zu beschäftigt ist, selbst zu betreiben.",
     "systemsOk": "Systeme OK",
     "copyright": "© {{year}} produktor.io",
     "tagline": "ProProdukt SL · On-Premise-Installation & Support.",

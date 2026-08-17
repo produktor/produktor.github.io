@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "nameEn": "Stack CRM",
+      "nameDe": "Stack CRM",
+      "tagEn": "OnlyOffice Workspace · on-premise",
+      "tagDe": "OnlyOffice Workspace · On-Premise",
+      "descriptionEn": "Contacts, deals, documents, mail, and calendar on OnlyOffice Workspace — on hardware you own. Not a HubSpot or Salesforce clone.",
+      "descriptionDe": "Kontakte, Deals, Dokumente, Mail und Kalender in OnlyOffice Workspace — auf Hardware, die Sie besitzen. Kein HubSpot- oder Salesforce-Klon.",
+      "bulletsEn": [
+        "OnlyOffice Workspace: CRM, docs, mail, calendar",
+        "Runs on your hardware with your IdP",
+        "Same perimeter as Chat, Meet, and Company Brain"
+      ],
+      "bulletsDe": [
+        "OnlyOffice Workspace: CRM, Docs, Mail, Kalender",
+        "Auf Ihrer Hardware mit Ihrem IdP",
+        "Gleicher Perimeter wie Chat, Meet und Company Brain"
+      ]
+    },
+    {
+      "nameEn": "Stack Chat",
+      "nameDe": "Stack Chat",
+      "tagEn": "Matrix · Element · E2E · on-premise",
+      "tagDe": "Matrix · Element · E2E · On-Premise",
+      "descriptionEn": "Team messaging on Matrix / Element with end-to-end encryption and an on-prem homeserver. Not Slack or Discord.",
+      "descriptionDe": "Team-Messaging auf Matrix / Element mit Ende-zu-Ende-Verschlüsselung und On-Prem-Homeserver. Nicht Slack, nicht Discord.",
+      "bulletsEn": [
+        "On-prem Matrix homeserver you operate",
+        "Element clients with E2E",
+        "Agent and Company Brain in the same rooms via MCP"
+      ],
+      "bulletsDe": [
+        "On-Prem-Matrix-Homeserver, den Sie betreiben",
+        "Element-Clients mit E2E",
+        "Agent und Company Brain in denselben Räumen über MCP"
+      ]
+    },
+    {
+      "nameEn": "Stack Meet",
+      "nameDe": "Stack Meet",
+      "tagEn": "Video in your perimeter",
+      "tagDe": "Video in Ihrem Perimeter",
+      "descriptionEn": "Video meetings in the same on-prem perimeter as Chat and CRM. Recordings stay with you — not a Zoom clone, and not a 1000-person webinar claim.",
+      "descriptionDe": "Videomeetings im selben On-Prem-Perimeter wie Chat und CRM. Aufzeichnungen bleiben bei Ihnen — kein Zoom-Klon, kein 1000-Teilnehmer-Anspruch.",
+      "bulletsEn": [
+        "Same perimeter as Matrix and OnlyOffice",
+        "Recordings on storage you control",
+        "Sized to your rooms and hardware"
+      ],
+      "bulletsDe": [
+        "Gleicher Perimeter wie Matrix und OnlyOffice",
+        "Aufzeichnungen auf Storage unter Ihrer Kontrolle",
+        "Dimensioniert nach Ihren Räumen und Ihrer Hardware"
+      ]
+    }
+  ]
+}

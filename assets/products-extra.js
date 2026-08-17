@@ -93,23 +93,86 @@
       </article>`;
   }
 
-  function isPatched(section, data, de) {
+  function isExtrasPatched(section, data, de) {
     const lang = de ? "de" : "en";
     if (section.getAttribute("data-pk-products-extra") !== lang) return false;
     const first = data.products[0]?.nameEn;
     return Boolean(section.querySelector(".pk-product__extra") && section.textContent.includes(first));
   }
 
-  function applyProducts(section, data) {
-    const de = isGerman();
-    if (isPatched(section, data, de)) return;
-
-    const reactGrid = [...section.querySelectorAll(".grid")].find(
+  function findReactGrid(section) {
+    return [...section.querySelectorAll(".grid")].find(
       (el) => !el.classList.contains("pk-products__extra-host"),
     );
+  }
+
+  function findCoreArticle(grid, product) {
+    const names = [product.nameEn, product.nameDe].filter(Boolean);
+    return [...grid.querySelectorAll("article")].find((article) => {
+      const heading = article.querySelector("h3");
+      const text = heading?.textContent?.trim();
+      return text && names.includes(text);
+    });
+  }
+
+  function setBulletTexts(list, bullets) {
+    const items = [...list.querySelectorAll("li")];
+    bullets.forEach((text, index) => {
+      const item = items[index];
+      if (!item) return;
+      const spans = [...item.querySelectorAll("span")];
+      const target = spans.length > 1 ? spans[spans.length - 1] : item;
+      if (target.textContent !== text) target.textContent = text;
+    });
+  }
+
+  function isCorePatched(section, core, de) {
+    if (!core?.products?.length) return true;
+    const lang = de ? "de" : "en";
+    const grid = findReactGrid(section);
+    if (!grid) return false;
+    return core.products.every((product) => {
+      const article = findCoreArticle(grid, product);
+      if (!article || article.getAttribute("data-pk-stack-core") !== lang) return false;
+      const expected = de ? product.descriptionDe : product.descriptionEn;
+      return Boolean(expected) && article.textContent.includes(expected);
+    });
+  }
+
+  function patchCoreCards(section, core, de) {
+    if (!core?.products?.length || isCorePatched(section, core, de)) return;
+    const grid = findReactGrid(section);
+    if (!grid) return;
+    const lang = de ? "de" : "en";
+
+    for (const product of core.products) {
+      const article = findCoreArticle(grid, product);
+      if (!article) continue;
+      const tag = de ? product.tagDe : product.tagEn;
+      const description = de ? product.descriptionDe : product.descriptionEn;
+      const bullets = de ? product.bulletsDe : product.bulletsEn;
+      const heading = article.querySelector("h3");
+      const tagEl = heading?.nextElementSibling;
+      const descEl = tagEl?.nextElementSibling;
+      if (tagEl && tagEl.tagName === "P" && tagEl.textContent !== tag) {
+        tagEl.textContent = tag;
+      }
+      if (descEl && descEl.tagName === "P" && descEl.textContent !== description) {
+        descEl.textContent = description;
+      }
+      const list = article.querySelector("ul");
+      if (list && bullets?.length) setBulletTexts(list, bullets);
+      article.setAttribute("data-pk-stack-core", lang);
+    }
+  }
+
+  function applyExtras(section, data, de) {
+    if (isExtrasPatched(section, data, de)) return;
+
+    const reactGrid = findReactGrid(section);
     if (!reactGrid) return;
 
-    // Never mutate React grid children — host extras in a sibling grid.
+    // Never replace React grid children — host extras in a sibling grid.
     let host = section.querySelector(".pk-products__extra-host");
     if (!host) {
       host = document.createElement("div");
@@ -126,23 +189,35 @@
     section.setAttribute("data-pk-products-extra", de ? "de" : "en");
   }
 
+  function applyProducts(section, extra, core) {
+    const de = isGerman();
+    patchCoreCards(section, core, de);
+    applyExtras(section, extra, de);
+  }
+
+  function isPatched(section, extra, core, de) {
+    return isExtrasPatched(section, extra, de) && isCorePatched(section, core, de);
+  }
+
   async function mount() {
     try {
-      const [section, response] = await Promise.all([
+      const [section, extraRes, coreRes] = await Promise.all([
         waitFor("#products"),
         fetch("data/products-extra.json"),
+        fetch("data/stack-core.json"),
       ]);
-      if (!response.ok) throw new Error(`products-extra.json ${response.status}`);
-      const data = await response.json();
+      if (!extraRes.ok) throw new Error(`products-extra.json ${extraRes.status}`);
+      const extra = await extraRes.json();
+      const core = coreRes.ok ? await coreRes.json() : { products: [] };
 
-      const run = () => applyProducts(section, data);
+      const run = () => applyProducts(section, extra, core);
       const watch = window.pkWatchPatch || ((fn) => fn());
       watch(run, {
         root: section,
-        done: () => isPatched(section, data, isGerman()),
+        done: () => isPatched(section, extra, core, isGerman()),
       });
       if (window.pkOnLanguageChange) {
-        window.pkOnLanguageChange(() => applyProducts(section, data));
+        window.pkOnLanguageChange(() => applyProducts(section, extra, core));
       }
     } catch (err) {
       console.warn("[produktor products-extra]", err);

@@ -39,7 +39,7 @@
       ],
       "en": {
         "name": "Stack CRM",
-        "tag": "Office stack · CRM · documents · data plane",
+        "tag": "OnlyOffice Workspace · CRM · documents · data plane",
         "titleHighlight": "CRM",
         "titleRest": "and the office data plane.",
         "lead": "Pipeline, accounts, contacts, tasks, and document originals on your OnlyOffice / Postgres plane — plus a file data plane (S3, SMB, SSH) so desks, agents, and backups share one corpus without SaaS egress.",
@@ -90,7 +90,7 @@
       },
       "de": {
         "name": "Stack CRM",
-        "tag": "Office-Stack · CRM · Dokumente · Data Plane",
+        "tag": "OnlyOffice Workspace · CRM · Dokumente · Data Plane",
         "titleHighlight": "CRM",
         "titleRest": "und die Office-Data-Plane.",
         "lead": "Pipeline, Accounts, Kontakte, Tasks und Dokument-Originale auf Ihrer OnlyOffice-/Postgres-Ebene — plus File-Data-Plane (S3, SMB, SSH), damit Desks, Agents und Backups ein Corpus teilen ohne SaaS-Egress.",
@@ -151,7 +151,7 @@
       ],
       "en": {
         "name": "Stack Chat",
-        "tag": "Team messaging",
+        "tag": "Matrix · Element · E2E · on-premise",
         "titleHighlight": "Chat",
         "titleRest": "without SaaS egress.",
         "lead": "Channels, threads, DMs, voice notes, and file sharing — end-to-end encrypted with keys you hold. Native agent bots with long-term memory, STT/TTS, and optional call join — still on your homeserver.",
@@ -205,7 +205,7 @@
       },
       "de": {
         "name": "Stack Chat",
-        "tag": "Team-Messaging",
+        "tag": "Matrix · Element · E2E · On-Premise",
         "titleHighlight": "Chat",
         "titleRest": "ohne SaaS-Egress.",
         "lead": "Channels, Threads, DMs, Sprachnachrichten und Filesharing — Ende-zu-Ende-verschlüsselt mit Schlüsseln in Ihrer Custody. Native Agent-Bots mit Langzeitgedächtnis, STT/TTS und optionalem Call-Join — weiterhin auf Ihrem Homeserver.",
@@ -269,7 +269,7 @@
       ],
       "en": {
         "name": "Stack Meet",
-        "tag": "Video conferencing",
+        "tag": "Video in your perimeter",
         "titleHighlight": "Meet",
         "titleRest": "on your SFU.",
         "lead": "Low-latency video, screen share, recording, and webinars — routed on your LAN and peered through your own SFU cluster. Recordings land in your object store, not a vendor vault.",
@@ -281,7 +281,7 @@
         "features": [
           "Self-hosted SFU with WebRTC fall-back",
           "Recordings stay on your object store",
-          "Up to 1000 participants per room (sized hardware)",
+          "Rooms sized to your hardware — no 1000-person Zoom-clone claim",
           "Screen share, webinars, and waiting rooms",
           "LAN-first routing with controlled WAN peering",
           "Integrates with suite identity and Chat"
@@ -310,7 +310,7 @@
       },
       "de": {
         "name": "Stack Meet",
-        "tag": "Videokonferenzen",
+        "tag": "Video in Ihrem Perimeter",
         "titleHighlight": "Meet",
         "titleRest": "auf Ihrer SFU.",
         "lead": "Latenzarme Videoübertragung, Bildschirmfreigabe, Aufzeichnung und Webinare — geroutet über Ihr LAN und Ihre eigene SFU-Cluster-Topologie. Aufzeichnungen landen in Ihrem Object-Store, nicht im Vendor-Vault.",
@@ -322,7 +322,7 @@
         "features": [
           "Selbstgehostete SFU mit WebRTC-Fallback",
           "Aufzeichnungen bleiben in Ihrem Object-Store",
-          "Bis zu 1000 Teilnehmer pro Raum (passende Hardware)",
+          "Räume nach Ihrer Hardware dimensioniert — kein 1000-Teilnehmer-Zoom-Klon",
           "Bildschirmfreigabe, Webinare und Waiting Rooms",
           "LAN-first Routing mit kontrolliertem WAN-Peering",
           "Anbindung an Suite-Identity und Chat"
@@ -618,16 +618,16 @@
           "Enterprise search that cannot say “unconfirmed”",
           "Managed inference SaaS as the system of record"
         ],
-        "overview": "Stack AI is the Company Brain layer of the suite, not a chatbot over PDFs. OnlyOffice is the relationship skeleton; Matrix is the live conversation layer. Claims are confirmed only with independent evidence; everything else is marked unconfirmed. A small tool-calling model calls search/get/audit tools. Local inference is the target; some installs currently use hosted inference for cost — the architecture is ready to bring it inside.",
+        "overview": "Stack AI is the Company Brain layer of the suite, not a chatbot over PDFs. OnlyOffice is the relationship skeleton; Matrix is the live conversation layer. Claims are confirmed only with independent evidence; everything else is marked unconfirmed. A thin tool-calling agent — local Qwen + PicoClaw, currently in debug — calls search → get → audit over MCP. Inference stays on-prem. We do not claim an air-gapped production install at a partner.",
         "features": [
           "Evidence-first graph: confirmed vs unconfirmed, with source links",
           "OnlyOffice CRM + docs as the relationship skeleton",
           "Matrix / Element as the live conversation and agent interface",
           "Continuous ingest from mail, chat, documents (calls via STT where installed)",
-          "Lightweight tool-calling agent — no giant in-model corpus",
-          "MCP / HTTP so other internal tools query the same verified layer",
+          "Thin tool-calling agent — local Qwen + PicoClaw (in debug), no giant in-model corpus",
+          "MCP / HTTP so other internal tools query the same verified layer (search → get → audit)",
           "On-prem by design; data stays inside the perimeter",
-          "Local inference engines (vLLM, Ollama, llama.cpp) when hardware allows"
+          "Local inference on your hardware — not a hosted-cost compromise pitched as the product"
         ],
         "useCases": [
           "Regulated teams that cannot send company knowledge to a cloud LLM",
@@ -637,7 +637,7 @@
         "deploy": [
           "Stand up beside Stack CRM and Stack Chat on the same IdP",
           "Point the agent at the brain MCP (search → get → audit)",
-          "Keep inference local when the GPU/CPU budget allows; hosted inference is a cost compromise, not the product",
+          "Run local Qwen + PicoClaw on-prem (currently in debug) — do not pitch hosted inference as the product",
           "Do not treat the model weights as the Source of Truth"
         ],
         "refs": [
@@ -674,16 +674,16 @@
           "Enterprise-Suche, die nicht „unbestätigt“ sagen kann",
           "Managed-Inference-SaaS als System of Record"
         ],
-        "overview": "Stack AI ist die Company-Brain-Schicht der Suite, kein Chatbot über PDFs. OnlyOffice ist das Beziehungsskelett; Matrix die lebende Gesprächsebene. Behauptungen gelten nur mit unabhängigen Belegen; sonst unconfirmed. Ein kleines Tool-Calling-Modell ruft search/get/audit. Lokale Inferenz ist das Ziel; manche Installationen nutzen hosted inference aus Kostengründen — die Architektur kann sie nach innen holen.",
+        "overview": "Stack AI ist die Company-Brain-Schicht der Suite, kein Chatbot über PDFs. OnlyOffice ist das Beziehungsskelett; Matrix die lebende Gesprächsebene. Behauptungen gelten nur mit unabhängigen Belegen; sonst unconfirmed. Ein dünner Tool-Calling-Agent — lokales Qwen + PicoClaw, derzeit in Debug — ruft search → get → audit über MCP. Inferenz bleibt on-prem. Kein Air-Gap-Produktivbetrieb beim Partner als Anspruch.",
         "features": [
           "Evidence-first Graph: confirmed vs unconfirmed, mit Quellen",
           "OnlyOffice CRM + Docs als Beziehungsskelett",
           "Matrix / Element als Live-Conversation und Agent-Interface",
           "Kontinuierlicher Ingest aus Mail, Chat, Dokumenten (Calls via STT wo installiert)",
-          "Leichter Tool-Calling-Agent — kein riesiges Modell-Corpus",
-          "MCP / HTTP, damit interne Tools dieselbe geprüfte Schicht nutzen",
+          "Dünner Tool-Calling-Agent — lokales Qwen + PicoClaw (in Debug), kein riesiges Modell-Corpus",
+          "MCP / HTTP, damit interne Tools dieselbe geprüfte Schicht nutzen (search → get → audit)",
           "On-Prem by design; Daten bleiben im Perimeter",
-          "Lokale Inference-Engines (vLLM, Ollama, llama.cpp), wenn Hardware es zulässt"
+          "Lokale Inferenz auf Ihrer Hardware — hosted inference ist kein Produkt-Pitch"
         ],
         "useCases": [
           "Regulierte Teams, die Firmenwissen nicht an eine Cloud-LLM geben dürfen",
@@ -693,7 +693,7 @@
         "deploy": [
           "Neben Stack CRM und Stack Chat mit derselben IdP aufsetzen",
           "Agent auf Brain-MCP zeigen (search → get → audit)",
-          "Inferenz lokal halten, wenn GPU/CPU reicht; hosted inference ist ein Kostenkompromiss, nicht das Produkt",
+          "Lokales Qwen + PicoClaw on-prem (derzeit in Debug) — hosted inference nicht als Produkt pitchen",
           "Modellgewichte nicht als Source of Truth behandeln"
         ],
         "refs": [
