@@ -56,16 +56,16 @@
       "nameDe": "Stack AI",
       "tagEn": "Company Brain · local Qwen · PicoClaw",
       "tagDe": "Company Brain · lokales Qwen · PicoClaw",
-      "descriptionEn": "Evidence-first Company Brain on your stack: ingest channels, fact-check claims, keep an auditable graph. A thin tool-calling agent — local Qwen + PicoClaw, currently in debug — answers through chat and voice from verified facts. The agent reaches the brain over MCP: search → get → audit. We do not claim an air-gapped production install at a partner.",
-      "descriptionDe": "Evidence-first Company Brain auf Ihrem Stack: Kanäle aufnehmen, Behauptungen gegenprüfen, prüfbaren Graph halten. Ein dünner Tool-Calling-Agent — lokales Qwen + PicoClaw, derzeit in Debug — antwortet über Chat und Sprache aus geprüften Fakten. Der Agent erreicht den Brain über MCP: search → get → audit. Kein Air-Gap-Produktivbetrieb beim Partner als Anspruch.",
+      "descriptionEn": "Evidence-first Company Brain on your stack. The whole team asks in Element and gets confirmed facts back — ingest of channels is the other direction, not the product. A thin tool-calling agent — local Qwen + PicoClaw, currently in debug — reaches the brain over MCP: search → get → audit. We do not claim an air-gapped production install at a partner.",
+      "descriptionDe": "Evidence-first Company Brain auf Ihrem Stack. Das ganze Team fragt in Element und bekommt confirmed Fakten zurück — Ingest von Kanälen ist die andere Richtung, nicht das Produkt. Ein dünner Tool-Calling-Agent — lokales Qwen + PicoClaw, derzeit in Debug — erreicht den Brain über MCP: search → get → audit. Kein Air-Gap-Produktivbetrieb beim Partner als Anspruch.",
       "bulletsEn": [
         "Confirmed vs unconfirmed facts with source links — not RAG-over-PDFs",
-        "OnlyOffice + Matrix as the skeleton; agent via Element / MCP (search → get → audit)",
+        "Talk in Element; the agent queries the brain via MCP (search → get → audit)",
         "Local Qwen + PicoClaw on-prem — inference inside, being debugged"
       ],
       "bulletsDe": [
         "Confirmed vs unconfirmed Fakten mit Quellen — kein RAG-über-PDFs",
-        "OnlyOffice + Matrix als Skelett; Agent über Element / MCP (search → get → audit)",
+        "Sprechen in Element; der Agent fragt den Brain über MCP (search → get → audit)",
         "Lokales Qwen + PicoClaw on-prem — Inferenz innen, in Debug"
       ],
       "liveDemoUrl": "https://ai.produktor.io/"

@@ -154,7 +154,7 @@
         "tag": "Matrix · Element · E2E · on-premise",
         "titleHighlight": "Chat",
         "titleRest": "without SaaS egress.",
-        "lead": "Channels, threads, DMs, voice notes, and file sharing — end-to-end encrypted with keys you hold. Native agent bots with long-term memory, STT/TTS, and optional call join — still on your homeserver.",
+        "lead": "Element is how the whole team talks to the agent and the stack: ask, get facts — not only dump channels in. Channels, threads, DMs, voice, files stay E2E with keys you hold.",
         "replaces": [
           "Slack",
           "Discord"
@@ -208,7 +208,7 @@
         "tag": "Matrix · Element · E2E · On-Premise",
         "titleHighlight": "Chat",
         "titleRest": "ohne SaaS-Egress.",
-        "lead": "Channels, Threads, DMs, Sprachnachrichten und Filesharing — Ende-zu-Ende-verschlüsselt mit Schlüsseln in Ihrer Custody. Native Agent-Bots mit Langzeitgedächtnis, STT/TTS und optionalem Call-Join — weiterhin auf Ihrem Homeserver.",
+        "lead": "Element ist die Oberfläche: das ganze Team spricht mit Agent und Stack, holt Fakten — nicht nur Kanäle abliefern. Channels, Threads, DMs, Sprache, Files bleiben E2E, Schlüssel in Ihrer Custody.",
         "replaces": [
           "Slack",
           "Discord"
@@ -612,7 +612,7 @@
         "tag": "Company Brain · evidence-first · on-premise",
         "titleHighlight": "Company Brain",
         "titleRest": "on your stack.",
-        "lead": "An evidence-first knowledge core on OnlyOffice (CRM + docs) and Matrix: ingest channels, extract claims, fact-check, keep an auditable graph. A lightweight tool-calling agent answers through chat and voice — it queries verified facts, it does not guess.",
+        "lead": "The whole team speaks in Element and gets facts from the Company Brain. OnlyOffice is the relationship skeleton; channels are ingested too — this is not collect-only. The agent answers from verified facts, it does not guess.",
         "replaces": [
           "Cloud RAG chatbots",
           "Enterprise search that cannot say “unconfirmed”",
@@ -622,8 +622,8 @@
         "features": [
           "Evidence-first graph: confirmed vs unconfirmed, with source links",
           "OnlyOffice CRM + docs as the relationship skeleton",
-          "Matrix / Element as the live conversation and agent interface",
-          "Continuous ingest from mail, chat, documents (calls via STT where installed)",
+          "Matrix / Element: the whole team asks the agent and gets facts back",
+          "Continuous ingest from mail, chat, documents (the other direction — not collect-only)",
           "Thin tool-calling agent — local Qwen + PicoClaw (in debug), no giant in-model corpus",
           "MCP / HTTP so other internal tools query the same verified layer (search → get → audit)",
           "On-prem by design; data stays inside the perimeter",
@@ -668,7 +668,7 @@
         "tag": "Company Brain · evidence-first · On-Premise",
         "titleHighlight": "Company Brain",
         "titleRest": "auf Ihrem Stack.",
-        "lead": "Evidence-first Wissenskern auf OnlyOffice (CRM + Docs) und Matrix: Kanäle aufnehmen, Behauptungen extrahieren, gegenprüfen, prüfbaren Graph halten. Ein leichter Tool-Calling-Agent antwortet über Chat und Sprache — er fragt geprüfte Fakten, er rät nicht.",
+        "lead": "Das ganze Team spricht in Element und holt Fakten aus dem Company Brain. OnlyOffice ist das Beziehungsskelett; Kanäle werden auch aufgenommen — das ist nicht nur Sammeln. Der Agent antwortet aus geprüften Fakten, er rät nicht.",
         "replaces": [
           "Cloud-RAG-Chatbots",
           "Enterprise-Suche, die nicht „unbestätigt“ sagen kann",
@@ -678,8 +678,8 @@
         "features": [
           "Evidence-first Graph: confirmed vs unconfirmed, mit Quellen",
           "OnlyOffice CRM + Docs als Beziehungsskelett",
-          "Matrix / Element als Live-Conversation und Agent-Interface",
-          "Kontinuierlicher Ingest aus Mail, Chat, Dokumenten (Calls via STT wo installiert)",
+          "Matrix / Element: das ganze Team fragt den Agent und holt Fakten",
+          "Kontinuierlicher Ingest aus Mail, Chat, Dokumenten (die andere Richtung — nicht nur Sammeln)",
           "Dünner Tool-Calling-Agent — lokales Qwen + PicoClaw (in Debug), kein riesiges Modell-Corpus",
           "MCP / HTTP, damit interne Tools dieselbe geprüfte Schicht nutzen (search → get → audit)",
           "On-Prem by design; Daten bleiben im Perimeter",

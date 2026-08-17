@@ -23,17 +23,17 @@
       "nameDe": "Stack Chat",
       "tagEn": "Matrix · Element · E2E · on-premise",
       "tagDe": "Matrix · Element · E2E · On-Premise",
-      "descriptionEn": "Team messaging on Matrix / Element with end-to-end encryption and an on-prem homeserver. Not Slack or Discord.",
-      "descriptionDe": "Team-Messaging auf Matrix / Element mit Ende-zu-Ende-Verschlüsselung und On-Prem-Homeserver. Nicht Slack, nicht Discord.",
+      "descriptionEn": "Element is how the whole team talks to the agent and the stack — ask, get facts, not only collect. Matrix homeserver on your hardware, E2E. Not Slack or Discord.",
+      "descriptionDe": "Element ist die Oberfläche, über die das ganze Team mit Agent und Stack spricht — fragen, Fakten holen, nicht nur sammeln. Matrix-Homeserver auf Ihrer Hardware, E2E. Nicht Slack, nicht Discord.",
       "bulletsEn": [
         "On-prem Matrix homeserver you operate",
-        "Element clients with E2E",
-        "Agent and Company Brain in the same rooms via MCP"
+        "Element: the team's interface to the agent and the stack",
+        "Ask in-room for confirmed facts; channels also feed the Company Brain"
       ],
       "bulletsDe": [
         "On-Prem-Matrix-Homeserver, den Sie betreiben",
-        "Element-Clients mit E2E",
-        "Agent und Company Brain in denselben Räumen über MCP"
+        "Element: die Team-Oberfläche zu Agent und Stack",
+        "Im Raum nach bestätigten Fakten fragen; Kanäle speisen den Brain zusätzlich"
       ]
     },
     {
