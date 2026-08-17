@@ -269,10 +269,10 @@
       ],
       "en": {
         "name": "Stack Meet",
-        "tag": "Video in your perimeter",
+        "tag": "Video · STT · OnlyOffice",
         "titleHighlight": "Meet",
         "titleRest": "on your SFU.",
-        "lead": "Low-latency video, screen share, recording, and webinars — routed on your LAN and peered through your own SFU cluster. Recordings land in your object store, not a vendor vault.",
+        "lead": "Video in your perimeter. After the meeting, STT turns speech into text: facts go into the Company Brain, the dialog is filed as an OnlyOffice document — same path as a call-notes upload. Recordings stay on storage you control.",
         "replaces": [
           "Zoom",
           "Google Meet"
@@ -280,6 +280,7 @@
         "overview": "Stack Meet closes the loop for sovereign collaboration: the same people who chat and work deals can meet without a third-party media path. Scale rooms on hardware you size; keep recordings under your retention policy.",
         "features": [
           "Self-hosted SFU with WebRTC fall-back",
+          "STT after the call: facts into the Company Brain, dialog as an OnlyOffice document",
           "Recordings stay on your object store",
           "Rooms sized to your hardware — no 1000-person Zoom-clone claim",
           "Screen share, webinars, and waiting rooms",
@@ -310,10 +311,10 @@
       },
       "de": {
         "name": "Stack Meet",
-        "tag": "Video in Ihrem Perimeter",
+        "tag": "Video · STT · OnlyOffice",
         "titleHighlight": "Meet",
         "titleRest": "auf Ihrer SFU.",
-        "lead": "Latenzarme Videoübertragung, Bildschirmfreigabe, Aufzeichnung und Webinare — geroutet über Ihr LAN und Ihre eigene SFU-Cluster-Topologie. Aufzeichnungen landen in Ihrem Object-Store, nicht im Vendor-Vault.",
+        "lead": "Video in Ihrem Perimeter. Nach dem Meeting macht STT aus Sprache Text: Fakten in den Company Brain, der Dialog als OnlyOffice-Dokument — derselbe Weg wie ein Call-Notes-Upload. Aufzeichnungen bleiben auf Storage unter Ihrer Kontrolle.",
         "replaces": [
           "Zoom",
           "Google Meet"
@@ -321,6 +322,7 @@
         "overview": "Stack Meet schließt den Kreis souveräner Kollaboration: dieselben Personen, die chatten und Deals führen, treffen sich ohne Third-Party-Medienpfad. Räume auf Hardware dimensionieren, die Sie wählen; Aufzeichnungen unter Ihrer Retention-Policy.",
         "features": [
           "Selbstgehostete SFU mit WebRTC-Fallback",
+          "STT nach dem Call: Fakten in den Company Brain, Dialog als OnlyOffice-Dokument",
           "Aufzeichnungen bleiben in Ihrem Object-Store",
           "Räume nach Ihrer Hardware dimensioniert — kein 1000-Teilnehmer-Zoom-Klon",
           "Bildschirmfreigabe, Webinare und Waiting Rooms",
@@ -612,7 +614,7 @@
         "tag": "Company Brain · evidence-first · on-premise",
         "titleHighlight": "Company Brain",
         "titleRest": "on your stack.",
-        "lead": "The whole team speaks in Element and gets facts from the Company Brain. OnlyOffice is the relationship skeleton; channels are ingested too — this is not collect-only. The agent answers from verified facts, it does not guess.",
+        "lead": "The whole team speaks in Element and gets facts from the Company Brain. Meets and calls are transcribed: facts into the brain, the dialog filed as an OnlyOffice document. The agent answers from verified facts, it does not guess.",
         "replaces": [
           "Cloud RAG chatbots",
           "Enterprise search that cannot say “unconfirmed”",
@@ -623,6 +625,7 @@
           "Evidence-first graph: confirmed vs unconfirmed, with source links",
           "OnlyOffice CRM + docs as the relationship skeleton",
           "Matrix / Element: the whole team asks the agent and gets facts back",
+          "Meets/calls: STT → facts in the brain, dialog filed as an OnlyOffice document",
           "Continuous ingest from mail, chat, documents (the other direction — not collect-only)",
           "Thin tool-calling agent — local Qwen + PicoClaw (in debug), no giant in-model corpus",
           "MCP / HTTP so other internal tools query the same verified layer (search → get → audit)",
@@ -668,7 +671,7 @@
         "tag": "Company Brain · evidence-first · On-Premise",
         "titleHighlight": "Company Brain",
         "titleRest": "auf Ihrem Stack.",
-        "lead": "Das ganze Team spricht in Element und holt Fakten aus dem Company Brain. OnlyOffice ist das Beziehungsskelett; Kanäle werden auch aufgenommen — das ist nicht nur Sammeln. Der Agent antwortet aus geprüften Fakten, er rät nicht.",
+        "lead": "Das ganze Team spricht in Element und holt Fakten aus dem Company Brain. Meets und Calls werden transkribiert: Fakten in den Brain, der Dialog als OnlyOffice-Dokument. Der Agent antwortet aus geprüften Fakten, er rät nicht.",
         "replaces": [
           "Cloud-RAG-Chatbots",
           "Enterprise-Suche, die nicht „unbestätigt“ sagen kann",
@@ -679,6 +682,7 @@
           "Evidence-first Graph: confirmed vs unconfirmed, mit Quellen",
           "OnlyOffice CRM + Docs als Beziehungsskelett",
           "Matrix / Element: das ganze Team fragt den Agent und holt Fakten",
+          "Meets/Calls: STT → Fakten in den Brain, Dialog als OnlyOffice-Dokument",
           "Kontinuierlicher Ingest aus Mail, Chat, Dokumenten (die andere Richtung — nicht nur Sammeln)",
           "Dünner Tool-Calling-Agent — lokales Qwen + PicoClaw (in Debug), kein riesiges Modell-Corpus",
           "MCP / HTTP, damit interne Tools dieselbe geprüfte Schicht nutzen (search → get → audit)",
